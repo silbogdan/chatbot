@@ -10,3 +10,5 @@ This is a chatbot developed in C++ as a team project for Object Oriented Program
 [Munteanu Rareș](https://github.com/MunteanuRaresEugen)
 [Radu-Marian Macovei](https://github.com/radu-marian)
 [Crețan Adrian](https://github.com/AdrianCretan)
+[Ioniță Ionuț-Victor](https://github.com/IIV21)
+
