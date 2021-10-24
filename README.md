@@ -7,3 +7,4 @@ This is a chatbot developed in C++ as a team project for Object Oriented Program
 ## Contributors
 
 [Bogdan Silvășan](https://github.com/silbogdan)
+[Munteanu Rareș](https://github.com/MunteanuRaresEugen)
