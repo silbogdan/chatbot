@@ -3,11 +3,10 @@
 #ifndef WX_PRECOMP
 #include <wx/wx.h>
 #endif
+#include "MenuPanel.h"
 
-
-class MenuPanel : public wxPanel
+class HomePanel : public wxPanel
 {
 public:
-	MenuPanel(wxPanel* Parent);
+	HomePanel(wxPanel* Parent);
 };
-

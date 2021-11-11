@@ -4,10 +4,13 @@
 #include <wx/wx.h>
 #endif
 #include "MyApp.h"
+#include "MenuPanel.h"
 class MyFrame : public wxFrame
 {
 public:
     MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
+    MenuPanel *mp;
+    wxPanel* Parent;
 private:
     void OnHello(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);

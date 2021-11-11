@@ -16,6 +16,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     SetMenuBar(menuBar);
     CreateStatusBar();
     SetStatusText("Welcome to ChatBot!");
+    Parent = new wxPanel(this,wxID_ANY);
+    mp = new MenuPanel(Parent);
 }
 void MyFrame::OnExit(wxCommandEvent& event)
 {
@@ -30,3 +32,4 @@ void MyFrame::OnHello(wxCommandEvent& event)
 {
     wxLogMessage("Hello world from wxWidgets!");
 }
+
