@@ -3,11 +3,12 @@
 #ifndef WX_PRECOMP
 #include <wx/wx.h>
 #endif
+#include "MyApp.h"
 #include "MyFrame.h"
 
-class MyApp : public wxApp
+class MenuPanel : public wxPanel
 {
 public:
-    virtual bool OnInit();
+	MenuPanel(wxPanel* Parent);
 };
 

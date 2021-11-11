@@ -8,6 +8,7 @@
 #endif
 #include "MyApp.h"
 #include "MyFrame.h"
+#include "MenuPanel.h"
 
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
 EVT_MENU(ID_Hello, MyFrame::OnHello)
