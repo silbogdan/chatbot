@@ -8,6 +8,7 @@
 #include "MenuPanel.h"
 #include "HomePanel.h"
 #include "ChatbotPanel.h"
+#include "AboutUsPanel.h"
 
 class MyFrame : public wxFrame
 {
@@ -19,6 +20,7 @@ public:
     MenuPanel *mp;
     HomePanel* hp;
     ChatbotPanel* cp;
+    AboutUsPanel* ap;
 
     void ShowHome(wxCommandEvent& event);
     void ShowChatbot(wxCommandEvent& event);

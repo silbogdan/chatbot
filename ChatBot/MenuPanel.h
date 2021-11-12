@@ -12,10 +12,12 @@ public:
 private:
 	wxButton* go_to_home;
 	wxButton* go_to_chatbot;
+	wxButton* go_to_about_us;
 };
 enum
 {
 	BUTTON_HOME = wxID_HIGHEST + 1,
-	BUTTON_CHATBOT = wxID_HIGHEST + 2
+	BUTTON_CHATBOT = wxID_HIGHEST + 2,
+	BUTTON_ABOUT_US = wxID_HIGHEST + 3
 };
 

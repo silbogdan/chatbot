@@ -27,12 +27,15 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     mp = new MenuPanel(Parent);
     hp = new HomePanel(Parent);
     cp = new ChatbotPanel(Parent);
+    ap = new AboutUsPanel(Parent);
 
     hbox->Add(mp, 1, wxEXPAND | wxALL, 5);
     hbox->Add(hp, 3, wxEXPAND | wxALL, 5);
     hbox->Add(cp, 3, wxEXPAND | wxALL, 5);
+    hbox->Add(ap, 3, wxEXPAND | wxALL, 5);
 
     hbox->Hide(cp);
+    hbox->Hide(ap);
     hbox->Layout();
 
     Parent->SetSizer(hbox);
