@@ -21,9 +21,9 @@ public:
     HomePanel* hp;
     ChatbotPanel* cp;
     AboutUsPanel* ap;
-
     void ShowHome(wxCommandEvent& event);
     void ShowChatbot(wxCommandEvent& event);
+  
 
 private:
 
@@ -33,10 +33,10 @@ private:
 
     wxBoxSizer* hbox;
 
-
     void OnHello(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
+    
     wxDECLARE_EVENT_TABLE();
 };
 enum

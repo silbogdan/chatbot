@@ -33,6 +33,7 @@ EVT_MENU(wxID_EXIT, MyFrame::OnExit)
 EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
 EVT_MENU(BUTTON_HOME, MyFrame::OnExit)
 EVT_MENU(BUTTON_CHATBOT, MyFrame::OnExit)
+EVT_MENU(BUTTON_ABOUT_US, MyFrame::ShowChatbot)
 wxEND_EVENT_TABLE()
 wxIMPLEMENT_APP(MyApp);
 
