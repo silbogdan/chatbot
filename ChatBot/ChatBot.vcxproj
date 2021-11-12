@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ChatbotPanel.h" />
     <ClInclude Include="HomePanel.h" />
     <ClInclude Include="MenuPanel.h" />
     <ClInclude Include="MyApp.h" />
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChatBot.cpp" />
+    <ClCompile Include="ChatbotPanel.cpp" />
     <ClCompile Include="HomePanel.cpp" />
     <ClCompile Include="MenuPanel.cpp" />
     <ClCompile Include="MyApp.cpp" />

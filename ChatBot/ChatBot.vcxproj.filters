@@ -30,6 +30,9 @@
     <ClInclude Include="HomePanel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ChatbotPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChatBot.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="HomePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatbotPanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

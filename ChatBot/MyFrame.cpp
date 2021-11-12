@@ -3,24 +3,43 @@
 MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
-    wxMenu* menuFile = new wxMenu;
+    menuFile = new wxMenu;
+    menuHelp = new wxMenu;
+    menuBar = new wxMenuBar;
+
     menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
         "Help string shown in status bar for this menu item");
     menuFile->AppendSeparator();
     menuFile->Append(wxID_EXIT);
-    wxMenu* menuHelp = new wxMenu;
+
     menuHelp->Append(wxID_ABOUT);
-    wxMenuBar* menuBar = new wxMenuBar;
+
     menuBar->Append(menuFile, "&File");
     menuBar->Append(menuHelp, "&Help");
+
     SetMenuBar(menuBar);
     CreateStatusBar();
     SetStatusText("Welcome to ChatBot!");
-    Parent = new wxPanel(this,wxID_ANY);
+
+    Parent = new wxPanel(this, wxID_ANY);
+    hbox = new wxBoxSizer(wxHORIZONTAL);
+
     mp = new MenuPanel(Parent);
+    hp = new HomePanel(Parent);
+    cp = new ChatbotPanel(Parent);
+
+    hbox->Add(mp, 1, wxEXPAND | wxALL, 5);
+    hbox->Add(hp, 3, wxEXPAND | wxALL, 5);
+    hbox->Add(cp, 3, wxEXPAND | wxALL, 5);
+    hbox->Hide(cp);
+
+    Parent->SetSizer(hbox);
+
+    this->Centre();
 }
 void MyFrame::OnExit(wxCommandEvent& event)
 {
+    delete menuFile;
     Close(true);
 }
 void MyFrame::OnAbout(wxCommandEvent& event)
