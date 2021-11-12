@@ -31,7 +31,9 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     hbox->Add(mp, 1, wxEXPAND | wxALL, 5);
     hbox->Add(hp, 3, wxEXPAND | wxALL, 5);
     hbox->Add(cp, 3, wxEXPAND | wxALL, 5);
+
     hbox->Hide(cp);
+    hbox->Layout();
 
     Parent->SetSizer(hbox);
 
@@ -39,7 +41,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 }
 void MyFrame::OnExit(wxCommandEvent& event)
 {
-    delete menuFile;
     Close(true);
 }
 void MyFrame::OnAbout(wxCommandEvent& event)
@@ -51,4 +52,17 @@ void MyFrame::OnHello(wxCommandEvent& event)
 {
     wxLogMessage("Hello world from wxWidgets!");
 }
-
+void MyFrame::ShowHome(wxCommandEvent& event)
+{
+    hbox->Hide(cp);
+    hbox->Layout();
+    hp->Show(true);
+    hbox->Layout();
+}
+void MyFrame::ShowChatbot(wxCommandEvent& event)
+{
+    hbox->Hide(hp);
+    hbox->Layout();
+    cp->Show(true);
+    hbox->Layout();
+}

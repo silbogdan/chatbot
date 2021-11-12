@@ -9,4 +9,6 @@ class HomePanel : public wxPanel
 {
 public:
 	HomePanel(wxPanel* Parent);
+
+	wxStaticText* m_text;
 };

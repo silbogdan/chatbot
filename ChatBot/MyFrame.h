@@ -19,6 +19,10 @@ public:
     MenuPanel *mp;
     HomePanel* hp;
     ChatbotPanel* cp;
+
+    void ShowHome(wxCommandEvent& event);
+    void ShowChatbot(wxCommandEvent& event);
+
 private:
 
     wxMenu* menuFile;
