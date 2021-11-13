@@ -23,7 +23,7 @@ public:
     AboutUsPanel* ap;
     void ShowHome(wxCommandEvent& event);
     void ShowChatbot(wxCommandEvent& event);
-  
+    void ShowAboutUs(wxCommandEvent& event);
 
 private:
 

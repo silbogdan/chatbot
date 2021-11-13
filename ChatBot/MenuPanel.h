@@ -13,6 +13,8 @@ private:
 	wxButton* go_to_home;
 	wxButton* go_to_chatbot;
 	wxButton* go_to_about_us;
+
+	wxBoxSizer* vbox;
 };
 enum
 {

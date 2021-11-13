@@ -58,6 +58,7 @@ void MyFrame::OnHello(wxCommandEvent& event)
 void MyFrame::ShowHome(wxCommandEvent& event)
 {
     hbox->Hide(cp);
+    hbox->Hide(ap);
     hbox->Layout();
     hp->Show(true);
     hbox->Layout();
@@ -65,7 +66,18 @@ void MyFrame::ShowHome(wxCommandEvent& event)
 void MyFrame::ShowChatbot(wxCommandEvent& event)
 {
     hbox->Hide(hp);
+    hbox->Hide(ap);
     hbox->Layout();
     cp->Show(true);
+    hbox->Layout();
+}
+
+
+void MyFrame::ShowAboutUs(wxCommandEvent& event)
+{
+    hbox->Hide(hp);
+    hbox->Hide(cp);
+    hbox->Layout();
+    ap->Show(true);
     hbox->Layout();
 }
