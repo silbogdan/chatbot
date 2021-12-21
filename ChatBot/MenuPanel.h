@@ -10,7 +10,6 @@ class MenuPanel : public wxPanel
 public:
 	MenuPanel(wxPanel* Parent);
 private:
-	wxButton* go_to_home;
 	wxButton* go_to_chatbot;
 	wxButton* go_to_about_us;
 
@@ -18,8 +17,7 @@ private:
 };
 enum
 {
-	BUTTON_HOME = wxID_HIGHEST + 1,
-	BUTTON_CHATBOT = wxID_HIGHEST + 2,
-	BUTTON_ABOUT_US = wxID_HIGHEST + 3
+	BUTTON_CHATBOT = wxID_HIGHEST + 1,
+	BUTTON_ABOUT_US = wxID_HIGHEST + 2
 };
 

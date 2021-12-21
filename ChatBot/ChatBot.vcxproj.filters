@@ -27,9 +27,6 @@
     <ClInclude Include="MenuPanel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HomePanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ChatbotPanel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -48,9 +45,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HomePanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ChatbotPanel.cpp">

@@ -143,7 +143,6 @@
   <ItemGroup>
     <ClInclude Include="AboutUsPanel.h" />
     <ClInclude Include="ChatbotPanel.h" />
-    <ClInclude Include="HomePanel.h" />
     <ClInclude Include="MenuPanel.h" />
     <ClInclude Include="MyApp.h" />
     <ClInclude Include="MyFrame.h" />
@@ -153,7 +152,6 @@
     <ClCompile Include="AboutUsPanel.cpp" />
     <ClCompile Include="ChatBot.cpp" />
     <ClCompile Include="ChatbotPanel.cpp" />
-    <ClCompile Include="HomePanel.cpp" />
     <ClCompile Include="MenuPanel.cpp" />
     <ClCompile Include="MyApp.cpp" />
     <ClCompile Include="MyFrame.cpp" />
