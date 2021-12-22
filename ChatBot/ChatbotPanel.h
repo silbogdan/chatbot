@@ -6,6 +6,7 @@
 #endif
 #include <wx/listbox.h>
 #include <wx/listctrl.h>
+#include "Message.h"
 
 class ChatbotPanel : public wxPanel
 {

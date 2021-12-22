@@ -4,6 +4,7 @@
 
 class Message
 {
+public:
 	wxString msg;
 	bool isbot = true;
 	int ID;

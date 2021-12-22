@@ -23,12 +23,16 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
 {	 
-	wxString a = TextCtrl2->GetValue(); //works well
+	Message* temp;
+	temp = new Message();
+	temp->msg = TextCtrl2->GetValue();
+	temp->isbot = 0;
+	//wxString a = TextCtrl2->GetValue();//works well
 	//auto temp =  main_chat->Insert(a, i); //to insert items
 
 	//0 for bot/left, 1 for user/right
 	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, 1, a);
+	main_chat->SetItem(i, !temp->isbot, temp->msg);
 	i++;
 
 	/*wxListItem* item = new wxListItem();
