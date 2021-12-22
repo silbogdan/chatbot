@@ -14,7 +14,7 @@ public:
 	void takeMessage(wxCommandEvent& event);
 	wxStaticText* m_text;
 	static wxTextCtrl* TextCtrl2;
-	static wxListBox* main_chat;
+	static wxListCtrl* main_chat;
 	wxString b[3];
 private:
 	wxButton* send_button;
