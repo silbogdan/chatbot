@@ -22,7 +22,7 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	wxString a = TextCtrl2->GetValue(); //works well
 	auto temp =  main_chat->Insert(a, i); //to insert items
 	i++;
-	
+	//
 	/* things to display pointers
 	auto chaine2 = temp;
 	std::stringstream tmpss;
