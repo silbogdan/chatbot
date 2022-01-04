@@ -1,0 +1,1357 @@
+PART THREE
+BIOPROCESS INTELLIGENT CONTROL
+
+
+
+
+
+
+
+
+
+
+Part three
+
+
+
+
+
+BIOPROCESS INTELLIGENT
+CONTROL
+
+In this chapter will be configured the general intelligent structure for bioprocess control. Hence, 
+in # 3.1 will be shown divers original models ofdifferent considered bioprocesses and the 
+corresponding modeling results. The model heterogeneity is due to the microorganism types 
+variability. Following the model types, in # 3.2 will be established the general control criteria, 
+by tackling the general bioprocess control theory in addition with the conceptual modalities to 
+deal with the model fiuctuation. Finally, in # 3.3 will be configured the general intelligent 
+control structure based on working hypothesis, i.e. bioprocess pattern recognition, analytical 
+optimization and fuzzy control. The process database will be configured on AS400 system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+
+PART THREE
+BIOPROCESS INTELLIGENT CONTROL
+
+The experimental data analysis guides to the impossibility to develop global models, which can 
+formalize (from mathematical point of view) all the culture phases. Hence, distinct limited models 
+have been developed, who are applicable through specific evolution conditions. The control 
+algorithm practice with a priori model is limited from this point of view. Moreover, the adaptive 
+control systems offer a sub-optimal global solution (despite the optimization during the time 
+samples).
+
+Therefore, the intelligent control techniques offer the possibilities to substitute the bioprocess 
+information lack (and the general evolution rules) for the subjective principles established by a 
+human expert. So, an intelligent control system can be built in order to manage specific bioprocess 
+types.
+
+
+3. 1.  P R O PO SE D  M O D E L S  O F  SPECIFIC  BIOPROCESSES
+
+
+
+3.1.1. Mathematical modeling of enzymatic hydrolysis of wheat straw under the inhibitory effect of 
+the end product
+
+Cellulose is the most abundant organic compound in the world and is constantly replenished  by  
+photosynthesis.  The conversion of cellulose to soluble sugars is accomplished by cellulolytic 
+enzymes or mineral  acids,  both  methods  being characterized   by   advantages   and 
+disadvantages (Marsden, Gray, 1986).
+
+The enzymatic hydrolysis is a process performed in heterogeneous system, involving the action of 
+soluble enzyme (cellulase) on insoluble substrate. Cellulase is not a single enzyme but is, 
+depending on the source, a multicomponent  entity  with  variable composition. In general, 
+cellulases secreted by fungi consist of three major classes of components:  endoglucanases,  
+cellobio- hydrolases  and  beta-glucosidases.  The conversion of cellulose to glucose occurred by 
+the  synergism  between  the  individual components of the cellulase system. Despite the great 
+number of the studies concerning the mode of cellulase action (Estebauer et al., 1991, Kuhard et 
+al., 1993, Steiner, 1994,
+Maheswari, 1993, Olama, 1993), the results provide only an approximate representation of the enzyme 
+hydrolysis kinetics of an insoluble cellulose.
+
+2
+The kinetics of the enzymatic hydrolysis of insoluble cellulose primary depends on three groups of 
+factors (David et al., 1986, Morisson, 1988, Ramos et al., Ropars et al., 1992, Zacchi et al., 
+1988): the structural features of cellulose, the nature of the enzyme system employed and the mode 
+of interaction between cellulose and enzyme. Furthermore, kinetic characteristics of the 
+heterogeneous cellulose-cellulase system, such as mass transfer adsorption and desorption of the 
+enzyme,  surface  reaction  and  product inhibition should be examined. A kinetic model, which 
+considers all these factors, has not been proposed.
+
+Experimental conditions
+•  Enzyme. cellulase system was obtained from the culture of the cellulolytic fungus Aspergillus 
+niger (Archer, 1994, Orsson, 1993, Szewczyk, 1994; Mandels, 1969). The culture broth was filtered 
+through nylon cloth and filtrate was used as enzyme preparate;
+•  Substrate. milled and alkaline treated wheat straw (NaOH at 120° C, one hour); (Jecu, 1996);
+•  Enzymatic hydrolysis. enzyme digestion of substrate was carried out at 45° C in acetate buffer, 
+pH 4.5, to which sodium azide has been added to prevent microbial contamination. The reaction  
+mixture contained various amount of substrate (12; 20; 40; and 60 g/l). The influence of the
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+accumulation of end product (glucose) was determined by supplementation of the medium with various 
+amounts of exogene glucose (10; 20 and 40 g/L). After 24 hours of reaction, representative aliquots 
+of each digestion  mixture  were  withdrawn, centrifuged to remove all solid substrate. Reducing 
+sugar content of the supernatant was determined (as glucose) using the dinitrosalycilic method of 
+Miller (1959).
+
+The experimental data have shown the inhibitory effect of the accumulation of end product in the 
+mixture reaction. The yield of substrate conversion has decreased greatly with the increase of the 
+glucose concentration.
+
+In the limited conditions (Caramihai and Jecu, 1995), for a function P=f(inhibitor), taking into 
+account a finite inhibitor concentration (I=Ilim) the product accumulation being 0, the inhibitory 
+effects were produced only by the substrate concentration. For this case, the proposed model has 
+the following equation:
+substrate concentrations, presents a linear dependence between the product formation and substrate 
+concentration (fig. 3.1.1.1.).
+
+10                          10
+
+8                         8
+
+6               6
+
+4                    —  4
+
+2              2
+
+0
+20     40     so
+Substrate [g/L]
+Fig.  3.1.1.1  Product  formation  vs.  substrate concentration (without inhibitor effect); >  real 
+data,   model
+For higher substrate concentration values (S=100 + 120 g/L) it has obtained a decreasing product 
+formation rate, as consequence of the substrate variations and enzyme adsorption onto substrate 
+(Caramihai, Jecu, 1995).
+
+
+P —— Po(1
+3.1.1.1
+A previous paper (Caramihai and Jecu, 1995) has confirmed, in a substrate range of 10-60 g/L, the 
+maintenance of a linear dependence
+
+where: Po = obtained product (without inhibitor effect) [mg/mL];
+I = inhibitor concentration [g/L];
+I1i = limiting inhibitor concentration (which correspond to zero product) [g/L];
+k = constant.
+
+Considering the inhibitory effect of the substrate, the equation (3.1.1.1) becomes more complex:
+(1 —  I )e °        3.1.1.2
+I„q
+In this case, Po depends on substrate concentration (ci, cz = constants). The enzymatic hydrolysis 
+typical profile, for lower
+between the glucose release and the substrate concentration.
+
+In enzyme reaction, the accumulated end products usually inhibit the rate of the process. In this 
+case, glucose was competing with the substrate cellulose for the active sites on the enzyme. The 
+supplementation of the mixture reaction with different amounts of glucose determined important 
+decreases of the product concentration (Annex 1, Table 1).
+As shown from the figures 3.1.1.1, 3.1.1.2 and
+3.1.1.3 the most significant decrease of the product release was obtained in the presence of 20 g/L 
+exogene glucose.
+
+
+
+
+
+3
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                      THREE                     
+
+
+6                6
+
+
+
+4                       4
+
+
+
+2                        —  2
+
+
+2.4
+
+2
+E
+1.6
+
+1.2
+08
+
+04
+
+
+2.4
+
+— 2
+
+- 1.6
+
+- 1.2
+
+— 0.8
+
+0.4
+
+
+
+20     40     60
+Substrate [g/L]
+Fig.  3.1.1.2  Product  formation  vs.  substrate concentration (glucose: 10g/L); > real data, 
+model
+0         20        40
+Glucose [g/L]
+Fig.  3.1.1.4  Product  formation  vs.  inhibitor concentration (initial substrate concentration: 
+20
+g/L); > real data,   model
+
+
+6              - 6
+4  —                     —  4
+
+- 4
+
+2                          2
+2                        —  2
+
+
+
+
+
+0    20      40     60
+Substrate [g/L]
+20       40
+Glucose {g/Lj
+
+Fig.  3.1.1.3  Product  formation  vs.  substrate concentration (glucose: 20g/L); > real data, 
+model
+Fig.  3.1.1.5  Product  formation  vs.  inhibitor concentration (initial substrate concentration: 
+40
+g/L);  real data,   model
+
+10
+The modeling results were presented in Annex      ₈
+1, Table 2 (for all experiments Hi = 100 g/L).
+The  experimental  data  show  a  good       6
+correspondence with the simulated values, i.e.
+the proposed model 1S adequate.              4
+2
+0
+10
+
+
+8
+
+- 6
+
+— 4
+
+- 2
+
+
+20        40
+Glucose [g/L]
+Fig.  3.1.1.6  Product  formation  vs.  inhibitor concentration (initial substrate concentration: 
+60
+g/L);  real data,   model
+
+
+4
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+Figures 3.1.1.4, 3.1.1.5 and 3.1.1.6 present the influence of the inhibitor concentration on the 
+product formation, for various substrate levels. Table 3 (Annex 1) indicates the experimental data, 
+and Table 4 (Annex 1) shows the modeling errors.
+
+Finally, it should be point out that the equations  3.1.1.1  and  3.1.1.2  describe enzymatic 
+hydrolysis processes, and can be used for determination of optimal conditions. It would be 
+evaluated if the optimum of the function  P=f(S,I),  easily  (analytical) determined at this 
+moment, can be send up using an intelligent control system.
+
+3.1.2.  Kinetic  model  of  catalase accumulation in aerobic bioprocess with Micrococcus 
+lysodeikticus
+
+In a discontinuous aerobic bioprocess a high producing   bacterium   Micrococcus lysodeikticus  
+accumulates  intracellular catalase for the H2Oz decomposing. The toxic H2O2 formation is due to 
+cellular respiration, and consequently a high catalase activity is characteristic for the 
+exponential growth phase.
+
+Following   #2.1.1.3  and  Gaden's recommendation, the product accumulation is to be considered 
+conforming to the metabolic route of product formation and related to the culture growth:
+a) Product formation kinetic is a function of substrate consumption rate, ipso facto of the growth 
+rate (growth associated product accumulation); the total change in free enthalpy is negative (AG < 
+0) - type I. The main product appears as a result of primary energy metabolism by oxidation of the 
+substrate.  Growth  curve,  substrate consumption and product formation are very similar.
+b) Product  formation  kinetic  is  only indirectly dependent on the substrate
+
+' The controlled parameters were speed, temperature, airflow and pressure.
+consumption, the relationship with the growth curve being complex; the total change in free 
+enthalpy is also negative (A G < 0) - type II.
+c) Product formation kinetic does not depend on the substrate consumption and the change in free 
+enthalpy is positive (AG > 0) - type III.
+
+Taking into account of these criteria, a type I product formation kinetic is a logical answer for 
+the intracellular catalase accumulation.
+
+Experimental conditions
+
+The Micrococcus lysodeikticus bacterium was cultivated in a stirred tank lab-bioreactor¹ with 10L  
+medium.  The  main  aerobic  batch bioprocess parameters were:
+•  Temperature: 30 °C
+•  Pressure: 0.5 atm
+•  Stirrer speed: 450 - 550 rpm
+•  pH 9, unnecessary control
+•  Air-fiow: 400 - 800 L/h
+•  Time process: 20-24h
+
+The bioprocess parameters were monitored and controlled by conventional procedures.
+Medium  composition:  NaHCO3  1,7%, CaHPO40,2 %, yeast extract 2%, molasses 1%/r.s., microelements.
+
+During the exponential growth phase, the C substrate  is mainly used for metabolites accumulation, 
+principal product formation and growth energy obtaining; on the other hand in the stationary phase 
+the share for growth metabolites and energy obtaining is much decreasing to the benefit of the 
+substrate used for maintaining energy and product formation.
+
+In these conditions, the following general kinetic model can be considered (Schugerl, 1987, 
+Schugerl, 1993):
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+dP  dX
+dt   dt
+
+3.1.2.1
+8               8
+
+where  n  and  b  can  be  time  dependent       ⁶                ⁶
+(Caramihai ct al., 1995) related to the batch
+process evolution and consequently with the       ⁴               ⁴
+growth curve:
+2                          2
+
+   ‘I   
+3.1.2.2
+
+
+0                           0
+0    4    8    12    16    20
+Time [h]
+
+
+If kt is a constant, the value of o parameter can be adjusted by using the coefficient k2. with a
+Fig.  3.1.2.1  Product  formation  rate vs. time (experiment 1); > real data,   model
+
+specific rate significance (h ¹). Finally, the mathematical form of the parameter expresses that to 
+the final period of the batch bioprocess the product formation rate is lesser and lesser dependent  
+of the growth  kinetic (this dependence is decreasing till 0).
+
+Meanwhile, the b parameter has a constant value (linear dependence) expressing the relative 
+contribution of the existing cells to the product formation.
+
+1.6
+1.4
+1.2
+
+
+0.8
+0.6
+0.4
+0.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+0    4    8    12    16    20
+Time [h]
+1.6
+1.4
+1.2
+
+
+0.8
+0.6
+0.4
+0.2
+
+The final form of the equation (3.1.2.1) becomes:
+
+dP  k   dX
+dt  1 + e " dt +€3T      3.1.2.3
+The experimental data are shown in Table 1, Annex 2. Two experiments are investigated. The 
+experiment duration was 20h. The cell concentration  (as  dry  weight)  and  the enzymatic activity 
+were checked from 4 to 4 hours.
+
+
+
+
+
+
+
+6
+Fig. 3.1.2.2  Product formation rate vs. time (experiment 2); > real data,   model
+Fig. 3.1.2.1 and 3.1.2.2 show the experimental data in analogy with the model simulated value
+
+The model described by the equation (3.1.2.3), a growth associated product accumulation model,  
+predicted  well  enough  the experimental behavior. The proposed model is not only an extension of 
+the classical model, but expresses better the more complex dependence between growth and product 
+formation, and finally the existing metabolic routes. Furthermore, the modeling error is better 
+that the classic model errors (see Table 2, Annex 2).
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+3.1.3.  Modeling  of  alcoholoxydase production with Hansenula polymorpha
+
+Experimental conditions
+A fed-batch bioprocess for alcoholoxydase obtaining with the methylotrophic yeast Hansenula  
+polymorpha  CBS-4732  was operated in an airlift lab bioreactor (draft concentric airlift with air 
+sparged riser). The enzyme is used for obtaining a high- specialized  kit  for  methanol/ethanol 
+determination.
+
+The yeast was cultivated on a complex medium containing (NH4)2SO4›  2 04› N•2HPO4›MgSO4 7H O, 
+CaC12.yeast extract or autolysed residual beer yeast as organic N source and microelements (Fe, B, 
+Cu, I, Mn, Zn, Mo).
+
+The main process parameters were:
+• continuous temperature control 37-38°C;
+• a minimal level of pOz - 10% from the saturation concentration was maintained during the 
+exponential growth;
+• continuous pH control between 4.5-5.0 by addition of NH4OH;
+• no foam control, if the main parameters are optimally controlled;
+•  pH: 4.5-5
+
+The unique C source, the methanol was introduced function of the yeast growth rate in connection 
+with the substrate consumption rate for avoiding the growth inhibition by substrate concentration.
+
+The previous studies (Chirvase and Marica, 1992) for airlift performance characterization and 
+bioprocess optimization demonstrated that on  these  conditions  a  high  level  of alcoholoxydase 
+was accumulated during the first part of the exponential phase growth. So that the assumption of a 
+growth associated product formation model becomes plausible.
+
+Conforming to the studies presented in the experimental part a growth associated product
+accumulation model (type I) is to be considered (Caramihai et al., 1995):
+
+dP  dX
+3.1.3.1
+dt   dt
+
+where: ki. kz = constants;
+e”'  ^’ = autocatalysis factor (which expresses the special nature of a growth associated enzyme as 
+bioprocess product);
+X = cells concentration expressed as dry weight (g/L);
+Xp = cells concentration corresponding to a threshold level (g/L);
+P = alcoholoxydase activity (EA/mL of extract);
+Note that ki. kz and Xp are a posteriori values
+Meanwhile the parameter Xp represents a threshold value, which defines the present model behavior 
+in comparison with the classical Gaden model:
+• if Xp = X, model (3.1.3.1) corresponds to Gaden model;
+• if Xp < X, product rate is grater than product rate obtained by Gaden model;
+• if Xp > X, product rate is lesser than Gaden product rate.
+
+The alcoholoxydase  is  an  intracellular enzyme, so there is a complex procedure for its obtaining 
+after its biosynthesis (cells disruption, extraction with adequate solutions, extract 
+concentration, etc.). The product rate evolution can be expressed in a first form as the activity 
+of the enzyme determined by a known biochemical analysis in the volume of extract (mL) obtained 
+after cells' disruption and extraction.
+
+Three experiments were performed (time bioprocess: 40 — 44h). The optical density (as cell  
+concentration  indicator)  and  the enzymatic activity were measured (Table 1, Annex 3). The 
+estimated parameter values are shown in Table 2, Annex 3. By comparison
+7
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                      THREE                     
+
+with the classical form of a growth associated product accumulation model, the introduction of  
+"autocatalysis factor" expresses the enzyme is a special product which is used as
+catalyst for culture growth sustaining (the       20              20
+modeling error is /² < 0.1).
+6
+
+
+0    4    8    12   16   20
+4                Dry Weight [g/L]
+Fig. 3.1.3.3 Product formation rate vs. dry weight (experiment 3);  >  real data (AE [microMol
+2       methanol/min/mL of extract],    model [AE
+[microMoI methanol/min/mL of extract])
+
+
+
+0    4    8    12   16    20
+Dry Weight [g/L]
+Fig. 3.1.3.1 Product formation rate vs. dry weight (experiment 1);  >  real data (AE [microMol
+methanol/min/mL of extract],    model [AE [microMol methanol/min/mL of extract])
+
+
+
+6               6
+
+
+4                         4
+
+
+2                         2
+
+
+
+0    4    8    12    16    20
+Dry Weight [g/L]
+Fig. 3.1.3.2 Product formation rate vs. dry weight (experiment 2);  >  real data (AE [microMoI
+methanol/min/mL of extract],    model [AE [microMol methanol/min/mL of extract])
+
+
+
+
+
+
+
+
+
+8
+Fig. 3.1.3.1, 3.1.3.2, 3.1.3.3 represent the product accumulation rate evolution (model curves) by 
+comparison with the experimental data for representative fed - batch runs.
+
+Finally, we can see that the chosen model predicted  well  enough  the  experimental behavior  and  
+can  be  considered  as  a contribution  to the product  accumulation modeling for the special 
+case, when the bioprocess  product  is  an  enzyme. Furthermore, in the three experiments, two 
+levels of alcoholoxydase activity can be reached depending on two cellular metabolism systems for 
+enzyme using as catalyst and probably  independent  of  the  cultivation conditions. The idea of 
+two different systems for the enzyme using in the cellular growth is sustained by the good fitting 
+of the same model, but with two levels for the kmvalue (ki in experiment 3 >> kt in experiment 1 
+and 2).
+
+3.1.4.  Mathematical  modeling  of  the enzymatic hydrolysis of wheat straw
+
+Recent interest in renewable resource has prompted many researchers to investigate the enzymatic 
+hydrolysis of cellulose. Despite the efforts of these investigators, much of the mechanism for 
+cellulose hydrolysis is still unclear. The complexity of the problem is, in a large part, due to 
+the significant alteration of
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+the substrate properties (Gupta, 1992; Wyman
+et al., 1993).
+
+The yield of the enzymatic hydrolysis process is dependent in a large measure of the substrate 
+level. It has been stated that the substrate concentration increase over an optimal value produces 
+the decrease of the rate digestion.
+
+According to our results, we have proposed a mathematical  model for describing the enzymatic 
+hydrolysis of pretreated wheat straw using a fungal cellulase complex.
+
+Experimental conditions
+•  Microorganism.  cellulolytic  fungus Aspergillus niger, which belongs to the microbial 
+collection of Research Institute for Chemistry.
+•  Growth  medium.  Mandels—Weber’s medium (1969), using as carbon source, 3.5% wheat straw. The 
+cultures were performed in agitated flasks at 29° C. The culture broth was centrifuged at 4000 rpm, 
+and the supernatant was measured for cellulase activity. The enzymatic activity, as 
+carboxymethylcellulase, was 8.44 IU/ml. One enzyme unit activity was defined as the amount of 
+glucose (micromoles)  released  in the assay conditions. The amount of reducing sugars was  
+evaluated  with  dinitrosalicylic reagent, according to Miller (1959).
+•  Substrate: physical and chemical treated wheat straw was used. The milled wheat straw was 
+treated with 1% NaOH, at 120° C, under pressure. After pretreatment, the substrate was washed with 
+water until neutrality and dried at 70° C.
+•  Hydrolysis experiments. the experiments were performed in 25 mL flasks, at 50° C and 4.5 pH. The 
+substrate concentrations were: 0.02; 0.035; 0.04; 0.06; 0.08; 0.1; 0.12; 0.14; 0.16; 0.18; 0.2; 
+0.21 g/mL. To avoid bacterial contamination, sodium azide was added.
+•  Time process: 24 hours.
+Prior  to  enzymic  hydrolysis,  the lignocellulosic substrate was treated with sodium hydroxide in 
+order to improve the enzyme accessibility to the substrate. Dilute NaOH treatment causes swelling 
+decrease in the degree of polymerization, separation of structural  linkages  between  lignin  and 
+carbohydrates, and disruption of the lignin structure (Table 1. from Annex 4.).
+
+The proposed model for the enzymatic hydrolysis can be considered as an extension of  
+Michaelis—Menten  classical  kinetic (Michaelis,  Menten, 1913), taking into account the inhibition 
+produced by substrate (Caramihai, Jecu, 1995). Based on these premises, the hydrolysis proceeds 
+according to the following equation:
+
+3.1.4.1
+k2 +
+
+where: S = substrate concentration (g/mL); Sri = limiting substrate concentration,
+- the enzymatic hydrolysis rate is zero (g/mL);
+ki, k2, k3 = constants.
+
+The modeling parameters and errors are presented in Table 2., Annex 4.
+
+As shown, the modeling error for the untreated substrate is higher as compared with the 
+corresponding value for the treated straw, as a consequence of the off-line measurements and 
+structural  modification  of  the pretreated substrate.
+
+The modeling results vs. real data are presented in fig.3.1.4.1 and 3.1.4.2.
+
+The agreement between real and modeling data is good enough (Table 3., Annex 4.) to allow the 
+obtainment of the optimal substrate concentration for the enzymatic process control.
+
+
+9
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+05
+
+04
+
+
+
+0.2
+
+0.1
+
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0   0.04  0.08  0.12  0.16  0.2  0.24
+Substrate [g/L]
+A.s
+
+04
+
+0.3
+
+02
+
+0.1
+
+Experimental conditions
+•  Substrate.  alkaline pre-treated wheat straw;
+•  Enzyme. enzymic preparate obtained from
+Aspergillus niger cultures;
+•  Enzymatic hydrolysis. the experiments were performed at 50° C with 10 — 120 g/L substrate 
+concentrations, in order to avoid the inhibition with substrate excess (cf.
+#3.1.4.). To study the effect of glucose accumulation in the reaction mixture,
+
+Fig. 3.1.4.1 Untreated wheat straw:  real data,
+model
+glucose of different concentrations (10, 20 and 40 g/L) was added. The content of reducing sugars 
+was evaluated with
+
+1.4
+
+
+
+
+08
+1.4
+■ ■      1.2
+
+0.8
+dinitrosalicylic reagent, according to Miller (1959).
+•  Hydrolysis time: 24 hours.
+
+According to experimental data, the product
+
+06
+04
+02
+
+0
+0   0.04  0.08  0.12  0.16  0.2  0.24
+Substrate [g/L]
+0.6     formation (glucose) was found to increase
+0.4     asymptotically  to  a  maximum  value. 02     Additionally, high exogene glucose has been 
+shown to be inhibitory in cellulase activity
+against substrate (Caramihai, Jecu, 1995). In these  conditions,  the following  model
+(Caramihai, Jecu; 1996) was proposed to
+
+Fig. 3.1.4.2 Treated wheat straw: > real data, model
+Meanwhile, the maximal experimental values of the process rate are higher as those obtained from 
+the model, due to the utilization of the limited  substrate  concentration, empirical evaluated.
+describe the process:
+
+
+
+1 + e ’'
+
+where: P = product concentration (g/L)
+
+
+
+3.1.5.1
+
+3.1.5. Modeling of the enzymatic hydrolysis in the conditions of product inhibition
+
+In enzyme reactions, the accumulated end products inhibit the rate of the process. Many authors 
+reported that glucose inhibited the hydrolysis of cellulose by filtrates of the majority of the 
+cellulolytic organisms (Wood, 1992; Robson et al., 1989). The degree of inhibition depends on the 
+relative affinities of the inhibitor and substrate for the active sites and on the ratio of the 
+concentration of the inhibitor and substrate.
+
+10
+max  '   maximum   product concentration (g/L)
+S = substrate concentration (g/L)
+k+ = Michaelis & Menten constant type (g/L)
+ki inhibitory constant
+This equation, an extension of the classical enzymatic  kinetics,  displays  a  better dependence 
+between the glucose formation and the inhibitory effect of end product in the enzymatic hydrolysis 
+of cellulose.
+
+Fig. 3.1.5.1 presents the modeling data for the hydrolytic processes, with or without various
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                      THREE                     
+
+
+exogene glucose concentrations (10, 20 and 40 g/L).
+
+
+
+
+
+
+
+
+
+
+
+0   20   40   60   80   100  120
+Substrate [g/L]
+Fig. 3.1.5.1 Product accumulation vs. substrate concentration
+
+> real data,   model (0 g/L glucose addition)
+
+real data,  model (10 g/L glucose addition) real data,  model (20 g/L glucose addition) real data,  
+ model (40 g/L glucose addition)
+The modeling errors are shown in Annex 5, Table 1.
+
+The results can be viewed as a step in the correct  control  for  maximum  product formation, in 
+conjunction with the influences of substrate concentration and end product inhibition.
+
+3.1.6. Yeast cultivation on simulated liquor
+
+In  order  to  obtain  cellulose,  chemical treatment has been considered a viable option for 
+upgrading the huge quantities of waste lignocellulose generated annually through the activities  of 
+ the  agricultural  and  forest industries  (Wenzl,  1970).  During  the treatment,  acetic  acid  
+contained  in  the
+Due to assess the influence of acetic acid on the growth of this organism, a study was conducted 
+using a synthetic medium, by simulating the real condition.
+
+Experimental conditions
+•  Growth medium: 20 g/L glucose or 10 g/L xylose; 4 g/L yeast extract, 5 g/L peptone; inhibitory 
+compound, acetic acid (1/100, w/v).
+•  Organism. Candida utilis
+•  Agitation: 180 rpm;
+•  Temperature: 35°C;
+•  Process time. 10 h;
+•  Analytical    methods.    biomass concentration was evaluated by optical density (DO); dry 
+weight was estimated according to Jeffries and Streenath (1988), where 1 DO=0.19 g/L dry weight. 
+The content of acetic acid was estimated with Perkin   Elmer   (Model   B)   gas chromatograph.
+
+In order to develop an original specific growth rate (q) model,  firstly,  an equation  of 
+inhibitors was elaborated (Caramihai et al., 1995).
+
+3.1.6.1
+
+
+where: Io = initial inhibitor concentration
+(g/L);
+Hi = limiting inhibitor concentration (if I = Hi , q = 0);
+t = time (h);
+k = constant
+
+Granted that the specific growth rate is determined by two substrates, of which one is for growth 
+and the second acts as an inhibitor, the following equation can be written:
+
+hemicellulose structure is released and an inhibitory effect on Candida utilis growth was observed 
+(Leonard, Hajni, 1945).
+'  12
+3.1.6.2
++ S
+
+11
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+where: S  =  non  -  inhibitory  substrate concentration (g/L);
+I = inhibitory substrate concentration
+(g/L)
+ki, k2, k3  constants.
+
+The  influence  of  initial  acetic  acid concentration on yeast growth is shown in Table 1, Annex 
+6. Yeast strain assimilated both monosaccharides and acetic acid in
+cultivation conditions. The yield of biomass/ assimilated substrate was increased when
+
+
+0.1 I 0.08 0.06 0.04 0.02
+
+0   10   20
+Time [h]
+
+
+
+
+
+
+
+
+
+
+
+
+
+30   40
+
+
+0.1
+
+0.08
+
+0.06
+
+0.04
+
+0.02
+
+0
+
+xylose was used as primary substrate - 0.46g biomass dry weight/g assimilated sugar - as compared 
+with 0.40g/g with glucose as primary   substrate.   When   only monosaccharides were used as 
+primary carbon source, without addition of acetic acid, the situation is reversed: 0.47g/g were 
+obtained on glucose and 0.419/g on xylose. Different metabolic pathways may be involved in 
+contradictory results when acetic acid as inhibitory substrate.
+Fig. 3.1.6.2  Inhibitor concentration  vs. time
+(substrate: xylose); > real data,   model
+The k parameter estimated value (from eq. 3.1.6.1) and the corresponding  modeling errors are shown 
+in Table 2, Annex 6. Table 3 presents the parameter-estimated values from eq. 3.1.6.2 in comparison 
+with other classical models.
+
+
+
+0.2 fi
+
+=  0.16
+
+g 0.12
+
+0.08
+
+0.04
+0.2
+
+0.16
+
+012
+
+0.08
+
+0.04
+
+
+0
+0     10     20
+Time [h]
+0
+30   40
+
+Fig.  3.1.6.1  Inhibitor  concentration  vs.  time (substrate: glucose); > real data,   model
+
+At the end of fermentation,  inhibitor concentrations for both experiments were the same. The above 
+equations were checked with the experimental data presented in the Table 1. Fig. 3.1.6.1 and 
+3.1.6.2 show the inhibitor concentration vs. time for the both substrate types.
+
+
+
+12
+Fig. 3.1.6.3 Specific growth rate vs. substrate and inhibitor concentration (substrate: glucose); > 
+real data,   model
+
+At last, fig. 3.1.6.3 and 3.1.6.4 present the specific growth rate dependence in connection with  
+the  substrate  and  inhibitor concentrations.
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fig. 3.1.6.4 Specific growth rate vs. substrate and inhibitor concentration (substrate: xylose); > 
+real data,  model
+The models described by eq. 3.1.6.1 and
+3.1.6.2  predicted  well  enough  the experimental behavior, demonstrating the working hypothesis 
+are valid. A powerful dependence between specific growth rate and inhibitor's evolution is 
+sustained together with the presence of two parameters: S and I.
+
+3.1.7. Modeling of methanol bacteria growth for SCP production
+•  Pressure: 0.1 - 0.2 atm;
+•  Air fiow: lvvm;
+•  Fermenter: Biotec LKB of 8.4L working volume;
+•  Organism. Methylomonas ICCF-27,‘
+•  Process time: 36-40h; 13 experiments.
+
+The bioprocess modeling take into account the inhibitor effect of methanol (Caramihai et al, 1992)  
+on  the  bacteria  growth.  The experimental data are shown in Annex 7, Table 1-12. The dependence 
+q = f(S) (Annex 7, Table 13) is presented in Fig. 3.1.7.1. Note that in this case, the specific 
+growth rate is zero for a finite substrate value.
+
+Therefore, a valid hypothesis can be the presence of a Metabolic Reducing Factor, R(S) attached to 
+the classical Haldane (Andrews) model. The metabolic reducing factor is zero when the substrate 
+concentration achieved a limiting value, S = Slim- Meanwhile, R(S) tills to 1 for lower substrate 
+concentration values. Hence, the proposed model is:
+
+  k,S    R(S)
+
+
+Since yeasts are characterized  by low conversion yield of methanol and reduced protein level, it 
+is of interest to study the Single Cell Protein (SCP) obtaining from
+
+   k,S  
+k + S + k! S²
+
+(1 — eᵏ’"°" ')
+3.1.7.1
+
+methylotrophic bacteria. In this circumstance:
+•  The conversion yield is higher than in the yeast case;
+•  The protein content is higher (75-80% ref. dry weight, compared to 45-50% for yeast).
+
+Experimental conditions:
+•  Culture medium (g/1). (NH4)2SO4 (1.5); KH2PO4 (1.5); NaHPO4 (1.5); MgSO4 (0.2); FeSO4 (0.2); 
+CuSO4 (0.005); CaCl2 (0.01). The methanol content varies from 0.1 to 0.2 %;
+•  pH. 6.7-6.9 by the addition of NH3;
+•  Temperature. 35°C +/-1°C;
+where: R(S) = metabolic reducing factor; q = specific growth rate (h ¹);
+S = methanol concentration (g/L, g%); ki, kz, k3, k4 = constants
+
+
+
+
+
+
+
+
+
+
+13
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4     6   8
+Substrate [g%]
+Fig. 3.1.7.1 Specific growth rate vs. substrate concentration; > real data,   model
+Fig. 3.1.7.1 shows a good experimental data fitting. The parameter values and modeling errors are 
+shown in Annex7, Table 14. Moreover, Table 15 exposes comparative results between the proposed 
+model and other literature models.
+
+3.1.8. Modeling of a fungal cellulase process
+
+Microorganisms growing on lignocellulosic substrates are able to produce extracellular enzymes, 
+which degrade cellulose to soluble sugars. These sugars, mainly cellobiose and glucose, represent 
+available carbon source for the secretion of extracellular  enzymes, cellulases.  Cellulose  
+fermentation  thus represents a very interesting example of a fermentation  where  growth,  enzyme 
+production and enzyme reaction are closely interdependent.
+
+Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases, 
+     exoglucanases (cellobiohydrolases) and beta-glucosidases. The individual enzymes act 
+synergistic for the complete degradation of insoluble cellulose. The most important cellulolytic 
+fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp., 
+which is able to produce a wide range of extracellular enzymes growing on various substrates.
+
+14
+Experimental conditions
+•  Organism. Aspergillus niger strain which belongs  to  microbial  collection  of Research 
+Institute for Chemistry;
+•  Culture media. the strain was cultivated on Mandels's medium (1969) with 1% cellulose as sole 
+carbon source. The fungal cultures were performed at 4.5 pH and 28°C. The culture broth was 
+centrifuged at 3000 rpm and the supernatant was evaluated for cellulase activity;
+•  Analytical methods: the enzymatic activity was measured as endoglucanase activity using   1%   
+carboxymethylcellulose, according to Mandels (1976). One unit of enzyme activity was expressed as 
+the amount of glucose (micromoles) released per minute under the assay conditions. The reducing  
+sugars  were  evaluated  with dinitrosalicylic reagent according to Miller (1959). Soluble protein 
+was determined by the  Lowry  method  (1951).  Mycelial protein was extracted with NaOH, the 
+protein was determined on the combined extracts. Cellulose was determined as total carbohydrate  in 
+the residue from the NaOH extraction by the sulfuric acid method. Cell mass was calculated as dry 
+weight minus cellulose.
+•  Time process: 120 h.
+
+The relationship between cellulase production and cellulose concentration, based on the assumption 
+of Gaden (1959) describing the growth of the fungus and product release, was given by the following 
+equation (Caramihai et al., 1996):
+P ——                   3.1.8.1
+b+ X
+
+where: X = cell concentration, expressed as dry weight (mg/ml);
+S = residual substrate ( 1);
+P = endoglucanase activity (IU/min); a, b, c = constants
+
+PART
+BIOPROCESS INTELLIGENT CONTROL
+                     THREE                     
+
+
+The experimental results of the fungal cultivation are given in Annex 8, Table 1. The relationship 
+between mycelial protein and enzyme production is shown in figure 3.1.8.1. This indicates an 
+increase in the production of enzyme   with   increasing   growth microorganism, evaluated as 
+mycelial protein.
+Hence, fig. 3.1.8.3 shows the dependence of cellulase  production  vs.  cell  mass  and cellulose 
+utilization in the batch fermentation of cellulolytic fungus Aspergillus niger.
+
+4
+
+
+3
+
+
+2
+
+
+
+
+
+
+
+4     8    12    16
+Mycelian Protein [mg%mL]
+Fig. 3.1.8.1 Endoglucanase production vs. mycelian protein > real data;  model
+
+The response of substrate concentration at the growth and enzyme production is seen in Figure 
+3.1.8.2. After 120 h of fermentation, the level of residual substrate indicates a carbon source 
+consumption of approx. 30% for maximum cellulase production. The profile indicates a good fitting 
+between the real and modeling data.
+
+Fig. 3.1.8.3 Endoglucanase production vs. mycelian protein and residual substrate; > real data, 
+model
+
+The model parameters and modeling errors are given in Table 2, Annex 8.
+
+4                          4
+
+
+3                         3
+
+
+2                          2
+
+
+1               1
+
+
+0
+2.4   2.6   2.8   3   3.2   3.4   3.6
+Residual Substrate [g/L]
+Fig. 3.1.8.2 Endoglucanase production vs. residual substrate;  real data,   model
+
+15
+
+
+
+
+3. 2. O P T I M I Z A T I O N ST A T E M E NT
+
+
+
+The bioprocess modeling and (intelligent) control imposes the design of a system that can 
+distinguish and develop the corresponding operations in order to control the process (Montague et 
+al., 1991). It has already proved (in the above chapters) the multivariability and the nonlinearity 
+of the fermentation processes. In this case, the bioprocess control, based on a priori model, is 
+very difficult due to the scarcity of the on line process information and of  the deficit  
+concerning  the theoretical substantiation  regarding   the  cellular metabolism and its influence 
+on the bioprocess behavior.
+
+In these conditions it is necessary to replace the classical control methods with those based on 
+intelligent  techniques. The thorough utilization of one of them guides to a deadlock, either 
+because of the bio-physique-chemica1 knowledge deficiency regarding the cell population evolution 
+(i.e. the classical control techniques), or the exhaustive utilization of the human  expert  
+knowledge,  which  are subjective  and  non-standard  (i.e.  the intelligent control structure) - 
+(Thibault, Najim, 1993).
+
+Hence, it is necessary to design a control system, which can to choose the (intelligent) control 
+strategies, based on analytical models, in order to improve the control performances. This is an 
+Intelligent Control Structure (ICS) based on Hybrid Control Techniques (HCT).
+
+Commonly, a bioprocess control structure departs from its specificity (Chang e/ al., 1988; Lim et 
+al., 1986, Semones, Lim, 1989),
+i.e. the control system is designed for each process  type. The bioprocess  diversity imposes a 
+corresponding variety of control algorithms.
+
+Consequently, a control structure restriction type can be established through bioprocess
+16
+classes  substantiation  (e.g.  cell  growth, enzymatic hydrolysis, product obtaining, etc.). Each 
+bioprocess class agrees with a finite number of control algorithms. The intelligent control 
+structure must establish the bioprocess type (from a corresponding class), based on a priori 
+information outfitted by the human operator.
+
+Once the bioprocess type established, ICS checks the corresponding model. The main advantage of a 
+priori model is the possibility to (analytically) set the global optimum, independently from the 
+subjective human expert information.
+
+The human bioprocess general description is commonly altered by the psychological and perception 
+factors. It has already founded (Garrido-Sanchez et a/, 1993) that the intelligent control systems 
+founded (only) on the human subjective knowledge is less performant that the control systems who 
+utilize the objective information fitted by a conceptual model. Hence, the literature recommends 
+(Fonteix et al., 1994) the intelligent control techniques utilization only if the control 
+structures based on quantitative models fail.
+
+Therefore,  the  utilization  of  conceptual models in conjunction with intelligent control 
+techniques appear to be attractive (Chtourou et al., 1993; Normandin et al., 1994; Willis et al., 
+1992). Through the analytical  model the optimum coordinates  are determined;  the modalities to 
+reach these coordinates are founded by the intelligent structure (Thibault, van Breusegem, 1991). 
+Hence, the subjective conditions (resulted from the human expert) needed to attain the optimality 
+are juxtaposed with the objective elements (outcome from the mathematical formalism) which display 
+the optimum  coordinates.  Obviously,  the biosystems  are  multivariable.  A  process
+
+
+
+
+optimum in connection with a variable (or a variables set) is not obligatory the global optimum of 
+the bioprocess (in relation with all the variables) - (Luttman et al., 1985; Lee et al., 1991; 
+Modak et al., 1986)). The choice is tacked  based  on human knowledge  and experience  in  
+connection  with  the  final objective, related to a specific fermentation process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17
+
+PART THREE
+
+B I O P R O C E S S I N T E L L I G E N T C O N T R O L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18
+
+
+
+
+CONCLUSIONS
+
+1. The bioprocess evolution analysis has allowed to define models who fit better the process 
+evolution curves. Specific bioprocess classes have been described and some original models have 
+been developed in order to increase the fitting of real data. The estimation errors were better in 
+all cases (see Annexes) than the well-known corresponding literature model errors.
+2. The model diversity can be (conceptually) treated through an unique control structure based on 
+analytical model and intelligent techniques. Hence, an intelligent control structure was designed, 
+which is able to detect the bioprocess type, to design the process model and to control the 
+fermentation process based on intelligent techniques, in order to maximize a performance index.
+3. The corresponding database was configured through the AS400 system, due to its well-known 
+advantages (security and integrity of data). The database access allows the data monitoring and, on 
+the other hand, the establishing of the bioprocess evolution patterns.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19
