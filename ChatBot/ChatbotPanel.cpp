@@ -2,6 +2,7 @@
 #include <wx/string.h>
 #include <wx/position.h>
 #include <sstream>
+#include "OpenPDF.h"
 
 int i{};
 
@@ -27,6 +28,9 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	temp = new Message();
 	temp->msg = TextCtrl2->GetValue();
 	temp->isbot = 0;
+		 // write asd in chatbot text to open pdf number 1.
+		OpenPDF op;
+		op.openPDF(temp->msg.ToStdString());
 	//wxString a = TextCtrl2->GetValue();//works well
 	//auto temp =  main_chat->Insert(a, i); //to insert items
 
