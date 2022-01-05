@@ -188,13 +188,8 @@ namespace stemming
     template <typename string_typeT = std::wstring>
     class english_stem : public stem<string_typeT>
         {
-    public:
-        english_stem() : m_first_vowel(string_typeT::npos)
-            {}
-        //---------------------------------------------
-        /**@param[in,out] text English string to stem.*/
-        //Function to convert string to wstring
-        std::wstring s2ws(const std::string& str)
+    private:
+        static std::wstring s2ws(const std::string& str)
         {
             using convert_typeX = std::codecvt_utf8<wchar_t>;
             std::wstring_convert<convert_typeX, wchar_t> converterX;
@@ -202,13 +197,28 @@ namespace stemming
             return converterX.from_bytes(str);
         }
         //function to convert wstring to string
-        std::string ws2s(const std::wstring& wstr)
+        static std::string ws2s(const std::wstring& wstr)
         {
             using convert_typeX = std::codecvt_utf8<wchar_t>;
             std::wstring_convert<convert_typeX, wchar_t> converterX;
 
             return converterX.to_bytes(wstr);
         }
+    public:
+        english_stem() : m_first_vowel(string_typeT::npos)
+            {}
+        //---------------------------------------------
+        /**@param[in,out] text English string to stem.*/
+        //Function to convert string to wstring
+        static std::string get_stemmed_text(std::string text)
+        {
+            std::wstring wtext = s2ws(text);
+            english_stem<> s;
+            s(wtext);
+            text = ws2s(wtext);
+            return text;
+        }
+
         void operator()(string_typeT& text)
             {
             if (text.length() < 3)
