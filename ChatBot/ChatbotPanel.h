@@ -22,7 +22,7 @@ public:
 private:
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;
-	wxButton* send_button;
+	wxBitmapButton* send_button;
 };
 enum
 {

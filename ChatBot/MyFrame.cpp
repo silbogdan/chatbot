@@ -32,11 +32,11 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     hbox->Add(cp, 3, wxEXPAND | wxALL, 5);
     hbox->Add(ap, 3, wxEXPAND | wxALL, 5);
 
-    hbox->Hide(cp);
     hbox->Hide(ap);
     hbox->Layout();
 
     Parent->SetSizer(hbox);
+    this->SetBackgroundColour(wxColour(*wxWHITE));
 
     this->Centre();
 }
