@@ -17,6 +17,8 @@ public:
 	static wxTextCtrl* TextCtrl2;
 	static wxListCtrl* main_chat;
 	wxString b[3];
+	wxBoxSizer* small_sizer;
+	wxBoxSizer* big_sizer;
 private:
 	wxButton* send_button;
 	
