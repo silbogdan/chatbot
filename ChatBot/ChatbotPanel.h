@@ -19,9 +19,7 @@ public:
 	void takeMessage(wxCommandEvent& event);
 	static wxTextCtrl* text_box;
 	static wxListCtrl* main_chat;
-	//void Resize(wxSizeEvent& event);
-	//int* w;
-	//wxSize* x;
+	void Resize(wxSizeEvent& event);
 private:
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;

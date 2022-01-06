@@ -28,12 +28,9 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	big_sizer->Add(small_sizer, 1, wxEXPAND | wxALL, 3);
 
 	this->SetSizer(big_sizer);
-	main_chat->SetColumnWidth(0, 310);
-	main_chat->SetColumnWidth(1, 310);
-	//x = new wxSize;
-	//*x = main_chat->GetSize();
-	//main_chat->SetColumnWidth(0, wxLIST_AUTOSIZE_USEHEADER);
-	//main_chat->SetColumnWidth(1, wxLIST_AUTOSIZE_USEHEADER);
+	
+	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
+
 	delete bitmap;
 }
 
@@ -54,15 +51,14 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	i++;
 	text_box->ChangeValue("");
 	
-	
-	
-	//wxString ceva = wxString::Format(wxT("%i"),w);
-	//main_chat->InsertItem(i,ceva);
-
 	delete temp;
 }
 
-/*void ChatbotPanel::Resize(wxSizeEvent& event)
-{	
-	//auto ceva = big_sizer->GetSize();
-}*/
+void ChatbotPanel::Resize(wxSizeEvent& event)
+{
+	auto size = main_chat->GetSize();
+	auto w = size.GetWidth();
+
+	main_chat->SetColumnWidth(0, w / 2);
+	main_chat->SetColumnWidth(1, w / 2);
+}
