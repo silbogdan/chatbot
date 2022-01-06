@@ -19,10 +19,14 @@ public:
 	void takeMessage(wxCommandEvent& event);
 	static wxTextCtrl* text_box;
 	static wxListCtrl* main_chat;
+	//void Resize(wxSizeEvent& event);
+	//int* w;
+	//wxSize* x;
 private:
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;
 	wxBitmapButton* send_button;
+	
 };
 enum
 {

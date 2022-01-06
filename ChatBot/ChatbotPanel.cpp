@@ -15,8 +15,8 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 
 	send_button->SetBackgroundColour(wxColour(*wxWHITE));
 
-	main_chat->InsertColumn(0, _("chatbot"));
-	main_chat->InsertColumn(1, _("person"));
+	main_chat->InsertColumn(0, _(""));
+	main_chat->InsertColumn(1, _(""));
 
 	big_sizer = new wxBoxSizer(wxVERTICAL);
 	small_sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -28,7 +28,12 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	big_sizer->Add(small_sizer, 1, wxEXPAND | wxALL, 3);
 
 	this->SetSizer(big_sizer);
-
+	main_chat->SetColumnWidth(0, 310);
+	main_chat->SetColumnWidth(1, 310);
+	//x = new wxSize;
+	//*x = main_chat->GetSize();
+	//main_chat->SetColumnWidth(0, wxLIST_AUTOSIZE_USEHEADER);
+	//main_chat->SetColumnWidth(1, wxLIST_AUTOSIZE_USEHEADER);
 	delete bitmap;
 }
 
@@ -48,6 +53,16 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	main_chat->SetItem(i, !temp->isbot, temp->msg);
 	i++;
 	text_box->ChangeValue("");
+	
+	
+	
+	//wxString ceva = wxString::Format(wxT("%i"),w);
+	//main_chat->InsertItem(i,ceva);
 
 	delete temp;
 }
+
+/*void ChatbotPanel::Resize(wxSizeEvent& event)
+{	
+	//auto ceva = big_sizer->GetSize();
+}*/
