@@ -28,6 +28,8 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	big_sizer->Add(small_sizer, 1, wxEXPAND | wxALL, 3);
 
 	this->SetSizer(big_sizer);
+
+	delete bitmap;
 }
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)

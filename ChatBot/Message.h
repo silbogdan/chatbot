@@ -9,4 +9,3 @@ public:
 	bool isbot = true;
 	int ID;
 };
-
