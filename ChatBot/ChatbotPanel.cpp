@@ -38,8 +38,10 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	temp = new Message();
 
 	temp->msg = text_box->GetValue();
-	if (temp->msg == "")
+	if (temp->msg == "") {
+		delete temp;
 		return;
+	}
 	temp->isbot = 0;
 	
 	main_chat->InsertItem(i, _(""));
