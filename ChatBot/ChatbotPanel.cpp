@@ -16,7 +16,7 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	send_button->SetBackgroundColour(wxColour(*wxWHITE));
 
 	main_chat->InsertColumn(0, _(""));
-	main_chat->InsertColumn(1, _(""));
+	main_chat->InsertColumn(1, _(""), wxLIST_FORMAT_RIGHT);
 
 	big_sizer = new wxBoxSizer(wxVERTICAL);
 	small_sizer = new wxBoxSizer(wxHORIZONTAL);
