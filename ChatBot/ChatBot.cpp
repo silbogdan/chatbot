@@ -15,7 +15,7 @@ EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
 EVT_BUTTON(BUTTON_CHATBOT, MyFrame::ShowChatbot)
 EVT_BUTTON(BUTTON_ABOUT_US, MyFrame::ShowAboutUs)
 EVT_BUTTON(BUTTON_SEND, ChatbotPanel::takeMessage)
-//EVT_LIST_
+EVT_TEXT_ENTER(wxID_HIGHEST + 10, ChatbotPanel::takeMessage)
 wxEND_EVENT_TABLE()
 wxIMPLEMENT_APP(MyApp);
 
