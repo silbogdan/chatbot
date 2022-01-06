@@ -2,12 +2,12 @@
 
 void OpenPDF::openPDF(string textPDF) 
 {
-	if (textPDF == "a")
-		ShellExecute(GetDesktopWindow(), L"open", L"1.pdf", NULL, NULL, SW_SHOWNORMAL);
-	if (textPDF == "b")
-		ShellExecute(GetDesktopWindow(), L"open", L"2.pdf", NULL, NULL, SW_SHOWNORMAL);
-	if (textPDF == "c")
-		ShellExecute(GetDesktopWindow(), L"open", L"3_1.pdf", NULL, NULL, SW_SHOWNORMAL);
-	if (textPDF == "d")
-		ShellExecute(GetDesktopWindow(), L"open", L"4.pdf", NULL, NULL, SW_SHOWNORMAL);
+	textPDF.append(".pdf");
+	std::wstring stemp = std::wstring(textPDF.begin(), textPDF.end());
+	LPCWSTR convertedText = stemp.c_str();
+
+
+	int nReturn = (int)ShellExecute(GetDesktopWindow(), L"open", convertedText, NULL, NULL, SW_SHOWNORMAL);
+	if (nReturn < 32)
+			throw 1;
 }

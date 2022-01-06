@@ -1,5 +1,5 @@
 #include "MyFrame.h"
-#include "OpenPDF.h"
+
 MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
@@ -63,8 +63,6 @@ void MyFrame::ShowHome(wxCommandEvent& event)
     hbox->Layout();
     hp->Show(true);
     hbox->Layout();
-    OpenPDF op;
-    op.openPDF("a");
 }
 void MyFrame::ShowChatbot(wxCommandEvent& event)
 {
