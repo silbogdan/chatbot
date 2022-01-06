@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{54331585-628f-4db0-991f-9abe337442df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\olestem">
+      <UniqueIdentifier>{8686b540-50ba-4ae7-b4f5-c1e24f8696b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\olestem\indexing">
+      <UniqueIdentifier>{0ae70c5c-031a-4a86-9974-681518653a07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\olestem\stemming">
+      <UniqueIdentifier>{fddd72ab-eda0-4905-8506-ab077662ee8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\olestem\utilities">
+      <UniqueIdentifier>{687a9c3b-6a29-425a-bb51-2c08fe6763bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -36,6 +51,63 @@
     <ClInclude Include="Message.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PDFReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\indexing\common_lang_constants.h">
+      <Filter>include\olestem\indexing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\indexing\string_util.h">
+      <Filter>include\olestem\indexing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\norwegian_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\portuguese_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\russian_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\spanish_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\stemming.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\swedish_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\danish_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\dutch_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\finnish_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\french_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\german_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\italian_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\english_stem.h">
+      <Filter>include\olestem\stemming</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\debug_logic.h">
+      <Filter>include\olestem\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\safe_math.h">
+      <Filter>include\olestem\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\utilities.h">
+      <Filter>include\olestem\utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChatBot.cpp">
@@ -57,6 +129,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PDFReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

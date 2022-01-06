@@ -142,11 +142,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AboutUsPanel.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\indexing\common_lang_constants.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\indexing\string_util.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\danish_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\dutch_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\english_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\finnish_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\french_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\german_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\italian_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\norwegian_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\portuguese_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\russian_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\spanish_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\stemming.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\stemming\swedish_stem.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\debug_logic.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\safe_math.h" />
+    <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\utilities.h" />
     <ClInclude Include="ChatbotPanel.h" />
     <ClInclude Include="MenuPanel.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="MyApp.h" />
     <ClInclude Include="MyFrame.h" />
+    <ClInclude Include="PDFReader.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +176,7 @@
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="MyApp.cpp" />
     <ClCompile Include="MyFrame.cpp" />
+    <ClCompile Include="PDFReader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
