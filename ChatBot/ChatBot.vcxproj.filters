@@ -108,6 +108,9 @@
     <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\utilities.h">
       <Filter>include\olestem\utilities</Filter>
     </ClInclude>
+    <ClInclude Include="OpenPDF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChatBot.cpp">
@@ -132,6 +135,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PDFReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenPDF.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

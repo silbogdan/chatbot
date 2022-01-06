@@ -41,6 +41,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     Parent->SetSizer(hbox);
 
     this->Centre();
+
 }
 void MyFrame::OnExit(wxCommandEvent& event)
 {

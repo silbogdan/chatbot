@@ -165,6 +165,7 @@
     <ClInclude Include="MenuPanel.h" />
     <ClInclude Include="MyApp.h" />
     <ClInclude Include="MyFrame.h" />
+    <ClInclude Include="OpenPDF.h" />
     <ClInclude Include="PDFReader.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -176,6 +177,7 @@
     <ClCompile Include="MenuPanel.cpp" />
     <ClCompile Include="MyApp.cpp" />
     <ClCompile Include="MyFrame.cpp" />
+    <ClCompile Include="OpenPDF.cpp" />
     <ClCompile Include="PDFReader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
