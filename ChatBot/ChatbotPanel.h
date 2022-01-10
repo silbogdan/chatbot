@@ -10,7 +10,7 @@
 #include <wx/position.h>
 #include <sstream>
 #include <wx/dialog.h>
-
+#include "MenuPanel.h"
 #include "OpenPDF.h"
 #include "Message.h"
 
@@ -27,7 +27,7 @@ public:
 	void feeling_lucky(wxCommandEvent& event);
 	void recommended(wxCommandEvent& event);
 	void test_knowledge(wxCommandEvent& event);
-
+	
 private:
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;

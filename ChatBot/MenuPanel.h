@@ -4,11 +4,16 @@
 #include <wx/wx.h>
 #endif
 
+#include "ChatbotPanel.h"
+
 
 class MenuPanel : public wxPanel
 {
 public:
 	MenuPanel(wxPanel* Parent);
+	static void Resize_empty_spot();
+	static MenuPanel* sth;
+	static wxBoxSizer* sth1;
 private:
 	wxButton* go_to_chatbot;
 	wxButton* go_to_about_us;
@@ -18,6 +23,7 @@ private:
 	wxButton* recommended;
 	wxButton* test_knowlodge;
 
+	wxBoxSizer* box_empty;
 	wxBoxSizer* vbox;
 };
 enum

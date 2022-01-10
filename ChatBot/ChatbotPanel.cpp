@@ -61,6 +61,7 @@ void ChatbotPanel::Resize(wxSizeEvent& event)
 
 	main_chat->SetColumnWidth(0, w / 2);
 	main_chat->SetColumnWidth(1, w / 2);
+	MenuPanel::Resize_empty_spot();
 }
 
 void ChatbotPanel::search_topic(wxCommandEvent& event)
