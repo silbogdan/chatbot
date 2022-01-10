@@ -19,6 +19,8 @@ EVT_BUTTON(BUTTON_SEND, ChatbotPanel::takeMessage)
 EVT_BUTTON(BUTTON_SEARCH, ChatbotPanel::search_topic)
 EVT_BUTTON(BUTTON_OPEN_FILE, ChatbotPanel::open_file)
 EVT_BUTTON(BUTTON_FEELING_LUCKY, ChatbotPanel::feeling_lucky)
+EVT_BUTTON(BUTTON_RECOMMENDED, ChatbotPanel::recommended)
+EVT_BUTTON(BUTTON_TEST_KNOWLEDGE, ChatbotPanel::test_knowledge)
 EVT_TEXT_ENTER(wxID_HIGHEST + 10, ChatbotPanel::takeMessage)
 wxEND_EVENT_TABLE()
 wxIMPLEMENT_APP(MyApp);

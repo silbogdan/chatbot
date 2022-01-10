@@ -98,3 +98,37 @@ void ChatbotPanel::feeling_lucky(wxCommandEvent& event)
 
 	delete dial;
 }
+
+void ChatbotPanel::recommended(wxCommandEvent& event)
+{
+	Message* question;
+	question = new Message();
+	question->msg = _("How is the weather in Bucharest?");
+
+	main_chat->InsertItem(i, _(""));
+	main_chat->SetItem(i, question->isbot, question->msg);
+	i++;
+	text_box->ChangeValue("");
+
+	Message* answer;
+	answer = new Message();
+	answer->msg = _("It's raining");
+
+	main_chat->InsertItem(i, _(""));
+	main_chat->SetItem(i, !answer->isbot, answer->msg);
+	i++;
+	text_box->ChangeValue("");
+
+	delete question;
+	delete answer;
+}
+
+void ChatbotPanel::test_knowledge(wxCommandEvent& event)
+{
+	wxMessageDialog* dial = new wxMessageDialog(NULL,
+		wxT("Are you sure to quit?"), wxT("Question"),
+		wxYES_NO | wxNO_DEFAULT | wxICON_QUESTION);
+	dial->ShowModal();
+	
+	delete dial;
+}
