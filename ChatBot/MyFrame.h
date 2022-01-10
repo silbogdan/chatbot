@@ -6,7 +6,6 @@
 
 #include "MyApp.h"
 #include "MenuPanel.h"
-#include "HomePanel.h"
 #include "ChatbotPanel.h"
 #include "AboutUsPanel.h"
 
@@ -18,10 +17,8 @@ public:
     wxPanel* Parent;
 
     MenuPanel *mp;
-    HomePanel* hp;
     ChatbotPanel* cp;
     AboutUsPanel* ap;
-    void ShowHome(wxCommandEvent& event);
     void ShowChatbot(wxCommandEvent& event);
     void ShowAboutUs(wxCommandEvent& event);
 

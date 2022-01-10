@@ -25,20 +25,18 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     hbox = new wxBoxSizer(wxHORIZONTAL);
 
     mp = new MenuPanel(Parent);
-    hp = new HomePanel(Parent);
     cp = new ChatbotPanel(Parent);
     ap = new AboutUsPanel(Parent);
 
     hbox->Add(mp, 1, wxEXPAND | wxALL, 5);
-    hbox->Add(hp, 3, wxEXPAND | wxALL, 5);
     hbox->Add(cp, 3, wxEXPAND | wxALL, 5);
     hbox->Add(ap, 3, wxEXPAND | wxALL, 5);
 
-    hbox->Hide(cp);
     hbox->Hide(ap);
     hbox->Layout();
 
     Parent->SetSizer(hbox);
+    this->SetBackgroundColour(wxColour(*wxWHITE));
 
     this->Centre();
 
@@ -56,17 +54,10 @@ void MyFrame::OnHello(wxCommandEvent& event)
 {
     wxLogMessage("Hello world from wxWidgets!");
 }
-void MyFrame::ShowHome(wxCommandEvent& event)
-{
-    hbox->Hide(cp);
-    hbox->Hide(ap);
-    hbox->Layout();
-    hp->Show(true);
-    hbox->Layout();
-}
+
+
 void MyFrame::ShowChatbot(wxCommandEvent& event)
 {
-    hbox->Hide(hp);
     hbox->Hide(ap);
     hbox->Layout();
     cp->Show(true);
@@ -76,7 +67,6 @@ void MyFrame::ShowChatbot(wxCommandEvent& event)
 
 void MyFrame::ShowAboutUs(wxCommandEvent& event)
 {
-    hbox->Hide(hp);
     hbox->Hide(cp);
     hbox->Layout();
     ap->Show(true);

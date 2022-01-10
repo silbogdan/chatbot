@@ -161,8 +161,8 @@
     <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\safe_math.h" />
     <ClInclude Include="C:\Users\Asus\Desktop\test stemming\portret_stemming\include\olestem\utilities\utilities.h" />
     <ClInclude Include="ChatbotPanel.h" />
-    <ClInclude Include="HomePanel.h" />
     <ClInclude Include="MenuPanel.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="MyApp.h" />
     <ClInclude Include="MyFrame.h" />
     <ClInclude Include="OpenPDF.h" />
@@ -173,8 +173,8 @@
     <ClCompile Include="AboutUsPanel.cpp" />
     <ClCompile Include="ChatBot.cpp" />
     <ClCompile Include="ChatbotPanel.cpp" />
-    <ClCompile Include="HomePanel.cpp" />
     <ClCompile Include="MenuPanel.cpp" />
+    <ClCompile Include="Message.cpp" />
     <ClCompile Include="MyApp.cpp" />
     <ClCompile Include="MyFrame.cpp" />
     <ClCompile Include="OpenPDF.cpp" />

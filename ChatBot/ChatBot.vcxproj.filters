@@ -42,13 +42,13 @@
     <ClInclude Include="MenuPanel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HomePanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ChatbotPanel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AboutUsPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PDFReader.h">
@@ -125,13 +125,13 @@
     <ClCompile Include="MenuPanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HomePanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ChatbotPanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AboutUsPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PDFReader.cpp">
