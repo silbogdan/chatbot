@@ -62,3 +62,39 @@ void ChatbotPanel::Resize(wxSizeEvent& event)
 	main_chat->SetColumnWidth(0, w / 2);
 	main_chat->SetColumnWidth(1, w / 2);
 }
+
+void ChatbotPanel::search_topic(wxCommandEvent& event)
+{
+	Message* message;
+	message = new Message();
+	message->msg =_("What are you searching?");
+
+	main_chat->InsertItem(i, _(""));
+	main_chat->SetItem(i, !message->isbot, message->msg);
+	i++;
+	text_box->ChangeValue("");
+
+	delete message;
+}
+
+void ChatbotPanel::open_file(wxCommandEvent& event)
+{
+	OpenPDF op;
+	try
+	{
+		op.openPDF("1");
+	}
+	catch (int err)
+	{
+		std::cout << err;
+	}
+}
+
+void ChatbotPanel::feeling_lucky(wxCommandEvent& event)
+{
+	wxMessageDialog* dial = new wxMessageDialog(NULL,
+		wxT("Download completed\nsomething"), wxT("Info"), wxOK);
+	dial->ShowModal();
+
+	delete dial;
+}

@@ -9,7 +9,9 @@
 #include <wx/string.h>
 #include <wx/position.h>
 #include <sstream>
+#include <wx/dialog.h>
 
+#include "OpenPDF.h"
 #include "Message.h"
 
 class ChatbotPanel : public wxPanel
@@ -20,6 +22,12 @@ public:
 	static wxTextCtrl* text_box;
 	static wxListCtrl* main_chat;
 	void Resize(wxSizeEvent& event);
+	void search_topic(wxCommandEvent& event);
+	void open_file(wxCommandEvent& event);
+	void feeling_lucky(wxCommandEvent& event);
+	void recommended(wxCommandEvent& event);
+	void test_knowledge(wxCommandEvent& event);
+
 private:
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;
