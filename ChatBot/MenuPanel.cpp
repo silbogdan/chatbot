@@ -21,10 +21,10 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 	test_knowlodge = new wxButton(this, BUTTON_TEST_KNOWLEDGE, _T(" Test Your knowloedge"), wxPoint(0, 210), wxSize(300, 30), wxBU_LEFT | wxBORDER_NONE);
 
 	//buttons that go on the bottom and are required by the open file function
-	open_file1 = new wxButton(this, BUTTON_OPEN1, _T("Open file 1: "), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
-	open_file2 = new wxButton(this, BUTTON_OPEN2, _T("Open file 2: "), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
-	open_file3 = new wxButton(this, BUTTON_OPEN3, _T("Open file 3: "), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
-	open_file4 = new wxButton(this, BUTTON_OPEN4, _T("Open file 4: "), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
+	open_file1 = new wxButton(this, BUTTON_OPEN1, _T("Open part one: INTRODUCTION"), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
+	open_file2 = new wxButton(this, BUTTON_OPEN2, _T("Open part two: BIOPROCESS CONTROL STATEMENT"), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
+	open_file3 = new wxButton(this, BUTTON_OPEN3, _T("Open part three: BIOPROCESS INTELLIGENT CONTROL"), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
+	open_file4 = new wxButton(this, BUTTON_OPEN4, _T("Open part four: DESIGN OF THE INTELLIGENT\n CONTROL STRUCTURE"), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
 	cancel = new wxButton(this, BUTTON_CANCEL, _T("Cancel action"), wxDefaultPosition, wxDefaultSize, wxBU_LEFT | wxBORDER_NONE);
 
 	go_to_chatbot->SetBackgroundColour(wxColour(*wxWHITE));

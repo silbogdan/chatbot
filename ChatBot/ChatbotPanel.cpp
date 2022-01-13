@@ -67,17 +67,6 @@ void ChatbotPanel::Resize(wxSizeEvent& event)
 	main_chat->SetColumnWidth(1, w / 2);
 }
 
-void ChatbotPanel::search_topic(wxCommandEvent& event)
-{
-	Message* message;
-	message = new Message();
-	
-	message->msg =_("What are you searching?");
-	this->pushMessage(message);
-
-	delete message;
-}
-
 void ChatbotPanel::open_file(wxCommandEvent& event)
 {
 	Message* question = new Message();
