@@ -11,9 +11,6 @@ class MenuPanel : public wxPanel
 {
 public:
 	MenuPanel(wxPanel* Parent);
-	static void Resize_empty_spot();
-	static MenuPanel* sth;
-	static wxBoxSizer* sth1;
 private:
 	wxButton* go_to_chatbot;
 	wxButton* go_to_about_us;
@@ -22,9 +19,9 @@ private:
 	wxButton* feeling_lucky;
 	wxButton* recommended;
 	wxButton* test_knowlodge;
+	wxButton* fake_button;
 
-	wxBoxSizer* box_empty;
-	wxBoxSizer* vbox;
+	wxBoxSizer* main_sizer;
 };
 enum
 {
