@@ -32,7 +32,7 @@ private:
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;
 	wxBitmapButton* send_button;
-	
+	void pushMessage(Message* x);
 };
 enum
 {

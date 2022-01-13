@@ -34,23 +34,26 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	delete bitmap;
 }
 
+void ChatbotPanel::pushMessage(Message* x)
+{
+	if (x->msg == "") {
+		return;
+	}
+	main_chat->InsertItem(i, _(""));
+	main_chat->SetItem(i, !x->isbot, x->msg);
+	i++;
+}
+
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
 {	 
 	Message* temp;
 	temp = new Message();
 
 	temp->msg = text_box->GetValue();
-	if (temp->msg == "") {
-		delete temp;
-		return;
-	}
 	temp->isbot = 0;
+	this->pushMessage(temp);
 	
-	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, !temp->isbot, temp->msg);
-	i++;
 	text_box->ChangeValue("");
-	
 	delete temp;
 }
 
@@ -69,10 +72,7 @@ void ChatbotPanel::search_topic(wxCommandEvent& event)
 	message = new Message();
 	message->msg =_("What are you searching?");
 
-	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, !message->isbot, message->msg);
-	i++;
-	text_box->ChangeValue("");
+	this->pushMessage(message);
 
 	delete message;
 }
@@ -101,23 +101,17 @@ void ChatbotPanel::feeling_lucky(wxCommandEvent& event)
 
 void ChatbotPanel::recommended(wxCommandEvent& event)
 {
-	Message* question;
+	Message* question, *answer;
 	question = new Message();
-	question->msg = _("How is the weather in Bucharest?");
-
-	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, question->isbot, question->msg);
-	i++;
-	text_box->ChangeValue("");
-
-	Message* answer;
 	answer = new Message();
-	answer->msg = _("It's raining");
 
-	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, !answer->isbot, answer->msg);
-	i++;
-	text_box->ChangeValue("");
+	question->msg = _("How is the weather in Bucharest?");
+	question->isbot = false;
+	this->pushMessage(question);
+
+	answer->msg = _("It's raining");
+	answer->isbot = true;
+	this->pushMessage(answer);
 
 	delete question;
 	delete answer;
