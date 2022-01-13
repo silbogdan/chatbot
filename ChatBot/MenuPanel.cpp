@@ -53,6 +53,27 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 	main_sizer->Add(file_sizer, 3, wxEXPAND | wxALL, 3);
 
 	main_sizer->Hide(file_sizer);
-
+	main_sizer->Layout();
 	this->SetSizer(main_sizer);
+
+	Bind(wxEVT_BUTTON, &MenuPanel::hideOptionPanel, this, BUTTON_OPEN_FILE);
+	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_OPEN1);
+	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_OPEN2);
+	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_OPEN3);
+	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_OPEN4);
+	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_CANCEL);
+}
+
+void MenuPanel::hideOptionPanel(wxCommandEvent& event)
+{
+	main_sizer->Hide(option_sizer);
+	main_sizer->Show(file_sizer);
+	main_sizer->Layout();
+}
+
+void MenuPanel::hideFilePanel(wxCommandEvent& event)
+{
+	main_sizer->Hide(file_sizer);
+	main_sizer->Show(option_sizer);
+	main_sizer->Layout();
 }

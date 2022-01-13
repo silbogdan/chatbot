@@ -11,6 +11,10 @@ class MenuPanel : public wxPanel
 {
 public:
 	MenuPanel(wxPanel* Parent);
+
+	void hideOptionPanel(wxCommandEvent& event);
+	void hideFilePanel(wxCommandEvent& event);
+
 private:
 	wxButton* go_to_chatbot;
 	wxButton* go_to_about_us;

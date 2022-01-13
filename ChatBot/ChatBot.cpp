@@ -9,6 +9,8 @@
 #include "MenuPanel.h"
 #include <wx/event.h>
 
+
+
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
 EVT_MENU(ID_Hello, MyFrame::OnHello)
 EVT_MENU(wxID_EXIT, MyFrame::OnExit)
