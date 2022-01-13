@@ -70,8 +70,8 @@ void ChatbotPanel::search_topic(wxCommandEvent& event)
 {
 	Message* message;
 	message = new Message();
+	
 	message->msg =_("What are you searching?");
-
 	this->pushMessage(message);
 
 	delete message;
@@ -79,6 +79,11 @@ void ChatbotPanel::search_topic(wxCommandEvent& event)
 
 void ChatbotPanel::open_file(wxCommandEvent& event)
 {
+	Message* question = new Message();
+	question->msg = _T("Which file would you like to open?");
+	question->isbot = true;
+	this->pushMessage(question);
+
 	OpenPDF op;
 	try
 	{
@@ -88,6 +93,8 @@ void ChatbotPanel::open_file(wxCommandEvent& event)
 	{
 		std::cout << err;
 	}
+
+	delete question;
 }
 
 void ChatbotPanel::feeling_lucky(wxCommandEvent& event)
