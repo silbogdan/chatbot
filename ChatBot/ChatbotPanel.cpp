@@ -30,6 +30,7 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	this->SetSizer(big_sizer);
 	
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
+	Bind(wxEVT_BUTTON, &ChatbotPanel::open_file, this, BUTTON_OPEN_FILE);
 
 	delete bitmap;
 }

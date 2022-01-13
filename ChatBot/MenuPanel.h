@@ -15,6 +15,11 @@ public:
 	void hideOptionPanel(wxCommandEvent& event);
 	void hideFilePanel(wxCommandEvent& event);
 
+	void openFile1(wxCommandEvent& event);
+	void openFile2(wxCommandEvent& event);
+	void openFile3(wxCommandEvent& event);
+	void openFile4(wxCommandEvent& event);
+
 private:
 	wxButton* go_to_chatbot;
 	wxButton* go_to_about_us;

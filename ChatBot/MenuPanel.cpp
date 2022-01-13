@@ -62,6 +62,11 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_OPEN3);
 	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_OPEN4);
 	Bind(wxEVT_BUTTON, &MenuPanel::hideFilePanel, this, BUTTON_CANCEL);
+
+	Bind(wxEVT_BUTTON, &MenuPanel::openFile1, this, BUTTON_OPEN1);
+	Bind(wxEVT_BUTTON, &MenuPanel::openFile2, this, BUTTON_OPEN2);
+	Bind(wxEVT_BUTTON, &MenuPanel::openFile3, this, BUTTON_OPEN3);
+	Bind(wxEVT_BUTTON, &MenuPanel::openFile4, this, BUTTON_OPEN4);
 }
 
 void MenuPanel::hideOptionPanel(wxCommandEvent& event)
@@ -76,4 +81,60 @@ void MenuPanel::hideFilePanel(wxCommandEvent& event)
 	main_sizer->Hide(file_sizer);
 	main_sizer->Show(option_sizer);
 	main_sizer->Layout();
+}
+
+void MenuPanel::openFile1(wxCommandEvent& event)
+{
+	//i know that declaring 4 functions with only one character differnt isn't nice
+	//you cannot use any kind of array in Bind
+	//these command functions only take one parameter
+
+	OpenPDF op;
+	try
+	{
+		op.openPDF("1");
+	}
+	catch (int err)
+	{
+		std::cout << err;
+	}
+}
+
+void MenuPanel::openFile2(wxCommandEvent& event)
+{
+	OpenPDF op;
+	try
+	{
+		op.openPDF("2");
+	}
+	catch (int err)
+	{
+		std::cout << err;
+	}
+}
+
+void MenuPanel::openFile3(wxCommandEvent& event)
+{
+	OpenPDF op;
+	try
+	{
+		op.openPDF("3_1");
+	}
+	catch (int err)
+	{
+		std::cout << err;
+	}
+}
+
+void MenuPanel::openFile4(wxCommandEvent& event)
+{
+	OpenPDF op;
+	try
+	{
+		op.openPDF("4");
+	}
+	catch (int err)
+	{
+		std::cout << err;
+	}
 }
