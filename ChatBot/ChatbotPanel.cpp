@@ -30,7 +30,6 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	this->SetSizer(big_sizer);
 	
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
-	Bind(wxEVT_BUTTON, &ChatbotPanel::open_file, this, BUTTON_OPEN_FILE);
 
 	delete bitmap;
 }
@@ -67,30 +66,15 @@ void ChatbotPanel::Resize(wxSizeEvent& event)
 	main_chat->SetColumnWidth(1, w / 2);
 }
 
-void ChatbotPanel::open_file(wxCommandEvent& event)
+void ChatbotPanel::search_topic(wxCommandEvent& event)
 {
-	Message* question = new Message();
-	question->msg = _T("Which file would you like to open?");
-	question->isbot = true;
-	this->pushMessage(question);
 
-	OpenPDF op;
-	try
-	{
-		op.openPDF("1");
-	}
-	catch (int err)
-	{
-		std::cout << err;
-	}
-
-	delete question;
 }
 
 void ChatbotPanel::feeling_lucky(wxCommandEvent& event)
 {
 	wxMessageDialog* dial = new wxMessageDialog(NULL,
-		wxT("Download completed\nsomething"), wxT("Info"), wxOK);
+		wxT("Let me tell you something!"), wxT("Feeling lucky"), wxOK);
 	dial->ShowModal();
 
 	delete dial;
@@ -116,10 +100,11 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 
 void ChatbotPanel::test_knowledge(wxCommandEvent& event)
 {
-	wxMessageDialog* dial = new wxMessageDialog(NULL,
-		wxT("Are you sure to quit?"), wxT("Question"),
-		wxYES_NO | wxNO_DEFAULT | wxICON_QUESTION);
+	wxString b[] = { "A", "B", "C", "D" };
+
+	wxMultiChoiceDialog* dial = new wxMultiChoiceDialog(NULL,
+		_T("ceva"), _T("altceva"),4,  b, wxCHOICEDLG_STYLE, 
+		wxDefaultPosition);
 	dial->ShowModal();
-	
 	delete dial;
 }

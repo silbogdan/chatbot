@@ -22,7 +22,7 @@ public:
 	static wxTextCtrl* text_box;
 	static wxListCtrl* main_chat;
 	void Resize(wxSizeEvent& event);
-	void open_file(wxCommandEvent& event);
+	void search_topic(wxCommandEvent& event);
 	void feeling_lucky(wxCommandEvent& event);
 	void recommended(wxCommandEvent& event);
 	void test_knowledge(wxCommandEvent& event);
