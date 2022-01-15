@@ -27,13 +27,21 @@ public:
 	void recommended(wxCommandEvent& event);
 	void test_knowledge(wxCommandEvent& event);
 	
+	static void activateSearch() { is_waiting_for_search = true; }
+	static void deactivateSearch() { is_waiting_for_search = false; }
+	static bool getSearchStatus() { return is_waiting_for_search; }
+
 private:
+	static bool is_waiting_for_search;
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;
 	wxBitmapButton* send_button;
 	void pushMessage(Message* x);
+	bool is_wating_for_search = 0;
 };
 enum
 {
 	BUTTON_SEND = wxID_HIGHEST + 3
 };
+
+wxString getSearchResult(wxString thing);

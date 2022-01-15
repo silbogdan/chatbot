@@ -85,7 +85,7 @@ void MenuPanel::hideFilePanel(wxCommandEvent& event)
 
 void MenuPanel::openFile1(wxCommandEvent& event)
 {
-	//i know that declaring 4 functions with only one character differnt isn't nice
+	//i know that declaring 4 functions with only one character different isn't nice
 	//you cannot use any kind of array in Bind
 	//these command functions only take one parameter
 

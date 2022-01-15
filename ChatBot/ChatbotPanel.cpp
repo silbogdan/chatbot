@@ -1,6 +1,7 @@
 #include "ChatbotPanel.h"
 
 int i{};
+bool ChatbotPanel::is_waiting_for_search = false;
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 
@@ -8,7 +9,7 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
 {	
 	wxBitmap* bitmap = new wxBitmap;
-	text_box = new wxTextCtrl(this, wxID_HIGHEST + 10, _("Type a message..."), wxPoint(0, 580), wxSize(300, 20), wxTE_PROCESS_ENTER, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+	text_box = new wxTextCtrl(this, wxID_HIGHEST + 10, _(""), wxPoint(0, 580), wxSize(300, 20), wxTE_PROCESS_ENTER, wxDefaultValidator, _T("ID_TEXTCTRL1"));
 	bitmap->LoadFile("send.png", wxBITMAP_TYPE_PNG);
 	send_button = new wxBitmapButton(this, BUTTON_SEND, *bitmap, wxPoint(300, 580), wxSize(10, 10), wxBORDER_NONE);
 	main_chat = new wxListCtrl(this, wxID_ANY, wxPoint(100, 100), wxSize(200, 200), wxLC_REPORT | wxLC_VRULES);
@@ -46,15 +47,26 @@ void ChatbotPanel::pushMessage(Message* x)
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
 {	 
-	Message* temp;
-	temp = new Message();
+	Message* keyword, * answer;
+	keyword = new Message();
+	answer = new Message();
 
-	temp->msg = text_box->GetValue();
-	temp->isbot = 0;
-	this->pushMessage(temp);
+	keyword->msg = text_box->GetValue();
+	keyword->isbot = 0;
+	this->pushMessage(keyword);
+
+	if (ChatbotPanel::getSearchStatus())
+	{
+		answer->msg = getSearchResult(keyword->msg);
+		answer->isbot = 1;
+		this->pushMessage(answer);
+		ChatbotPanel::deactivateSearch();
+	}
 	
 	text_box->ChangeValue("");
-	delete temp;
+
+	delete keyword;
+	delete answer;
 }
 
 void ChatbotPanel::Resize(wxSizeEvent& event)
@@ -68,7 +80,15 @@ void ChatbotPanel::Resize(wxSizeEvent& event)
 
 void ChatbotPanel::search_topic(wxCommandEvent& event)
 {
+	Message* incentive;
+	incentive = new Message;
 
+	incentive->msg = _("What would you like to know?");
+	incentive->isbot = 1;
+	this->pushMessage(incentive);
+
+	ChatbotPanel::activateSearch();
+	delete incentive;
 }
 
 void ChatbotPanel::feeling_lucky(wxCommandEvent& event)
@@ -107,4 +127,15 @@ void ChatbotPanel::test_knowledge(wxCommandEvent& event)
 		wxDefaultPosition);
 	dial->ShowModal();
 	delete dial;
+}
+
+
+wxString getSearchResult(wxString thing)
+{
+	wxString answer;
+	answer = _("I do not know anything about ");
+	answer += thing;
+	answer += ".";
+
+	return answer;
 }
