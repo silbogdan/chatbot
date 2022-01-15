@@ -22,10 +22,10 @@ public:
 	static wxTextCtrl* text_box;
 	static wxListCtrl* main_chat;
 	void Resize(wxSizeEvent& event);
-	void search_topic(wxCommandEvent& event);
-	void feeling_lucky(wxCommandEvent& event);
+	void searchTopic(wxCommandEvent& event);
+	void feelingLucky(wxCommandEvent& event);
 	void recommended(wxCommandEvent& event);
-	void test_knowledge(wxCommandEvent& event);
+	void testKnowledge(wxCommandEvent& event);
 	
 	static void activateSearch() { is_waiting_for_search = true; }
 	static void deactivateSearch() { is_waiting_for_search = false; }
@@ -48,4 +48,6 @@ enum
 	BUTTON_SEND = wxID_HIGHEST + 3
 };
 
-wxString getSearchResult(wxString thing);
+void getSearchResult(Message* q, Message* a);
+void getFactForFeelingLucky(Message* f);
+void getQandAForRecommended(wxString* q, wxString* a);

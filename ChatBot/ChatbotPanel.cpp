@@ -9,7 +9,7 @@ const wxFont* ChatbotPanel::custom_font;
 ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
 {	
-	custom_font = new wxFont(14, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL,
+	custom_font = new wxFont(13, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL,
 		wxFONTWEIGHT_NORMAL, false);
 	wxBitmap* bitmap = new wxBitmap;
 
@@ -37,8 +37,6 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
 
-	
-
 	delete bitmap;
 }
 
@@ -65,8 +63,7 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 
 	if (ChatbotPanel::getSearchStatus())
 	{
-		answer->msg = getSearchResult(keyword->msg);
-		answer->isbot = 1;
+		getSearchResult(keyword, answer);
 		this->pushMessage(answer);
 		ChatbotPanel::deactivateSearch();
 	}
@@ -86,7 +83,7 @@ void ChatbotPanel::Resize(wxSizeEvent& event)
 	main_chat->SetColumnWidth(1, w / 2);
 }
 
-void ChatbotPanel::search_topic(wxCommandEvent& event)
+void ChatbotPanel::searchTopic(wxCommandEvent& event)
 {
 	Message* incentive;
 	incentive = new Message;
@@ -99,13 +96,18 @@ void ChatbotPanel::search_topic(wxCommandEvent& event)
 	delete incentive;
 }
 
-void ChatbotPanel::feeling_lucky(wxCommandEvent& event)
+void ChatbotPanel::feelingLucky(wxCommandEvent& event)
 {
+	Message* gospel = new Message;
+
+	getFactForFeelingLucky(gospel);
+
 	wxMessageDialog* dial = new wxMessageDialog(NULL,
-		wxT("Let me tell you something!"), wxT("Feeling lucky"), wxOK);
+		gospel->msg, wxT("Feeling lucky"), wxOK);
 	dial->ShowModal();
 
 	delete dial;
+	delete gospel;
 }
 
 void ChatbotPanel::recommended(wxCommandEvent& event)
@@ -126,7 +128,7 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 	delete answer;
 }
 
-void ChatbotPanel::test_knowledge(wxCommandEvent& event)
+void ChatbotPanel::testKnowledge(wxCommandEvent& event)
 {
 	wxString b[] = { "A", "B", "C", "D" };
 
@@ -142,12 +144,23 @@ ChatbotPanel::~ChatbotPanel()
 	delete custom_font;
 }
 
-wxString getSearchResult(wxString thing)
+void getSearchResult(Message* q, Message* a)
 {
-	wxString answer;
-	answer = _("I do not know anything about ");
-	answer += thing;
-	answer += ".";
+	a->msg = _("I do not know anything about ") + q->msg + _(".");
+	a->isbot = true;
+}
 
-	return answer;
+void getFactForFeelingLucky(Message* f)
+{
+	f->msg = _("Bioprocesses are a mistery even for me!");
+	f->isbot = true;
+}
+
+void getQandAForRecommended(wxString* q, wxString* a)
+{
+	wxString temp_q = _("What is the most important bioprocess?");
+	wxString temp_a = _("As if I know!");
+	
+	q = &temp_q;
+	a = &temp_a;
 }
