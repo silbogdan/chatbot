@@ -2,7 +2,7 @@
 
 MenuPanel::MenuPanel(wxPanel* Parent)
 	: wxPanel(Parent, -1, wxPoint(-1, -1), wxSize(-1, -1), wxBORDER_SUNKEN)
-{	
+{
 	main_sizer = new wxBoxSizer(wxVERTICAL);
 	navigation_sizer = new wxBoxSizer(wxVERTICAL);
 	empty_sizer = new wxBoxSizer(wxVERTICAL);
@@ -10,9 +10,9 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 	file_sizer = new wxBoxSizer(wxVERTICAL);
 
 	//buttons that go on the top and are related to navigation
-	go_to_chatbot = new wxButton(this, BUTTON_CHATBOT, _T("  Chatbot"), wxPoint(0, 0), wxSize(300, 30), wxBU_LEFT | wxBORDER_NONE);
-	go_to_about_us = new wxButton(this, BUTTON_ABOUT_US, _T("  About Us"), wxPoint(0, 30), wxSize(300, 30), wxBU_LEFT | wxBORDER_NONE);
-	
+	go_to_chatbot = new wxButton(this, BUTTON_CHATBOT, _T("  Chatbot"), wxPoint(0, 0), wxSize(300, 40), wxBU_LEFT | wxBORDER_NONE);
+	go_to_about_us = new wxButton(this, BUTTON_ABOUT_US, _T("  About Us"), wxPoint(0, 40), wxSize(300, 40), wxBU_LEFT | wxBORDER_NONE);
+
 	//buttons that go on the bottom and involve the bot
 	search = new wxButton(this, BUTTON_SEARCH, _T(" Search"), wxPoint(0, 60), wxSize(300, 30), wxBU_LEFT | wxBORDER_NONE);
 	open_file = new wxButton(this, BUTTON_OPEN_FILE, _T(" Open File"), wxPoint(0, 90), wxSize(300, 30), wxBU_LEFT | wxBORDER_NONE);
@@ -29,9 +29,11 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 
 	go_to_chatbot->SetBackgroundColour(wxColour(*wxWHITE));
 	go_to_about_us->SetBackgroundColour(wxColour(*wxWHITE));
+
+	//navigation_sizer->Add(go_to_chatbot, 1, 3);
+	//navigation_sizer->Add(go_to_about_us, 1, 3);
 	
-	navigation_sizer->Add(go_to_chatbot, 1, wxEXPAND | wxALL, 3);
-	navigation_sizer->Add(go_to_about_us, 1, wxEXPAND | wxALL, 3);
+	navigation_sizer->AddSpacer(1);
 
 	empty_sizer->AddSpacer(1);
 
@@ -47,10 +49,10 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 	file_sizer->Add(open_file4, 1, wxEXPAND | wxALL, 3);
 	file_sizer->Add(cancel, 1, wxEXPAND | wxALL, 3);
 
-	main_sizer->Add(navigation_sizer, 1, wxEXPAND | wxALL, 3);
-	main_sizer->Add(empty_sizer, 3, wxEXPAND | wxALL, 3);
-	main_sizer->Add(option_sizer, 3, wxEXPAND | wxALL, 3);
-	main_sizer->Add(file_sizer, 3, wxEXPAND | wxALL, 3);
+	main_sizer->Add(navigation_sizer, 1, wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
+	main_sizer->Add(empty_sizer, 2, wxEXPAND | wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
+	main_sizer->Add(option_sizer, 3, wxEXPAND | wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
+	main_sizer->Add(file_sizer, 4, wxEXPAND | wxALL, 3);
 
 	main_sizer->Hide(file_sizer);
 	main_sizer->Layout();

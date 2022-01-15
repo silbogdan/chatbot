@@ -20,6 +20,12 @@ public:
 	void openFile3(wxCommandEvent& event);
 	void openFile4(wxCommandEvent& event);
 
+	wxBoxSizer* main_sizer;
+	wxBoxSizer* navigation_sizer;
+	wxBoxSizer* empty_sizer;
+	wxBoxSizer* option_sizer;
+	wxBoxSizer* file_sizer;
+
 private:
 	wxButton* go_to_chatbot;
 	wxButton* go_to_about_us;
@@ -35,12 +41,6 @@ private:
 	wxButton* open_file3;
 	wxButton* open_file4;
 	wxButton* cancel;
-
-	wxBoxSizer* main_sizer;
-	wxBoxSizer* navigation_sizer;
-	wxBoxSizer* empty_sizer;
-	wxBoxSizer* option_sizer;
-	wxBoxSizer* file_sizer;
 };
 enum
 {

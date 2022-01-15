@@ -58,6 +58,9 @@ void MyFrame::OnHello(wxCommandEvent& event)
 
 void MyFrame::ShowChatbot(wxCommandEvent& event)
 {
+    mp->main_sizer->Show(mp->option_sizer);
+    mp->main_sizer->Hide(mp->file_sizer);
+    mp->main_sizer->Layout();
     hbox->Hide(ap);
     hbox->Layout();
     cp->Show(true);
@@ -67,6 +70,9 @@ void MyFrame::ShowChatbot(wxCommandEvent& event)
 
 void MyFrame::ShowAboutUs(wxCommandEvent& event)
 {
+    mp->main_sizer->Hide(mp->option_sizer);
+    mp->main_sizer->Hide(mp->file_sizer);
+    mp->main_sizer->Layout();
     hbox->Hide(cp);
     hbox->Layout();
     ap->Show(true);

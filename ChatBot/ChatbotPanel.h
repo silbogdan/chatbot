@@ -48,6 +48,12 @@ enum
 	BUTTON_SEND = wxID_HIGHEST + 3
 };
 
+/*
+* These are templates
+* I suppose that they will be member functions
+* I prefer that you keep the parameter order and type
+* x
+*/
 void getSearchResult(Message* q, Message* a);
 void getFactForFeelingLucky(Message* f);
 void getQandAForRecommended(Message* q, Message* a);
