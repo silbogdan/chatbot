@@ -50,4 +50,5 @@ enum
 
 void getSearchResult(Message* q, Message* a);
 void getFactForFeelingLucky(Message* f);
-void getQandAForRecommended(wxString* q, wxString* a);
+void getQandAForRecommended(Message* q, Message* a);
+void getStatementForTest(Message* x, bool* is_statement_true);

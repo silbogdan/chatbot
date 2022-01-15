@@ -116,12 +116,8 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 	question = new Message();
 	answer = new Message();
 
-	question->msg = _("How is the weather in Bucharest?");
-	question->isbot = false;
+	getQandAForRecommended(question, answer);
 	this->pushMessage(question);
-
-	answer->msg = _("It's raining");
-	answer->isbot = true;
 	this->pushMessage(answer);
 
 	delete question;
@@ -130,12 +126,55 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 
 void ChatbotPanel::testKnowledge(wxCommandEvent& event)
 {
-	wxString b[] = { "A", "B", "C", "D" };
+	Message* statement, *feedback;
+	wxMessageDialog* dial;
+	bool is_right;
+	const wxMessageDialog::ButtonLabel a(_("False"));
+	const wxMessageDialog::ButtonLabel b(_("True"));
 
-	wxMultiChoiceDialog* dial = new wxMultiChoiceDialog(NULL,
-		_T("ceva"), _T("altceva"),4,  b, wxCHOICEDLG_STYLE, 
-		wxDefaultPosition);
-	dial->ShowModal();
+	statement = new Message;
+	feedback = new Message;
+
+	getStatementForTest(statement, &is_right);
+
+	dial = new wxMessageDialog(NULL, statement->msg, _("Test incoming!"),
+		wxOK | wxCANCEL);
+	dial->SetOKCancelLabels(a, b);
+
+	//ok is false
+	//cancel is true
+
+	feedback->isbot = true;
+
+	if (is_right)
+	{
+		auto x = dial->ShowModal();
+		if (x == wxID_CANCEL)
+		{
+			feedback->msg = _("Congratulations! You were right!");
+		}
+		else
+		{
+			feedback->msg = _("You were wrong! Maybe next time!");
+		}
+	}
+	else
+	{
+		auto x = dial->ShowModal();
+		if (x == wxID_OK)
+		{
+			feedback->msg = _("Congratulations! You were right!");
+		}
+		else
+		{
+			feedback->msg = _("You were wrong! Maybe next time!");
+		}
+	}
+
+	this->pushMessage(feedback);
+
+	delete statement;
+	delete feedback;
 	delete dial;
 }
 
@@ -156,11 +195,17 @@ void getFactForFeelingLucky(Message* f)
 	f->isbot = true;
 }
 
-void getQandAForRecommended(wxString* q, wxString* a)
+void getQandAForRecommended(Message* q, Message* a)
 {
-	wxString temp_q = _("What is the most important bioprocess?");
-	wxString temp_a = _("As if I know!");
-	
-	q = &temp_q;
-	a = &temp_a;
+	q->msg = _("What is the most important bioprocess?");
+	q->isbot = false;
+
+	a->msg = _("As if I know!");
+	a->isbot = true;
+}
+
+void getStatementForTest(Message* x, bool* is_statement_true)
+{
+	x->msg = _("Hint: False is the right answer.");
+	*is_statement_true = false;
 }
