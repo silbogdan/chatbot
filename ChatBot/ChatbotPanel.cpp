@@ -4,12 +4,17 @@ int i{};
 bool ChatbotPanel::is_waiting_for_search = false;
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
+const wxFont* ChatbotPanel::custom_font;
 
 ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
 {	
+	custom_font = new wxFont(14, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL,
+		wxFONTWEIGHT_NORMAL, false);
 	wxBitmap* bitmap = new wxBitmap;
+
 	text_box = new wxTextCtrl(this, wxID_HIGHEST + 10, _(""), wxPoint(0, 580), wxSize(300, 20), wxTE_PROCESS_ENTER, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+	text_box->SetFont(*custom_font);
 	bitmap->LoadFile("send.png", wxBITMAP_TYPE_PNG);
 	send_button = new wxBitmapButton(this, BUTTON_SEND, *bitmap, wxPoint(300, 580), wxSize(10, 10), wxBORDER_NONE);
 	main_chat = new wxListCtrl(this, wxID_ANY, wxPoint(100, 100), wxSize(200, 200), wxLC_REPORT | wxLC_VRULES);
@@ -32,6 +37,8 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
 
+	
+
 	delete bitmap;
 }
 
@@ -42,6 +49,7 @@ void ChatbotPanel::pushMessage(Message* x)
 	}
 	main_chat->InsertItem(i, _(""));
 	main_chat->SetItem(i, !x->isbot, x->msg);
+	main_chat->SetItemFont(i, *custom_font);
 	i++;
 }
 
@@ -129,6 +137,10 @@ void ChatbotPanel::test_knowledge(wxCommandEvent& event)
 	delete dial;
 }
 
+ChatbotPanel::~ChatbotPanel()
+{
+	delete custom_font;
+}
 
 wxString getSearchResult(wxString thing)
 {

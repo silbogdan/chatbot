@@ -31,6 +31,8 @@ public:
 	static void deactivateSearch() { is_waiting_for_search = false; }
 	static bool getSearchStatus() { return is_waiting_for_search; }
 
+	~ChatbotPanel();
+
 private:
 	static bool is_waiting_for_search;
 	wxBoxSizer* small_sizer;
@@ -38,6 +40,8 @@ private:
 	wxBitmapButton* send_button;
 	void pushMessage(Message* x);
 	bool is_wating_for_search = 0;
+
+	static const wxFont* custom_font;
 };
 enum
 {
