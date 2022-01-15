@@ -28,7 +28,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     cp = new ChatbotPanel(Parent);
     ap = new AboutUsPanel(Parent);
 
-    hbox->Add(mp, 1, wxEXPAND | wxALL, 5);
+    hbox->Add(mp, 1, wxEXPAND | wxALL | wxFIXED_MINSIZE, 5);
     hbox->Add(cp, 3, wxEXPAND | wxALL, 5);
     hbox->Add(ap, 3, wxEXPAND | wxALL, 5);
 
@@ -36,6 +36,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     hbox->Layout();
 
     Parent->SetSizer(hbox);
+    hbox->Fit(Parent);
     this->SetBackgroundColour(wxColour(*wxWHITE));
 
     this->Centre();

@@ -49,10 +49,10 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 	file_sizer->Add(open_file4, 1, wxEXPAND | wxALL, 3);
 	file_sizer->Add(cancel, 1, wxEXPAND | wxALL, 3);
 
-	main_sizer->Add(navigation_sizer, 1, wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
-	main_sizer->Add(empty_sizer, 2, wxEXPAND | wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
-	main_sizer->Add(option_sizer, 3, wxEXPAND | wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
-	main_sizer->Add(file_sizer, 4, wxEXPAND | wxALL, 3);
+	main_sizer->Add(navigation_sizer, 1, wxEXPAND | wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
+	main_sizer->Add(empty_sizer, 4, wxEXPAND | wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
+	main_sizer->Add(option_sizer, 4, wxEXPAND | wxALL | wxRESERVE_SPACE_EVEN_IF_HIDDEN, 3);
+	main_sizer->Add(file_sizer, 8, wxEXPAND | wxALL, 3);
 
 	main_sizer->Hide(file_sizer);
 	main_sizer->Layout();
