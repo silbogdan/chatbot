@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Part one INTRODUCTION
 The bioprocess study makes evident the principles that are the foundation of living systems. In the 
 first part of this chapter, different kind ofbioprocesses (specially the aerobic bioprocesses) will 
@@ -20,36 +6,7 @@ metabolism. In the second part, the most usual bioreactor types with some partic
 shown. Finally, a general overview on the bioprocess measuring systems will be presented in 
 addition with the information  organization  modalities and other some consonant possibilities on 
 these.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1
-
-
-
-
-1. 1. B I OP ROC E S S E S
-
-
-
+|
 Bioprocesses are complex transformations of organic/anorganic  chemical  substances (substrates), 
 introduced in the culture medium, into products of economic interest (Moser, 1985).
 
@@ -59,28 +16,16 @@ products (substances which are necessary for the cellular components synthesis) 
 growth or maintenance energy. At the same time, the cells  are  directed  towards  specific 
 transformations of substrates into useful products by means of appropriate procedures (Leveau, 
 Bouix, 1984).
-
-
-
-
-
-
-
-
-
-
-
-Fig. 1.1.1 Bioprocess conception
-
+|
 The substrates are transformed either in new structure components (cell growth system) or/and     
-useful     substances (biotransformation/biosynthesis    cycle) (Nagai, 1979).
+useful substances (biotransformation/biosynthesis cycle) (Nagai, 1979).
 
 The main product of some bioprocesses is the growing cell quantity, but in most cases the formation 
  of some  metabolic  products (intracellular/extracellular) is  taken  into consideration.
 
 The main bioprocess types are: 2
-•  Aerobic bioprocesses (i.e. the oxygen can be considered as a second substrate);
-•  Anaerobic bioprocesses.
+- Aerobic bioprocesses (i.e. the oxygen can be considered as a second substrate);
+- Anaerobic bioprocesses.
 
 In this work, only the aerobic bioprocesses, more complex transformations than the anaerobic ones, 
 will be considered.
@@ -95,23 +40,23 @@ inoculation.
 
 From a physical point of view, the culture medium consists of the following phases (Moo Young, 
 1985):
-•  Solid phase: cells and insoluble medium components;
-•  Liquid  phase:  water  with  soluble substrates or products;
-•  Gas phase: air (oxygen, nitrogen), carbon dioxide and other metabolic gases.
+-  Solid phase: cells and insoluble medium components;
+-  Liquid  phase:  water  with  soluble substrates or products;
+-  Gas phase: air (oxygen, nitrogen), carbon dioxide and other metabolic gases.
 
 Due to  the  cell  elementary  chemical composition (Moo Young, 1985), the culture medium must 
 include all substances needed for cell growth and maintenance (Bocker, Recknagel,  1983). 
 Therefore,  the main medium   components   are   either organic/inorganic products or/and complex 
 natural compounds (Aiba et al., 1973):
-•  Carbon & energy source: glucose, zaharose, molasses, cellulose, n-paraffin;
-•  Nitrogen source;
-•  Phosphorus source,
-•  Oxygen source (for aerobic bioprocesses): air, air enriched with oxygen, etc.
-
+-  Carbon & energy source: glucose, zaharose, molasses, cellulose, n-paraffin;
+-  Nitrogen source;
+-  Phosphorus source,
+-  Oxygen source (for aerobic bioprocesses): air, air enriched with oxygen, etc.
+|
 PART
 ONE
 
-•  Metals  source  (as  microelements):
+-  Metals  source  (as  microelements):
 inorganic salts in very-small quantities.
 
 The bioprocess can be considered as a biosystem, which involve cells-medium- bioprocess 
@@ -124,20 +69,20 @@ biochemical parameters, which assure the cultivation conditions, is needed (Atki
 
 The main cultivation parameters are (Brauer, 1985, Schugerl, 1985, Blenke, 1985, Schugerl,
 Sittig, 1987):
-•  constant temperature (T) during the bioprocess evolution, specific for the cultivated cell: 
+-  constant temperature (T) during the bioprocess evolution, specific for the cultivated cell: 
 usual domain 20°C - 40°C;
-•  pressure (p): domain 0 — 0.5 at.;
-•  stirrer speed (n) (only for stirred reactors) and aeration (Q);
-•  pH: domain 3 — 10;
-•  dissolved oxygen (pO2);
-•  redox potential (rH);
-•  minim foam level.
+-  pressure (p): domain 0 — 0.5 at.;
+-  stirrer speed (n) (only for stirred reactors) and aeration (Q);
+-  pH: domain 3 — 10;
+-  dissolved oxygen (pO2);
+-  redox potential (rH);
+-  minim foam level.
 
 The bioprocess evolution is always described by  the following  specific  biochemical parameters 
 (Charles, 1985):
-•  Substrate concentration (S);
-•  Cell concentration/biomass (X);
-•  Product concentration (P).
+-  Substrate concentration (S);
+-  Cell concentration/biomass (X);
+-  Product concentration (P).
 
 There are many distinct (on-line/off-line) methods  to  determine  the  above concentrations 
 (Kossen, 1994, Moser, 1985,
@@ -154,48 +99,18 @@ chemical effects or using radiation.
 
 From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main 
 bioprocess modes of operation:
-•  Batch cultivation (..);
-•  Fed-batch cultivation (..);
-•  Continuous cultivation (Bliem, Katinger, 1988), Prokop, Rosenberg, 1989):
+-  Batch cultivation (..);
+-  Fed-batch cultivation (..);
+-  Continuous cultivation (Bliem, Katinger, 1988), Prokop, Rosenberg, 1989):
 
 The standard evolution curve of a batch culture is shown in fig. 1.1.2. The intermediate phases are 
 characteristic to each process with living cells (Moser, 1985, Kargi, 1985):
 
-
-
-
-
-
-
-
-
-Fig. 1.1.2 Standard representation of batch culture
 a) Lag phase or the cell adaptation to the new medium conditions;
 b) Exponential growth phase
 c) Stationary (steady state) phase;
 d) Decreasing phase.
-
-In addition, there are some cases (depending on the final product kinetics), where conjugate 
-metabolic  routes (conforming  to well- controlled sequencing) can be applied, or simultaneous 
-cultivation of two or more microorganisms is to be used (Schugerl, 1985)
-
-
-
-3
-
-
-
-
-
-There are some complex phenomena, specific to living systems, which define important concepts for 
-the bioprocess control:
-•  Inhibitory substrate concentration effect (Kobayashi, 1972): each cell can use the substrate  
-until  a  certain  level  of concentration  and  for  concentrations superior to this value the 
-metabolic reactions are inhibited and finally blocked. Due to its low solubility, there is no
-
-
-1. 2. BI O R E A C T O RS
-
+|
 1.2.1. Overview
 
 The specific problems of aerobic bioprocesses are correlated with the bioreactor conception 
@@ -215,7 +130,7 @@ conditions. Aerobic reactors can be subdivided into submerged and surface reacto
 reactors  are more suitable than surface devices for mass production and have therefore become more
 4
 inhibition  by  dissolved  oxygen concentration
-•  Growth associated/non-associated product kinetics (Gaden, 1959, Chisti, 1989): the growth 
+-  Growth associated/non-associated product kinetics (Gaden, 1959, Chisti, 1989): the growth 
 associated product is mostly obtained during the exponential phase of growth, where the cell 
 multiplication is maxim, but the non-growth-associated product  is  accumulated  after  this 
 characteristic phase.
@@ -242,13 +157,7 @@ Furthermore, other condition imposed to bioreactor refers to sterility maintenan
 long continuous cultivation (Schugerl, 1985).
 
 The main global concept about the bioreactor performance is this installation must be optimally 
-designed and operated so that the
-
-
-
-
-
-cultivated cells can find all the needed environmental  conditions.  Hence  the optimized 
+designed and operated so that the cultivated cells can find all the needed environmental  conditions.  Hence  the optimized 
 bioreactor design is achieved based on bioprocess specificity (Charles, 1985).
 
 Taking into consideration the geometric variants,  the  study  of  the  bioreactor hydrodynamic 
@@ -258,14 +167,14 @@ and variation domain for the operation variables) not less important for an indu
 the scaling up study of model bioreactors. Often the scaling down techniques must also be applied 
 for achieving an optimal reactor design and operation. At the same time an adequate control 
 strategy for the whole biosystem is to be parallel developed.
-
+|
 1.2.2. Bioreactors types
 
 There are a number of ways in which turbulence can be produced by energy dissipation. From this 
 point if view two principal bioreactor types are now used in the bioprocessing operation 
 (Moo-Young, 1985):
-•  Stirrer reactor;
-•  Pneumatic reactor.
+-  Stirrer reactor;
+-  Pneumatic reactor.
 
 In the stirrer reactor energy is generated by the rotational or axial motion of mechanically moving 
  agitators,  kinetic  energy  being transferred to the liquid and then dissipated in it. Though the 
@@ -299,15 +208,11 @@ either added or removed by a jacket or helical coil. Mixing and gas dispersion a
 stirrer positioned along the cylindrical axis of the container.
 The main part of this reactor type is the stirrer, which must accomplish the following tasks 
 (Brauer, 1985):
-•  The energy transfer to the liquid;
-•  The dispersion of gas into the liquid;
-•  The oxygen transfer from the gaseous phase to the liquid phase;
-•  The  mixing  of  all  the  medium components.
-
-
-
-
-
+-  The energy transfer to the liquid;
+-  The dispersion of gas into the liquid;
+-  The oxygen transfer from the gaseous phase to the liquid phase;
+-  The  mixing  of  all  the  medium components.
+|
 Function of different specific bioprocesses, many types of stirrers can be chosen taking into 
 consideration the needs imposed by the cultivation, but in accordance with the criterion of a minim 
 energy use, too.
@@ -320,8 +225,8 @@ The mixing efficiency means a turbulent liquid flow, characterized by high level
 number (NR>10³). At the same time the oxygen transfer  rate (OTR),  a very important performance 
 parameter for aerobic bioprocesses, depends both on the stirrer speed and the airflow, so that this 
 dependence is to be quantitatively expressed for using in a control structure, too.
-
-b) Pneumatic reactors
+|
+Pneumatic reactors
 In this type of reactor compressed air is expanded  and  dispersed  through  a  gas distributor 
 (sparger). As the density of the air is considerably lower than that of the medium, gas bubbles 
 rise up and liquid is entrained with them. The power supplied by the compressed air disperses the 
@@ -333,9 +238,9 @@ possible throughout the reactor to prevent coalescence. Fermentation media may p
 but at a lower level than pure liquids (water).
 
 The most used pneumatic reactors are:
-•  Airlift reactors (Chisti, 1989, Schugerl, 1985, Blenke, 1985);
-•  Column reactors (Chisti, 1989);
-•  Tower reactors (Chisti, 1989).
+-  Airlift reactors (Chisti, 1989, Schugerl, 1985, Blenke, 1985);
+-  Column reactors (Chisti, 1989);
+-  Tower reactors (Chisti, 1989).
 
 In the airlift reactor the driving force for the liquid flow is provided by the density
 6
@@ -365,55 +270,8 @@ those  who  grow  only immobilized on micro-carriers; the difference between the
 conditions is done by the specific physiology. As a general propriety, valid also for plant cells, 
 all these cell types are very much affected by the shear stress and often by the gas bubbles 
 presence.
-
-Due to the special cultivation conditions, imposed by the animal and plant cells characteristics, 
-the design of bioreactors for productive processes with these cells has
-
-
-
-
-developed as a distinct field (Katinger, Scheirer, 1985).
-
-At the mean time the usual variation domain for the cultivation parameters (stirrer speed, aeration 
-flow, temperature, pH, dissolved oxygen concentration) is always more limited than that for the 
-microorganisms, condition who demands a more precise parameters control.
-For animal cells cultivation another gaseous substrate besides oxygen is needed-the carbon 
-dioxide-and consequently there are more problems regarding the interfacial transfer of two gases 
-diminished only by the slower dynamics  of  whole  cellular  metabolic reactions.
-
-In accordance with these ideas the main types of bioreactors used for the time being for 
-cultivating animal and plant cells are:
-•  Stirrer reactors;
-•  Pneumatic reactors;
-•  Vibromixer reactors;
-•  Hollow fiber reactors and other special types.
-
-Stirrer bioreactors (Katinger, Scheirer, 1985, Brunswick, 1982, Cheng, Papontsakis, 1986, Bliew, 
-Katinger, 1988, Prokop, Rosenberg, 1989) have a smaller aspect ratio than those for applications 
-with microorganisms and use impellers which specific geometry, which produce low shear stress. Thow 
-a turbulent flow may not be obtained, the stirrer speed is always reduced.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7
-
-
-
-
+|
 1.3. MEASURING SYSTEM FOR BIOPROCESS PARAMETERS
-
 
 
 Bioprocess control needs knowledge about biosystem state and evolution.
@@ -426,19 +284,7 @@ b) According to the place of determination: in-line, on-line, off-line (Linek et
 c) According to the type of determination: direct  and  indirect,  the  indirect determined 
 variables are obtained from other medium property measurements by simple data correlation. There 
 are also
-
-Table 1. Measuring system classification Measuring systems for physical variables
-Temperature Pressure
-Power consumption for mechanical stirrer Foam
-Gas & liquid flow turbidity (OD) Viscosity
-Liquid volume
-
-
-
-
-
-
-The  on-line  systems  are  the  most recommended (Sonnleitner, Fiechter, 1992; Schugerl, 1992) as 
+|The  on-line  systems  are  the  most recommended (Sonnleitner, Fiechter, 1992; Schugerl, 1992) as 
 the process information
 
 8
@@ -460,43 +306,9 @@ Dissolved oxygen Dissolved carbon dioxide Oz/COz in the outflow gas
 Carbon source concentration (sugar)
 Nitrogen source concentration
 ion concentration of Mg², K“, Ca²“, Na“, Fe*“,
-SO4 °, PO4' DNA, RNA NAD, NADH ATP, ADP, AMP
-
-can be transferred to the control system in real time.
-
-
-
-
-Usually, the following parameters are used for    Table 1 shows the description of the evaluation  
-and comparison  of different    measuring instruments used in the bioprocess measuring systems: 
-response time, sensibility,    (cf. Aiba et al., 1973). Table 2 presents the accuracy and stability 
-(Polakovic, Mandenius,    Aiba's concept extension of gateway sensors 1994; Leung et al., 1991). 
-Meanwhile, for the    — with their utilization into bioprocesses.
-on-line systems, the sensors must be sterilized and thus, the measuring structures don't interfere 
-with the biosystem.
-
-Table 2. Calculated variables types vs. sensor devices
-Sensor device                Calculated variables
-pH                         Acid product formation
-Dissolved oxygen concentration       OTR (Oxygen Transfer Rate) Oxygen concentration in the outflow 
-gas; gas OUR (Oxygen Uptake Rate) flows
-Carbon dioxide concentration in the outflow CPR (Carbon dioxide Production Rate) gas; gas flows
-OUR; CPR                  Respiratory Quotient (RQ = OUR/CPR) Carbon dioxide concentration and feed 
-rate    Cell concentration and yield
-
-
-
-1.3.1. Direct measurable variables
-
-1.3.1.1. Direct physical determinations
-
-The success of a fermentation depends upon the existence  of defined and optimal
-
-
-•  Weight.
-
-1.3.1.1.1. Temperature (Brunswick, 1992)
-environmental conditions for biomass and    Temperature determination is important in product 
+SO4 °, PO4' DNA, RNA NAD, NADH ATP, ADP, AMP can be transferred to the control system in real time.
+|
+Temperature determination is important in product 
 formation. Different physical and    relation with bioprocess evolution as well as chemical 
 parameters require to be kept    other process operations (i.e. sterilization, constant  (or 
 conforming  to an optimal    concentration,  and  purification).  The evolution trend) during the 
@@ -505,24 +317,17 @@ might be    mercury-in-glass  thermometers,  bimetallic corrected by a control s
 thermometers, pressure bulb thermometers, thermocouples,       metal-resistance
 
 The standard direct physical determinations are showed below:
-•  Temperature;
-•  Pressure (over pressure);
-•  Agitator shaft power and rate of stirring;
-•  Foam;
-•  Gas and liquid flow;
+-  Temperature;
+-  Pressure (over pressure);
+-  Agitator shaft power and rate of stirring;
+-  Foam;
+-  Gas and liquid flow;
 thermometers or thermistors.
 The measurement accuracy is about z 0.25 %
 
 The temperature determination in different fermenter measurement points is useful to determine the 
 global thermal balance.
-
-
-9
-
-
-
-
-
+|
 1.3.1.1.2.  Pressure  (over  pressure) (Brunswick, 1992)
 
 Pressure measurements may be needed for several reasons, the most important of them is the safety. 
@@ -536,7 +341,7 @@ aseptic conditions, a diaphragm gauge can be used.
 
 Alternatively, the pressure could be measured remotely using pressure bellows connected to the core 
 of a variable transformer or a piezoelectric transducer.
-
+|
 1.3.1.1.3. Agitator shaft power and rate of stirring (Brunswick, 1992)
 
 A variety of sensors can be used to measure the power consumption of a fermenter. On a large-scale 
@@ -551,7 +356,7 @@ sensing or magnetic force as detection mechanisms. The type of signal will deter
 choice of tachometer, which is required for recording and/or process control for regulating the 
 motor speed. In most cases (for small laboratory fermenters) the standard 9
 practice is to use an a. c. slip motor that is coupled to a thyristor command.
-
+|
 1.3.1.1.4. Foam (Brunswick, 1992)
 
 The formation of foam is a difficulty in many types of bioprocesses, which can create serious 
@@ -570,7 +375,7 @@ it is thrown against the walls of the bioreactor.
 
 Unfortunately, most of the mechanical devices have to be used in conjunction with an antifoam 
 agent.
-
+|
 1.3.1.1.5. Flow measurement (for gases and liquids) (Brunswick, 1992)
 
 One of the simplest methods for measuring gas flow introduced into a fermenter is by means of a 
@@ -578,11 +383,6 @@ variable aria meter, i.e. rotameter, which consists of a vertically mounted gas 
 increasing bore and enclosing a free- moving float. The position of the float is indicative of the 
 flow rate. The accuracy depends on having the gas at a constant pressure, but errors of up to + 10% 
 of full- scale deflection are quoted. The errors are greatest at low flow rates.
-
-
-
-
-
 
 Ideally, rotameters should not be sterilized and are therefore normally placed between a gas inlet 
 and a sterile filter.
@@ -602,7 +402,7 @@ by load cells (see below, the weight section). The fermenter is attached to load
 monitor the increases, and decreases in weight of the vessel at regular time intervals. Provided 
 the specific gravities of the liquids are known it is possible to estimate flow rates in different 
 feed pipes.
-
+|
 1.3.1.1.6. Weight (Brunswick, 1992)
 
 A load cell offers a convenient method of finding the weight of an object.
@@ -617,18 +417,18 @@ determined  by  appropriate  electrical apparatus.
 It is therefore possible to monitor feed rates from medium reservoirs, acid and bases utilization 
 for pH control and the use of antifoam agent for foam control: the changes in weight in a known 
 time interval can be used as a measure of liquid flow rates.
-
+|
 1.3.1.2. Direct chemical determinations
 
 The regular chemical determinations are presented below:
-•  pH;
-•  Redox potential;
-•  Dissolved oxygen concentration (pO2);
-•  Dissolved carbon dioxide concentration;
-•  Exit-gas analysis;
-•  On-line analysis of other chemical factors (ion-specific sensors, enzyme electrodes, microbial 
+-  pH;
+-  Redox potential;
+-  Dissolved oxygen concentration (pO2);
+-  Dissolved carbon dioxide concentration;
+-  Exit-gas analysis;
+-  On-line analysis of other chemical factors (ion-specific sensors, enzyme electrodes, microbial 
 electrodes, mass spectrometers, fluorimeters).
-
+|
 1.3.1.2.1. pH (Brunswick, 1992)
 
 In batch culture, the pH of an actively growing culture will not remain constant for very long. 
@@ -640,15 +440,8 @@ is to an alkaline condition. Normally, the pH drift is only in one direction.
 pH measurement is carried out using a combined glass reference electrode that will withstand 
 repeated sterilization at temperature of 120°C and pressures of l38kN/m². The electrode is 
 connected via leads to a pH-meter.
-
+|
 1.3.1.2.2. Redox potential (rH) (Brunswick, 1992)
-
-
-10
-
-
-
-
 
 The redox potential is a measure of the oxidation-reduction potential of a biological system and 
 can be determined as a voltage, the value in any system depending on the equilibrium of:
@@ -658,7 +451,7 @@ iridium probe, which is welded to
 a copper lead. The interpretation of results
 presents difficulties since the microorganisms can be at different redox potential by comparison 
 with the broth.
-
+|
 1.3.1.2.3. Dissolved oxygen concentration (pO2)(Brunswick, 1992)
 In most aerobic fermentations it is essential that the dissolved oxygen concentration does not fall 
 below a specified minimal level.
@@ -671,16 +464,15 @@ of corrosion of the anode.
 
 Polarographic electrodes are more commonly used in pilot or production bioreactors. For an increase 
 of precision, they are both pressure and temperature compensated.
-
+|
 1.3.1.2.4.  Dissolved  carbon  dioxide concentration (Brunswick, 1992)
 The measurement of dissolved carbon dioxide concentration is possible with an electrode, since a pH 
 or voltage change can be detected because of the gas going into solution. The first available 
 electrode consisted of a combined pH electrode with a bicarbonate buffer surrounding the bulb and 
-ceramic plug. Unfortunately, this electrode was not steam sterilizable. A new version (which can be
-11
+ceramic plug. Unfortunately, this electrode was not steam sterilizable. A new version (which can be 
 steam sterilized) involves a thin layer of aqueous bicarbonate over the glass sensing membrane of 
 the pH electrode.
-
+|
 1.3.1.2.5. Exit-gas analysis (Brunswick, 1992)
 
 The measurement and recording of the effluent gas composition is important in many fermentation 
@@ -697,11 +489,7 @@ Carbon dioxide is commonly monitored by infrared analysis using a positive filte
 Generally, it is expensive to have separate carbon dioxide and oxygen analyzers for each fermenter. 
 Therefore, it may be possible to couple up a group of fermenters via a multiplexer to a single pair 
 of gas analyzers.
-
-
-
-
-
+|
 1.3.1.2.6. On-line analysis of other chemical factors (Brunswick, 1992)
 
 Ion-specific sensors
@@ -716,7 +504,7 @@ immobilized on a membrane held in close contact to a pH or oxygen electrode.
 Microbial electrodes
 Microbial electrodes using immobilized whole cells have been developed and used for determination 
 of assimilable sugars, acetic
-
+|
 1.3.2. Indirectly measurable variables
 
 The indirect measurements allow variable values estimation at each sample period, f. Usually, the 
@@ -730,53 +518,7 @@ and the measure:
 z(t) —— h(x(t),u(t), p₂(t),t)+ w(I)   1.3.2.2
 where: xT = (xc ..,XL)= state variables vector (biomass  concentration  X,  substrate
 acid, ethyl alcohol, vitamin B, nicotinic acid, glutamic acid and cephalosporins.
-
-Mass spectrometers
-The mass spectrometer can be used for on-line analysis since it is very versatile and has a 
-response time less than 10 seconds for full- scale response, but is unfortunately expensive. It 
-does allow for monitoring of gas partial pressures (Oz, COz, CH4, etc.) dissolved gases (Oz, COz, 
-CH4, etc.) concentrations and volatiles (methanol, ethanol, acetone, etc.).
-
-Fluorimeters
-It is well established that fluorimetric measurements are very specific and rapid but their use in 
-bioprocess studies is quasi-limited for the time being. Hence, the measurement of NAD (provided it 
-remains at a constant concentration in cells) would be an ideal method for continuous measurement 
-of microbial biomass concentration.
-
-
-
-concentration S, product concentration P, etc.);
-uT = (u ,.....,uk) = control variables vector (dilution rate D, pH, temperature T, etc.);
-Pi(t), Pz(t)  bioprocess model vector and measuring system vector;
-f, h = process model vector and measure model vector (non-linear operators) dim f= L; dim h = p;
-v, w = noise;
-z = measure vector.
-
-The indirect measurements are generally performed by the application of discrete methods. Hence, if 
-it is supposed (Montague et al., 1988) that the direct measurement of process variables is done at 
-each moment K and the indirect measurement performed at each moment k, from (1.3.2.1), (1.3.2.2) it 
-is obtained:
-
-12
-
-
-
-
-x(k + l) = &(x(K),u(K), p,(K),K,Af) + w(K)
-2             2               h,(x(K),u(K), p₂(K), K)
-
-
-Z(K) ——
-
-L       +  L
-h (x(K),u(K), p₂(K), K)   •‹u
-Z(K) ——
-+
-hp   (K),u(K), p₂(K) K)   p
-1.3.2.4
-
-
-hp  (K),u(K), p (K)z K)   p
+|
 1.3.2.3
 
 where: t = m*at, m*2at, the information is obtained both from direct and indirect measurements;
@@ -786,72 +528,14 @@ Moreover:
 The measurement algorithm for discrete
 filtration can take the estimation of x(K), if the equation (1.3.2.3), (1.3.2.4) can be determined. 
 Commonly, this item is not reached due to the following factors:
-•  There is always a time dependent evolution of the bioprocesses (i.e. the parameter vectors 
+-  There is always a time dependent evolution of the bioprocesses (i.e. the parameter vectors 
 change theirs values during the process behavior;
-•  The equations (1.3.2.3), (1.3.2.4 don't describe all process phenomena, but they are only a 
+-  The equations (1.3.2.3), (1.3.2.4 don't describe all process phenomena, but they are only a 
 simplified representation.
 
 Hence, for measuring noises rejection, an adaptive measuring system can be taken into 
-consideration, cf. the following picture:
-
-
-
-
-
-
-
-
-
-
-Zd(K)
-
-
-
-
-
-
-Zd(K)    p2(K)
-
-
-
-
-Fig. 1.3.2.1 General adaptive structure for bioprocess measurements (cf. Stanskis, Simutis, 1988)
-
-
-13
-
-
-
-
-
-In this case it would be considered that the direct measuring errors are approximated by a gaussian 
-white noise E(V} = 0 and the dispersion is G² , = (Kv, z,) . In this case, K-I is a coefficient 
-which characterizes the medium  errors  of  measurements.  The experiments have already 
-demonstrated that the Kvj value is contained in the domain 0.001. 0.5 and depends on measuring 
-method
-and state variable. Commonly, the following parameters can be measured: oxygen uptake rate (ro2), 
-pH rate evolution (ra)› carbon dioxide production rate (rcoz), heat production rate (rQ). Different 
-kinetic equations link these parameters using the process state variables.
-
-Hence, a continuous bioprocess can be described by the following equation set:
-dx dt
-dS —— D(So —  + p(I, S, P,u' , p„t)X + Y2(i)
-dP —— D(Po — P) + s(X,S,P,u' , p„t)X + Y3(i)
-1.3.2.5
-where: Xo. S0.  0. X, S, P = biomass concentration, limiting substrate concentration and product 
-concentration (input/output);
-q, 3, c = specific growth rate, specific consumption  rate and specific  product formation rate;
-u' = [T,  pH,  pO2 ...QT = the
-environmental process vector;
-Pi = model parameter vector; D = dilution rate;
-1(t), W (t),  3(t) = modeling noises.
-Therefore, the indirect measurement system is described by the following equation set (where vi 
-...v4 are modeling noises):
-
-₀ z ") '  K  X,S,P,u' , p„/)J(I) + A₂J(I)+ K e(X,S,P,u' , p,,f)J(/) + v,(I)
-rco,( )'  K₄$q(X,S,P,u' , pt,t)K( )+ As ( ) + K₆ (X, S,P,u' , p,,t)^ !)+ • (')
-
-
+consideration.
+|
 1.3.2.6
 
 A Kalman procedure is imposed in these    The one-leve1 prediction Kalman algorithm is 
@@ -859,104 +543,10 @@ circumstances (i.e. on-line variable estimation    depicted below:
 based on 1.3.2.3 process model):
 
 
-X(K + l) = X(K + I K)(K + l) •
-• (Z(K + 1) —
+X(K + l) = X(K + I K)(K + l) -
+- (Z(K + 1) —
 — h(X(K + I K)y (K + 1)2 Hz UK)y K + 1))
-1.3.2.7
-
-
-Moreover,  the algorithm  for a priori computation of covariance errors matrix (CEM) is:
-
-
-
-    X(K),u'   
-P,(K + 1 I K) —— S
-K), K, kT]
-- P,(K-)
-  [X(K),u(K),  K), K, kT]+
-(K)
-
-Q(K)
-
-1.3.2.9
-
-
-14
-
-
-
-
-
-and the one for CEM estimation:
-
-P,(K + 1) = P,(K + 1 / K) — P,(K + 1 / K)
-
-d h T[X(K + 1 / K)y (K + 1)9 Hz UK)9 K + l]
-d X(K + 1 / K)
-[# h[X(K + l / K),u(K + 1), p2 (K),K + i] P,(K + l / K)
-# I(A + 1 / K)
-
-d h T[X(K + l / K), u(K + 1), p (A), A + i]
-1.3.2.10
-                 ²       + S(K + l)]
-d X(K + l / K)
-d h[X(K + 1 / K),u(K + 1), p2 (A), A + i] P,(K + 1 / A)
-d X(K + l / K)
-
-
-Furthermore:
-dhT[X(K + 1 K) u(K + I)•P2  ) K + 1]  i
-
-
-1.3.2.11
-
-(x + i) -
-dX(K + I I K)
-- s (›r + i)
-
-
-where: Sa  the ageing factor;
-S(K), Q(K)  = the corresponding matrices of measuring noise covariance and modeling noise 
-covariance.
-
-The initial conditions X(0) and  x(0) are the best (initial) estimations of the state variable 
-vector and the uncertainty degree of X(0) selection, respectively. The parameters pt and P2 are 
-time dependent. Hence, the state
-variables can be estimated. A commonly used
-procedure is the Least Squares Method. So, the equation 1.2.3.4 is developed in Taylor series:
-
-X,(K + L)  &,(p,(K)) + W(K)
-}(  )'  hf(Pz  )) + V(K)
-1.3.2.12
-and the estimation of Pi(K) is obtained with recursive LSM:
-
-p,(A) —— p,(A — 1) +
-+ K(  A — l) —  A)fi A — 1))
-K(A) —— P(K — 1)G (A)J (K)P(K — 1)G (K) +
-1
-2
-0
-P(K) —— SQ(I — K(A)G,(A)P(A — l))
-1.3.2.13
-A similar algorithm can be used for P2 estimation. Consequently,  t(0) and P2(0) can be  determined 
- following  the  off-line identification,  and  P(0)  will  define  the preliminary error 
-identification of Pi(0) and P2(0). A second method makes possible the simultaneous estimation of 
-process state and model parameters. Hence, we suppose that Pi(K) and P2(K) are fixed within a 
-sample period; the variable state vector will be:
-
-X(K + l)   &[X(K),u(K),K,kT]   W(K)
-X,(K + 1) =  p,(K + 1) =      p,(K)     +  p  K)
-p₂(K +1)       p₂(fi)       p  K)
-
-and the algorithm (1.3.2.7) = (1.3.2.11) can be applied in this case, too.
-
-15
-
-1.3.2.14
-
-
-
-
+|
 CONCLUSIONS
 1. General bioprocess presentation make evident the living systems specificity, i.e. non-linearity, 
 multi-variability and powerful interdependence between process variables. In these conditions, 
@@ -964,11 +554,11 @@ different cultivation procedures impose specific control optimizations being abl
 ensemble bioprocess — bioreactor.
 2. The instrumentation development for the measuring of bioprocess variables is a basic condition 
 for future control strategy development. The actual limitations of measuring systems are:
-•  The performant measuring instruments are generally too expensive and are not included in the 
+-  The performant measuring instruments are generally too expensive and are not included in the 
 standard bioreactor equipment.
-•  Generally, only the environmental cell medium is monitored and so, the intermediate level for 
+-  Generally, only the environmental cell medium is monitored and so, the intermediate level for 
 metabolic reaction rates is not known.
-•  The enzymatic activity determination is accomplished off-line.
+-  The enzymatic activity determination is accomplished off-line.
 
 Consequently, the bioprocess control structure will progress depending on measuring systems 
 development. The control based on analytical (a priori) model is limited due to the scarcity of the 
@@ -976,28 +566,3 @@ corresponding measuring systems, able to supervise the intracellular phenomena a
 interactions between bioprocess variables. To surpass these difficulties the implementation of 
 intelligent techniques represents a more applicable solution, even if only the advanced phenomena 
 cognition can establish the right solution for the optimal bioprocess control.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16
