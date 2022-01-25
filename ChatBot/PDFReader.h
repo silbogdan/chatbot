@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <vector>
 
 class PDFReader
 {
@@ -12,5 +13,6 @@ private:
 public:
 	PDFReader(std::string filePath);
 	std::string printText();
+	std::vector<std::string> getData();
 };
 
