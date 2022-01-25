@@ -32,9 +32,11 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     hbox->Add(cp, 3, wxEXPAND | wxALL, 5);
     hbox->Add(ap, 3, wxEXPAND | wxALL, 5);
 
-    hbox->Hide(ap);
+    //hbox->Hide(ap);
+    hbox->Hide(cp);
+    
     hbox->Layout();
-
+    mp->main_sizer->Hide(mp->option_sizer);
     Parent->SetSizer(hbox);
     hbox->Fit(Parent);
     this->SetBackgroundColour(wxColour(*wxWHITE));
@@ -67,7 +69,6 @@ void MyFrame::ShowChatbot(wxCommandEvent& event)
     cp->Show(true);
     hbox->Layout();
 }
-
 
 void MyFrame::ShowAboutUs(wxCommandEvent& event)
 {

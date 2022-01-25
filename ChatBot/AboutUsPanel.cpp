@@ -5,7 +5,7 @@ AboutUsPanel::AboutUsPanel(wxPanel* parent)
 {
 	master_sizer = new wxBoxSizer(wxVERTICAL);
 	wxBitmap* bitmap = new wxBitmap;
-	bitmap->LoadFile("send.png", wxBITMAP_TYPE_PNG);
+	bitmap->LoadFile("ss.png", wxBITMAP_TYPE_PNG);
 
 	display = new wxStaticBitmap(this, -1, *bitmap);
 	master_sizer->Add(display, 1, wxEXPAND, 1);
