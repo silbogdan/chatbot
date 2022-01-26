@@ -5,6 +5,39 @@ bool ChatbotPanel::is_waiting_for_search = false;
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
+const std::vector<std::string> luckyInfo =
+{
+	"The bioprocess study makes evident the principles that are the foundation of living systems. In the\
+			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\
+			be analyzed, together with the most interesting parameters and a general overview on the cell\
+			metabolism.In the second part, the most usual bioreactor types with some particularities will be\
+			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\
+			addition with the information  organization  modalities and other some consonant possibilities on\
+			these.\n\
+			Find out more about this in PART ONE.",
+		"From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\
+			bioprocess modes of operation:\n\
+		-  Batch cultivation;\n\
+		-  Fed-batch cultivation;\n\
+		-  Continuous cultivation\n\
+		Find out more about this in PART TWO.",
+		"One of the most important objectives for developing a general kinetic model is to establish a\
+			conceptual basis for microorganism growth description\n\
+			Find out more about this in PART TWO.",
+		"Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\
+			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
+			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
+			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
+			which is able to produce a wide range of extracellular enzymes growing on various substrates.\n\
+			Find out more about this in PART THREE.",
+		"The design of a fuzzy control system arises from organization necessity of the human expert\
+			knowledge.The  decisional quintessence of the control system is determined  by the\
+			transition from the information objective level to the subjective one(i.e.the information\
+			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\
+			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\
+			Caramihai, 1996).\n\
+			Find out more about this in PART FOUR"
+};
 
 ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
@@ -38,6 +71,9 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
 
 	delete bitmap;
+
+	/* initialize random seed: */
+	srand(time(NULL));
 }
 
 void ChatbotPanel::pushMessage(Message* x)
@@ -243,7 +279,9 @@ void getSearchResult(Message* q, Message* a)
 
 void getFactForFeelingLucky(Message* f)
 {
-	f->msg = _("Bioprocesses are a mistery even for me!");
+	/* generate secret number between 0 and 4: */
+	int randNo = rand() % 5;
+	f->msg = _(luckyInfo[randNo]);
 	f->isbot = true;
 }
 
