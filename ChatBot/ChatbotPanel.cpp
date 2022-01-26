@@ -61,12 +61,9 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	keyword->isbot = 0;
 	this->pushMessage(keyword);
 
-	if (ChatbotPanel::getSearchStatus())
-	{
-		getSearchResult(keyword, answer);
-		this->pushMessage(answer);
-		ChatbotPanel::deactivateSearch();
-	}
+	getSearchResult(keyword, answer);
+	this->pushMessage(answer);
+	ChatbotPanel::deactivateSearch();
 	
 	text_box->ChangeValue("");
 
@@ -112,16 +109,22 @@ void ChatbotPanel::feelingLucky(wxCommandEvent& event)
 
 void ChatbotPanel::recommended(wxCommandEvent& event)
 {
-	Message* question, *answer;
-	question = new Message();
-	answer = new Message();
 
-	getQandAForRecommended(question, answer);
-	this->pushMessage(question);
-	this->pushMessage(answer);
+	/*std::pair<Message*, Message*> retValues = getQandAForRecommended("Intrebare", "Raspuns");
+	this->pushMessage(retValues.first);
+	this->pushMessage(retValues.second);*/
 
-	delete question;
-	delete answer;
+	Message* recommendedMessage = new Message();
+	recommendedMessage->msg =
+		"Try asking these questions:\n\
+	What is the purpose of bioprocess study?\n\
+	What are the bioprocess modes of operation?\n\
+	What is important for developing a general kinetic model?\n\
+	What is cellulase?\n\
+	What is the purpose of a fuzzy control system?";
+	recommendedMessage->isbot = true;
+
+	this->pushMessage(recommendedMessage);
 }
 
 void ChatbotPanel::testKnowledge(wxCommandEvent& event)
@@ -185,8 +188,57 @@ ChatbotPanel::~ChatbotPanel()
 
 void getSearchResult(Message* q, Message* a)
 {
-	a->msg = _("I do not know anything about ") + q->msg + _(".");
 	a->isbot = true;
+
+	if (q->msg == "What is the purpose of bioprocess study?")
+	{
+		a->msg = _("The bioprocess study makes evident the principles that are the foundation of living systems. In the\n\
+			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\n\
+			be analyzed, together with the most interesting parameters and a general overview on the cell\n\
+			metabolism.In the second part, the most usual bioreactor types with some particularities will be\n\
+			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\n\
+			addition with the information  organization  modalities and other some consonant possibilities on\n\
+			these.\n\
+			Find out more about this in PART ONE.");
+	}
+	else if (q->msg == "What are the bioprocess modes of operation?")
+	{
+		a->msg = _("From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\n\
+			bioprocess modes of operation:\n\
+		-  Batch cultivation;\n\
+		-  Fed - batch cultivation;\n\
+		-  Continuous cultivation\n\
+		Find out more about this in PART TWO.");
+	}
+	else if (q->msg == "What is important for developing a general kinetic model?")
+	{
+		a->msg = _("One of the most important objectives for developing a general kinetic model is to establish a\n \
+			conceptual basis for microorganism growth description\n\
+			Find out more about this in PART TWO.");
+	}
+	else if (q->msg == "What is cellulase?")
+	{
+		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\n\
+			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\n\
+			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\n\
+			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\n\
+			which is able to produce a wide range of extracellular enzymes growing on various substrates.\n\
+			Find out more about this in PART THREE.");
+	}
+	else if (q->msg == "What is the purpose of a fuzzy control system?")
+	{
+		a->msg = _("The design of a fuzzy control system arises from organization necessity of the human expert\n\
+			knowledge.The  decisional quintessence of the control system is determined  by the\n\
+			transition from the information objective level to the subjective one(i.e.the information\n\
+			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\n\
+			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\n\
+			Caramihai, 1996).\n\
+			Find out more about this in PART FOUR");
+	}
+	else
+	{
+		a->msg = _("I do not know anything about ") + q->msg + _(".");
+	}
 }
 
 void getFactForFeelingLucky(Message* f)
@@ -195,14 +247,18 @@ void getFactForFeelingLucky(Message* f)
 	f->isbot = true;
 }
 
-void getQandAForRecommended(Message* q, Message* a)
+std::pair<Message*, Message*> getQandAForRecommended(std::string question, std::string answer)
 {
-	q->msg = _("What is the most important bioprocess?");
+	Message* q = new Message();
+	Message* a = new Message();
+	q->msg = _(question);
 	q->isbot = false;
 
-	a->msg = _("As if I know!");
+	a->msg = _(answer);
 	a->isbot = true;
-}
+
+	return std::pair<Message*, Message*>(q, a);
+} 
 
 void getStatementForTest(Message* x, bool* is_statement_true)
 {

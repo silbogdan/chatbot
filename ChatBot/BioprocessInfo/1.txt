@@ -14,7 +14,7 @@
 
 Part one INTRODUCTION
 The bioprocess study makes evident the principles that are the foundation of living systems. In the 
-first part of this chapter, different kind ofbioprocesses (specially the aerobic bioprocesses) will 
+first part of this chapter, different kind of bioprocesses (specially the aerobic bioprocesses) will 
 be analyzed, together with the most interesting parameters and a general overview on the cell 
 metabolism. In the second part, the most usual bioreactor types with some particularities will be 
 shown. Finally, a general overview on the bioprocess measuring systems will be presented in 

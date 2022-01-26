@@ -56,5 +56,5 @@ enum
 */
 void getSearchResult(Message* q, Message* a);
 void getFactForFeelingLucky(Message* f);
-void getQandAForRecommended(Message* q, Message* a);
+std::pair<Message*, Message*> getQandAForRecommended(std::string question, std::string answer);
 void getStatementForTest(Message* x, bool* is_statement_true);
