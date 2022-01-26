@@ -45,8 +45,8 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 
 void ChatbotPanel::pushMessage(Message* x)
 {
-	unsigned int lenght;
-	const unsigned int max_lenght = 35;
+	int lenght;
+	const unsigned int max_lenght = 45;
 	std::string same;
 	std::string same_temp_substring;
 
@@ -57,16 +57,21 @@ void ChatbotPanel::pushMessage(Message* x)
 	same = x->msg.ToStdString();
 	lenght = same.length();
 
-	for (int k{}; k < lenght; k = k+max_lenght)
+	for (int k{}; k < lenght; )
 	{
 		if (k + max_lenght < lenght)
 		{
+			//create a string thah has the maximum amount of characters before a space
 			same_temp_substring = same.substr(k, max_lenght);
+			auto temp = same_temp_substring.find_last_of(" ");
+			same_temp_substring = same.substr(k, temp);
+			k += temp;
 		}
 
 		else
 		{
-			same_temp_substring = same.substr(k, lenght-k+1);
+			same_temp_substring = same.substr(k, lenght-k+1.0);
+			break;
 		}
 		wxString buffer(same_temp_substring);
 
