@@ -2,6 +2,8 @@
 
 int i{};
 bool ChatbotPanel::is_waiting_for_search = false;
+bool ChatbotPanel::is_waiting_for_choice = false;
+Message ChatbotPanel::recommended_questions[4];
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
@@ -54,6 +56,9 @@ void ChatbotPanel::pushMessage(Message* x)
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
 {	 
 	Message* keyword, * answer;
+
+	int j{};
+
 	keyword = new Message();
 	answer = new Message();
 
@@ -66,6 +71,30 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 		getSearchResult(keyword, answer);
 		this->pushMessage(answer);
 		ChatbotPanel::deactivateSearch();
+	}
+
+	if (is_waiting_for_choice)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			//compare the input to the 4 q's (key..
+			if (recommended_questions[j].msg == keyword->msg)
+			{
+				answer->isbot = true;
+				answer->msg = _("Valid");
+				this->pushMessage(answer);
+				break;
+			}
+		}
+
+		is_waiting_for_choice = false;
+
+		if (j == 4)
+		{
+			answer->isbot = true;
+			answer->msg = _("Invalid");
+			this->pushMessage(answer);
+		}
 	}
 	
 	text_box->ChangeValue("");
@@ -112,16 +141,25 @@ void ChatbotPanel::feelingLucky(wxCommandEvent& event)
 
 void ChatbotPanel::recommended(wxCommandEvent& event)
 {
-	Message* question, *answer;
+	Message* question;
 	question = new Message();
-	answer = new Message();
 
-	getQandAForRecommended(question, answer);
+	unsigned int i{};
+
+	question->msg = _("These are some suggestions:");
+	question->isbot = true;
 	this->pushMessage(question);
-	this->pushMessage(answer);
+	
+	getQsForRecommended(this->recommended_questions);
+
+	for (int k{}; k < 4; k++)
+	{
+		this->pushMessage(&this->recommended_questions[i]);
+	}
+
+	is_waiting_for_choice = true;
 
 	delete question;
-	delete answer;
 }
 
 void ChatbotPanel::testKnowledge(wxCommandEvent& event)
@@ -195,13 +233,13 @@ void getFactForFeelingLucky(Message* f)
 	f->isbot = true;
 }
 
-void getQandAForRecommended(Message* q, Message* a)
+void getQsForRecommended(Message q[])
 {
-	q->msg = _("What is the most important bioprocess?");
-	q->isbot = false;
-
-	a->msg = _("As if I know!");
-	a->isbot = true;
+	for (int j {}; j < 4; j++)
+	{
+		q[j].msg = _("ceva");
+		q[j].isbot = true;
+	}
 }
 
 void getStatementForTest(Message* x, bool* is_statement_true)
