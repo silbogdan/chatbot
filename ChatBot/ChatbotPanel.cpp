@@ -2,6 +2,9 @@
 
 int i{};
 bool ChatbotPanel::is_waiting_for_search = false;
+bool ChatbotPanel::is_waiting_for_choice = false;
+Message ChatbotPanel::recommended_questions[4];
+Message ChatbotPanel::recommended_answers[4];
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
@@ -78,18 +81,58 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 
 void ChatbotPanel::pushMessage(Message* x)
 {
+	int lenght;
+	const unsigned int max_lenght = 45;
+	std::string same;
+	std::string same_temp_substring;
+
 	if (x->msg == "") {
 		return;
 	}
-	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, !x->isbot, x->msg);
-	main_chat->SetItemFont(i, *custom_font);
-	i++;
+
+	same = x->msg.ToStdString();
+	lenght = same.length();
+
+	for (int k{}; k < lenght; )
+	{
+		if (k + max_lenght < lenght || (same.substr(k, max_lenght)).find_first_of('?') != -1 || (same.substr(k, max_lenght)).find_first_of(':') != -1)
+		{
+			//create a string thah has the maximum amount of characters before a space
+			same_temp_substring = same.substr(k, max_lenght);
+			auto temp = same_temp_substring.find_last_of(' ');
+			auto x = same_temp_substring.find_first_of('?');
+			if (x != -1)
+				temp = x + 1;
+			x = same_temp_substring.find_first_of(':');
+			if (x != -1)
+				temp = x + 1;
+			same_temp_substring = same.substr(k, temp);
+			k += temp;
+		}
+		else
+		{
+			same_temp_substring = same.substr(k, lenght - k + 1);
+			k = lenght + 1;
+		}
+		
+		wxString buffer(same_temp_substring);
+
+		//show buffer
+
+		main_chat->InsertItem(i, _(""));
+		main_chat->SetItem(i, !x->isbot, buffer);
+		main_chat->SetItemFont(i, *custom_font);
+		i++;
+	}
+	return;
 }
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
 {	 
 	Message* keyword, * answer;
+
+	int j{};
+
 	keyword = new Message();
 	answer = new Message();
 
@@ -254,7 +297,7 @@ void getSearchResult(Message* q, Message* a)
 	}
 	else if (q->msg == "What is cellulase?")
 	{
-		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\
+		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases, \
 			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
 			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
 			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
@@ -285,18 +328,16 @@ void getFactForFeelingLucky(Message* f)
 	f->isbot = true;
 }
 
-std::pair<Message*, Message*> getQandAForRecommended(std::string question, std::string answer)
+void getQsAndAsForRecommended(Message q[], Message a[])
 {
-	Message* q = new Message();
-	Message* a = new Message();
-	q->msg = _(question);
-	q->isbot = false;
-
-	a->msg = _(answer);
-	a->isbot = true;
-
-	return std::pair<Message*, Message*>(q, a);
-} 
+	for (int j {}; j < 4; j++)
+	{
+		q[j].msg = _("ceva");
+		q[j].isbot = true;
+		a[j].msg = _("altceva");
+		a[j].isbot = true;
+	}
+}
 
 void getStatementForTest(Message* x, bool* is_statement_true)
 {
