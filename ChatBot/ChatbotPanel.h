@@ -40,6 +40,8 @@ private:
 	wxBitmapButton* send_button;
 	void pushMessage(Message* x);
 	bool is_wating_for_search = 0;
+	
+	const std::vector<std::string> luckyInfo;
 
 	static const wxFont* custom_font;
 };
