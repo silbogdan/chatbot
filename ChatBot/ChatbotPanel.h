@@ -13,6 +13,7 @@
 #include "MenuPanel.h"
 #include "OpenPDF.h"
 #include "Message.h"
+#include "TFIDFDatabase.h"
 
 class ChatbotPanel : public wxPanel
 {

@@ -45,6 +45,8 @@ const std::vector<std::string> luckyInfo =
 ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
 {	
+	TFIDFDatabase* tfidfDatabase = new TFIDFDatabase(".\\tfidfmatrix.txt", ".\\dictionary.txt");
+
 	custom_font = new wxFont(13, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL,
 		wxFONTWEIGHT_NORMAL, false);
 	wxBitmap* bitmap = new wxBitmap;

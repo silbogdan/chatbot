@@ -168,6 +168,7 @@
     <ClInclude Include="OpenPDF.h" />
     <ClInclude Include="PDFReader.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TFIDFDatabase.h" />
     <ClInclude Include="TFIDFMatrixCreator.h" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +181,7 @@
     <ClCompile Include="MyFrame.cpp" />
     <ClCompile Include="OpenPDF.cpp" />
     <ClCompile Include="PDFReader.cpp" />
+    <ClCompile Include="TFIDFDatabase.cpp" />
     <ClCompile Include="TFIDFMatrixCreator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
