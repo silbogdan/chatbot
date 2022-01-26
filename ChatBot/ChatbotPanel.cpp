@@ -46,7 +46,7 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 void ChatbotPanel::pushMessage(Message* x)
 {
 	int lenght;
-	const unsigned int max_lenght = 45;
+	const unsigned int max_lenght = 30;
 	std::string same;
 	std::string same_temp_substring;
 
@@ -62,17 +62,21 @@ void ChatbotPanel::pushMessage(Message* x)
 		if (k + max_lenght < lenght)
 		{
 			//create a string thah has the maximum amount of characters before a space
+			//create a string thah has the maximum amount of characters before a space
 			same_temp_substring = same.substr(k, max_lenght);
 			auto temp = same_temp_substring.find_last_of(" ");
+			if (temp == -1)
+				temp = max_lenght;
 			same_temp_substring = same.substr(k, temp);
 			k += temp;
 		}
 
 		else
 		{
-			same_temp_substring = same.substr(k, lenght-k+1);
+			same_temp_substring = same.substr(k, lenght - k + 1);
 			k = lenght + 1;
 		}
+		
 		wxString buffer(same_temp_substring);
 
 		//show buffer
@@ -98,33 +102,9 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	keyword->isbot = 0;
 	this->pushMessage(keyword);
 
-	if (ChatbotPanel::getSearchStatus())
-	{
-		getSearchResult(keyword, answer);
-		this->pushMessage(answer);
-		ChatbotPanel::deactivateSearch();
-	}
-
-	if (is_waiting_for_choice)
-	{
-		for (j = 0; j < 4; j++)
-		{
-			//compare the input to the 4 q's (key..
-			if (recommended_questions[j].msg == keyword->msg)
-			{
-				this->pushMessage(&recommended_answers[j]);
-				break;
-			}
-		}
-
-		is_waiting_for_choice = false;
-
-		if (j == 4)
-		{
-			getSearchResult(keyword, answer);
-			this->pushMessage(answer);
-		}
-	}
+	getSearchResult(keyword, answer);
+	this->pushMessage(answer);
+	ChatbotPanel::deactivateSearch();
 	
 	text_box->ChangeValue("");
 
@@ -170,25 +150,22 @@ void ChatbotPanel::feelingLucky(wxCommandEvent& event)
 
 void ChatbotPanel::recommended(wxCommandEvent& event)
 {
-	Message* question;
-	question = new Message();
 
-	unsigned int i{};
+	/*std::pair<Message*, Message*> retValues = getQandAForRecommended("Intrebare", "Raspuns");
+	this->pushMessage(retValues.first);
+	this->pushMessage(retValues.second);*/
 
-	question->msg = _("These are some suggestions:");
-	question->isbot = true;
-	this->pushMessage(question);
-	
-	getQsAndAsForRecommended(this->recommended_questions, this->recommended_answers);
+	Message* recommendedMessage = new Message();
+	recommendedMessage->msg =
+		"Try asking these questions:\
+	What is the purpose of bioprocess study?\
+	What are the bioprocess modes of operation?\
+	What is important for developing a general kinetic model?\
+	What is cellulase?\
+	What is the purpose of a fuzzy control system?";
+	recommendedMessage->isbot = true;
 
-	for (int k{}; k < 4; k++)
-	{
-		this->pushMessage(&this->recommended_questions[i]);
-	}
-
-	is_waiting_for_choice = true;
-
-	delete question;
+	this->pushMessage(recommendedMessage);
 }
 
 void ChatbotPanel::testKnowledge(wxCommandEvent& event)
@@ -252,8 +229,57 @@ ChatbotPanel::~ChatbotPanel()
 
 void getSearchResult(Message* q, Message* a)
 {
-	a->msg = _("I do not know anything about ") + q->msg + _(".");
 	a->isbot = true;
+
+	if (q->msg == "What is the purpose of bioprocess study?")
+	{
+		a->msg = _("The bioprocess study makes evident the principles that are the foundation of living systems. In the\
+			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\
+			be analyzed, together with the most interesting parameters and a general overview on the cell\
+			metabolism.In the second part, the most usual bioreactor types with some particularities will be\
+			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\
+			addition with the information  organization  modalities and other some consonant possibilities on\
+			these.\
+			Find out more about this in PART ONE.");
+	}
+	else if (q->msg == "What are the bioprocess modes of operation?")
+	{
+		a->msg = _("From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\
+			bioprocess modes of operation:\
+		-  Batch cultivation;\
+		-  Fed - batch cultivation;\
+		-  Continuous cultivation\
+		Find out more about this in PART TWO.");
+	}
+	else if (q->msg == "What is important for developing a general kinetic model?")
+	{
+		a->msg = _("One of the most important objectives for developing a general kinetic model is to establish a\
+			conceptual basis for microorganism growth description\n\
+			Find out more about this in PART TWO.");
+	}
+	else if (q->msg == "What is cellulase?")
+	{
+		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\
+			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
+			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
+			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
+			which is able to produce a wide range of extracellular enzymes growing on various substrates.\
+			Find out more about this in PART THREE.");
+	}
+	else if (q->msg == "What is the purpose of a fuzzy control system?")
+	{
+		a->msg = _("The design of a fuzzy control system arises from organization necessity of the human expert\
+			knowledge.The  decisional quintessence of the control system is determined  by the\
+			transition from the information objective level to the subjective one(i.e.the information\
+			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\
+			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\
+			Caramihai, 1996).\
+			Find out more about this in PART FOUR");
+	}
+	else
+	{
+		a->msg = _("I do not know anything about ") + q->msg + _(".");
+	}
 }
 
 void getFactForFeelingLucky(Message* f)
