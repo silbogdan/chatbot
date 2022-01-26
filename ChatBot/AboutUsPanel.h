@@ -7,7 +7,6 @@
 
 class AboutUsPanel : public wxPanel
 {
-
 public:
 	AboutUsPanel(wxPanel* Parent);
 private:
