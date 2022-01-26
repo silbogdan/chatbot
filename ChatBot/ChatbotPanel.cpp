@@ -66,7 +66,7 @@ void ChatbotPanel::pushMessage(Message* x)
 			auto temp = same_temp_substring.find_last_of(' ');
 			auto x = same_temp_substring.find_first_of('?');
 			if (x != -1)
-				temp = x+1;
+				temp = x + 1;
 			x = same_temp_substring.find_first_of(':');
 			if (x != -1)
 				temp = x + 1;
@@ -261,7 +261,7 @@ void getSearchResult(Message* q, Message* a)
 	}
 	else if (q->msg == "What is cellulase?")
 	{
-		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\
+		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases, \
 			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
 			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
 			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
