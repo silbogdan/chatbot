@@ -42,11 +42,12 @@ const std::vector<std::string> luckyInfo =
 			Find out more about this in PART FOUR"
 };
 
+vector<string> fileNames = { "BioprocessInfo\\1.txt", "BioprocessInfo\\2.txt", "BioprocessInfo\\3_1.txt", "BioprocessInfo\\4.txt" };
+TFIDFDatabase* ChatbotPanel::tfidfDatabase = new TFIDFDatabase(".\\tfidfmatrix.txt", ".\\dictionary.txt", fileNames);
+
 ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
-{	
-	TFIDFDatabase* tfidfDatabase = new TFIDFDatabase(".\\tfidfmatrix.txt", ".\\dictionary.txt");
-
+{
 	custom_font = new wxFont(13, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL,
 		wxFONTWEIGHT_NORMAL, false);
 	wxBitmap* bitmap = new wxBitmap;
@@ -72,7 +73,7 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	big_sizer->Add(small_sizer, 1, wxEXPAND | wxALL, 3);
 
 	this->SetSizer(big_sizer);
-	
+
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
 
 	delete bitmap;
@@ -116,7 +117,7 @@ void ChatbotPanel::pushMessage(Message* x)
 			same_temp_substring = same.substr(k, lenght - k + 1);
 			k = lenght + 1;
 		}
-		
+
 		wxString buffer(same_temp_substring);
 
 		//show buffer
@@ -130,7 +131,7 @@ void ChatbotPanel::pushMessage(Message* x)
 }
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
-{	 
+{
 	Message* keyword, * answer;
 
 	int j{};
@@ -145,7 +146,7 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	getSearchResult(keyword, answer);
 	this->pushMessage(answer);
 	ChatbotPanel::deactivateSearch();
-	
+
 	text_box->ChangeValue("");
 
 	delete keyword;
@@ -210,7 +211,7 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 
 void ChatbotPanel::testKnowledge(wxCommandEvent& event)
 {
-	Message* statement, *feedback;
+	Message* statement, * feedback;
 	wxMessageDialog* dial;
 	bool is_right;
 	const wxMessageDialog::ButtonLabel a(_("False"));
@@ -267,7 +268,7 @@ ChatbotPanel::~ChatbotPanel()
 	delete custom_font;
 }
 
-void getSearchResult(Message* q, Message* a)
+void ChatbotPanel::getSearchResult(Message* q, Message* a)
 {
 	a->isbot = true;
 
@@ -318,7 +319,73 @@ void getSearchResult(Message* q, Message* a)
 	}
 	else
 	{
-		a->msg = _("I do not know anything about ") + q->msg + _(".");
+		//a->msg = _("I do not know anything about ") + q->msg + _(".");
+
+
+		// Create an array with stemmed words of user's question
+		vector<string> inputWords;
+		stringstream ssin(q->msg.ToStdString());
+		while (ssin.good())
+		{
+			string word;
+			ssin >> word;
+			if (word != "")
+			{
+				word = stemming::english_stem<>::get_stemmed_text(word);
+				inputWords.push_back(word);
+			}
+		}
+
+		// Get data from database
+		vector<string> dictionary = ChatbotPanel::tfidfDatabase->getDictionary();
+		vector<vector<double>> tfidfMatrix = ChatbotPanel::tfidfDatabase->getMatrix();
+		vector<string> parArray = ChatbotPanel::tfidfDatabase->getParArray();
+		int parCount = parArray.size();
+		vector<double> sumsArray(parCount, 0.0);
+
+		// Compare input words to dictionary
+		for (string word : inputWords)
+		{
+			cout << word;
+
+			// Create array of sums of word importance / frequency
+			auto it = find(dictionary.begin(), dictionary.end(), word);
+			if (it != dictionary.end())
+			{
+				int idx = it - dictionary.begin();
+				for (int i = 0; i < parCount; i++)
+				{
+					sumsArray[i] += tfidfMatrix[i][idx];
+				}
+			}
+		}
+
+		// Sort sumsArray in parallel with parArray
+		for (int i = 0; i < sumsArray.size(); i++)
+		{
+			for (int j = i + 1; j < sumsArray.size(); j++)
+			{
+				if (sumsArray[i] < sumsArray[j])
+				{
+					double sumAux = sumsArray[i];
+					string parAux = parArray[i];
+					sumsArray[i] = sumsArray[j];
+					parArray[i] = parArray[j];
+					sumsArray[j] = sumAux;
+					parArray[j] = parAux;
+				}
+			}
+		}
+
+		string returnMessage = "";
+		returnMessage.append(parArray[0]);
+		a->msg = wxString::FromUTF8(returnMessage);
+		//for (string word : inputWords)
+		//{
+		//	returnMessage.append(word + " ");
+		//}
+
+		//a->msg = wxString::FromUTF8(returnMessage);
 	}
 }
 
@@ -332,7 +399,7 @@ void getFactForFeelingLucky(Message* f)
 
 void getQsAndAsForRecommended(Message q[], Message a[])
 {
-	for (int j {}; j < 4; j++)
+	for (int j{}; j < 4; j++)
 	{
 		q[j].msg = _("ceva");
 		q[j].isbot = true;
