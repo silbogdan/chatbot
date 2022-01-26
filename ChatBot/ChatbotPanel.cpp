@@ -2,9 +2,45 @@
 
 int i{};
 bool ChatbotPanel::is_waiting_for_search = false;
+bool ChatbotPanel::is_waiting_for_choice = false;
+Message ChatbotPanel::recommended_questions[4];
+Message ChatbotPanel::recommended_answers[4];
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
+const std::vector<std::string> luckyInfo =
+{
+	"The bioprocess study makes evident the principles that are the foundation of living systems. In the\
+			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\
+			be analyzed, together with the most interesting parameters and a general overview on the cell\
+			metabolism.In the second part, the most usual bioreactor types with some particularities will be\
+			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\
+			addition with the information  organization  modalities and other some consonant possibilities on\
+			these.\n\
+			Find out more about this in PART ONE.",
+		"From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\
+			bioprocess modes of operation:\n\
+		-  Batch cultivation;\n\
+		-  Fed-batch cultivation;\n\
+		-  Continuous cultivation\n\
+		Find out more about this in PART TWO.",
+		"One of the most important objectives for developing a general kinetic model is to establish a\
+			conceptual basis for microorganism growth description\n\
+			Find out more about this in PART TWO.",
+		"Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\
+			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
+			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
+			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
+			which is able to produce a wide range of extracellular enzymes growing on various substrates.\n\
+			Find out more about this in PART THREE.",
+		"The design of a fuzzy control system arises from organization necessity of the human expert\
+			knowledge.The  decisional quintessence of the control system is determined  by the\
+			transition from the information objective level to the subjective one(i.e.the information\
+			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\
+			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\
+			Caramihai, 1996).\n\
+			Find out more about this in PART FOUR"
+};
 
 ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
@@ -38,22 +74,65 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
 
 	delete bitmap;
+
+	/* initialize random seed: */
+	srand(time(NULL));
 }
 
 void ChatbotPanel::pushMessage(Message* x)
 {
+	int lenght;
+	const unsigned int max_lenght = 45;
+	std::string same;
+	std::string same_temp_substring;
+
 	if (x->msg == "") {
 		return;
 	}
-	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, !x->isbot, x->msg);
-	main_chat->SetItemFont(i, *custom_font);
-	i++;
+
+	same = x->msg.ToStdString();
+	lenght = same.length();
+
+	for (int k{}; k < lenght; )
+	{
+		if (k + max_lenght < lenght || (same.substr(k, max_lenght)).find_first_of('?') != -1 || (same.substr(k, max_lenght)).find_first_of(':') != -1)
+		{
+			//create a string thah has the maximum amount of characters before a space
+			same_temp_substring = same.substr(k, max_lenght);
+			auto temp = same_temp_substring.find_last_of(' ');
+			auto x = same_temp_substring.find_first_of('?');
+			if (x != -1)
+				temp = x + 1;
+			x = same_temp_substring.find_first_of(':');
+			if (x != -1)
+				temp = x + 1;
+			same_temp_substring = same.substr(k, temp);
+			k += temp;
+		}
+		else
+		{
+			same_temp_substring = same.substr(k, lenght - k + 1);
+			k = lenght + 1;
+		}
+		
+		wxString buffer(same_temp_substring);
+
+		//show buffer
+
+		main_chat->InsertItem(i, _(""));
+		main_chat->SetItem(i, !x->isbot, buffer);
+		main_chat->SetItemFont(i, *custom_font);
+		i++;
+	}
+	return;
 }
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
 {	 
 	Message* keyword, * answer;
+
+	int j{};
+
 	keyword = new Message();
 	answer = new Message();
 
@@ -61,12 +140,9 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	keyword->isbot = 0;
 	this->pushMessage(keyword);
 
-	if (ChatbotPanel::getSearchStatus())
-	{
-		getSearchResult(keyword, answer);
-		this->pushMessage(answer);
-		ChatbotPanel::deactivateSearch();
-	}
+	getSearchResult(keyword, answer);
+	this->pushMessage(answer);
+	ChatbotPanel::deactivateSearch();
 	
 	text_box->ChangeValue("");
 
@@ -112,16 +188,22 @@ void ChatbotPanel::feelingLucky(wxCommandEvent& event)
 
 void ChatbotPanel::recommended(wxCommandEvent& event)
 {
-	Message* question, *answer;
-	question = new Message();
-	answer = new Message();
 
-	getQandAForRecommended(question, answer);
-	this->pushMessage(question);
-	this->pushMessage(answer);
+	/*std::pair<Message*, Message*> retValues = getQandAForRecommended("Intrebare", "Raspuns");
+	this->pushMessage(retValues.first);
+	this->pushMessage(retValues.second);*/
 
-	delete question;
-	delete answer;
+	Message* recommendedMessage = new Message();
+	recommendedMessage->msg =
+		"Try asking these questions:\
+	What is the purpose of bioprocess study?\
+	What are the bioprocess modes of operation?\
+	What is important for developing a general kinetic model?\
+	What is cellulase?\
+	What is the purpose of a fuzzy control system?";
+	recommendedMessage->isbot = true;
+
+	this->pushMessage(recommendedMessage);
 }
 
 void ChatbotPanel::testKnowledge(wxCommandEvent& event)
@@ -185,23 +267,76 @@ ChatbotPanel::~ChatbotPanel()
 
 void getSearchResult(Message* q, Message* a)
 {
-	a->msg = _("I do not know anything about ") + q->msg + _(".");
 	a->isbot = true;
+
+	if (q->msg == "What is the purpose of bioprocess study?")
+	{
+		a->msg = _("The bioprocess study makes evident the principles that are the foundation of living systems. In the\
+			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\
+			be analyzed, together with the most interesting parameters and a general overview on the cell\
+			metabolism.In the second part, the most usual bioreactor types with some particularities will be\
+			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\
+			addition with the information  organization  modalities and other some consonant possibilities on\
+			these.\
+			Find out more about this in PART ONE.");
+	}
+	else if (q->msg == "What are the bioprocess modes of operation?")
+	{
+		a->msg = _("From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\
+			bioprocess modes of operation:\
+		-  Batch cultivation;\
+		-  Fed - batch cultivation;\
+		-  Continuous cultivation\
+		Find out more about this in PART TWO.");
+	}
+	else if (q->msg == "What is important for developing a general kinetic model?")
+	{
+		a->msg = _("One of the most important objectives for developing a general kinetic model is to establish a\
+			conceptual basis for microorganism growth description\n\
+			Find out more about this in PART TWO.");
+	}
+	else if (q->msg == "What is cellulase?")
+	{
+		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases, \
+			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
+			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
+			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
+			which is able to produce a wide range of extracellular enzymes growing on various substrates.\
+			Find out more about this in PART THREE.");
+	}
+	else if (q->msg == "What is the purpose of a fuzzy control system?")
+	{
+		a->msg = _("The design of a fuzzy control system arises from organization necessity of the human expert\
+			knowledge.The  decisional quintessence of the control system is determined  by the\
+			transition from the information objective level to the subjective one(i.e.the information\
+			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\
+			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\
+			Caramihai, 1996).\
+			Find out more about this in PART FOUR");
+	}
+	else
+	{
+		a->msg = _("I do not know anything about ") + q->msg + _(".");
+	}
 }
 
 void getFactForFeelingLucky(Message* f)
 {
-	f->msg = _("Bioprocesses are a mistery even for me!");
+	/* generate secret number between 0 and 4: */
+	int randNo = rand() % 5;
+	f->msg = _(luckyInfo[randNo]);
 	f->isbot = true;
 }
 
-void getQandAForRecommended(Message* q, Message* a)
+void getQsAndAsForRecommended(Message q[], Message a[])
 {
-	q->msg = _("What is the most important bioprocess?");
-	q->isbot = false;
-
-	a->msg = _("As if I know!");
-	a->isbot = true;
+	for (int j {}; j < 4; j++)
+	{
+		q[j].msg = _("ceva");
+		q[j].isbot = true;
+		a[j].msg = _("altceva");
+		a[j].isbot = true;
+	}
 }
 
 void getStatementForTest(Message* x, bool* is_statement_true)

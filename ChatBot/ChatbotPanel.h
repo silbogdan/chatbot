@@ -18,10 +18,14 @@ class ChatbotPanel : public wxPanel
 {
 public:
 	ChatbotPanel(wxPanel* parent);
-	void takeMessage(wxCommandEvent& event);
+
 	static wxTextCtrl* text_box;
 	static wxListCtrl* main_chat;
+
+	static bool is_waiting_for_choice;
+
 	void Resize(wxSizeEvent& event);
+	void takeMessage(wxCommandEvent& event);
 	void searchTopic(wxCommandEvent& event);
 	void feelingLucky(wxCommandEvent& event);
 	void recommended(wxCommandEvent& event);
@@ -33,13 +37,19 @@ public:
 
 	~ChatbotPanel();
 
+	static Message recommended_questions[4];
+	static Message recommended_answers[4];
+
 private:
 	static bool is_waiting_for_search;
+
 	wxBoxSizer* small_sizer;
 	wxBoxSizer* big_sizer;
 	wxBitmapButton* send_button;
 	void pushMessage(Message* x);
 	bool is_wating_for_search = 0;
+	
+	const std::vector<std::string> luckyInfo;
 
 	static const wxFont* custom_font;
 };
@@ -56,5 +66,5 @@ enum
 */
 void getSearchResult(Message* q, Message* a);
 void getFactForFeelingLucky(Message* f);
-void getQandAForRecommended(Message* q, Message* a);
+void getQsAndAsForRecommended(Message q[], Message a[]);
 void getStatementForTest(Message* x, bool* is_statement_true);

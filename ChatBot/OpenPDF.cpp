@@ -10,4 +10,5 @@ void OpenPDF::openPDF(string textPDF)
 	int nReturn = (int)ShellExecute(GetDesktopWindow(), L"open", convertedText, NULL, NULL, SW_SHOWNORMAL);
 	if (nReturn < 32)
 			throw 1;
+
 }

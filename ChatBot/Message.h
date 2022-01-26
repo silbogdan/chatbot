@@ -8,4 +8,6 @@ public:
 	wxString msg;
 	bool isbot = true;
 	int ID;
+
+	Message& operator=(Message& x);
 };
