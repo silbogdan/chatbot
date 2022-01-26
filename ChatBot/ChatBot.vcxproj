@@ -168,6 +168,7 @@
     <ClInclude Include="OpenPDF.h" />
     <ClInclude Include="PDFReader.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TFIDFMatrixCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AboutUsPanel.cpp" />
@@ -179,6 +180,7 @@
     <ClCompile Include="MyFrame.cpp" />
     <ClCompile Include="OpenPDF.cpp" />
     <ClCompile Include="PDFReader.cpp" />
+    <ClCompile Include="TFIDFMatrixCreator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

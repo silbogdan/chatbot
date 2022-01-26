@@ -38,3 +38,28 @@ std::string PDFReader::printText()
 
 	return finalText;
 }
+
+std::vector<std::string> PDFReader::getData()
+{
+	if (&file == nullptr)
+		std::cout << "No file was open";
+
+	std::string text;
+	std::string currText = "";
+	std::vector<std::string> finalTextArray;
+	while (std::getline(file, text))
+	{
+		if (text != "|")
+		{
+			currText.append(text);
+			currText.append("\n");
+		}
+		else
+		{
+			finalTextArray.push_back(currText);
+			currText = "";
+		}
+	}
+
+	return finalTextArray;
+}

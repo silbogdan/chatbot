@@ -1,110 +1,62 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Part two
-
-BIOPROCESS CONTROL STATEMENT
-
 In the first part of this section, the most usually literature models regarding the bioprocess 
 kinetic will be presented. Hence, based on a general admitted classification, different biomass 
 growth and product models in addition with bioprocess parameter evolution will be analyzed and the 
-conceptual limitations (if necessary) will be set up. In #2.2, the general control objectives will 
+conceptual limitations ( if necessary ) will be set up. In 2.2, the general control objectives will 
 be established, with a special emphasize on the economic performance criteria. Finally, a general 
 presentation on the control procedures will be made, and representative point of views will be 
 shown in order to point out the state of the art in the field and the outcoming tendencies.
+|
+2. 1.  BIOPROCESSMODELING
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1
-
-
-
-
-2. 1.  BI O PR O C E S S M O D E L I N G
-
-
-
-The knowledge about bioprocess behavior and modes of operation (Doran, 1986; Young, Bungay, 1973), 
+The knowledge about bioprocess behavior and modes of operation ( Doran, 1986; Young, Bungay, 1973 ), 
 allows the metabolic routes considerations in view of bioprocess optimal control. If that knowledge 
 is carried out in different kinetic equations, than:
-•  The    bioprocess    mathematical representation can be the basis for adequate  optimization  
-and  control technique  applications  (Moser,  1992; Wucherer et al., 1992);
-•  The  model  provides  the  necessary information about the characteristics of the chosen 
-procedure (Chen, Bastin, 1991; Bastin et al., 1992);
-•  A good model synthesizes the physiology and the genetic determinations of the specified 
-microorganism. Hence, this is the best technique to predict the process efficiency (Mosrati et al., 
-1991).
+   The    bioprocess    mathematical representation can be the basis for adequate  optimization  
+and  control technique  applications  ( Moser,  1992; Wucherer et al  1992 );
+   The  model  provides  the  necessary information about the characteristics of the chosen 
+procedure ( Chen, Bastin, 1991; Bastin et al  1992 );
+   A good model synthesizes the physiology and the genetic determinations of the specified 
+microorganism. Hence, this is the best technique to predict the process efficiency ( Mosrati et al  
+1991 ).
 
 The mathematical models, which describe the living cell evolution, must show the complex biosystem 
-attributes, must be as possible extensive and non-speculative and must be based on cell's 
-biochemistry (Freyer e/ al, 1989). Hence, the bioprocess model must be an  acceptable  compromise  
-between  the presentation of detailed internal processes (i.e. with considerable number of 
-parameters) and the consideration of a short parameter number, easy to use and estimate (Ljubenova, 
-Ignatova, 1994).
-
-Based on living system specificity, the bioprocesses  are characterized by non- linearity, 
-multivariability and parameter time variance (Eiki, Osono, 1990; Cushing, 1991;
-Stanbury, Whitaker, 1994; Kurtanjek, 1992). Consequently, the variables, which describe the 
+attributes, must be as possible extensive and non speculative and must be based on cell s 
+biochemistry ( Freyer e/ al, 1989 ). Hence, the bioprocess model must be an  acceptable  compromise  
+between  the presentation of detailed internal processes ( i.e. with considerable number of 
+parameters ) and the consideration of a short parameter number, easy to use and estimate ( Ljubenova, 
+Ignatova, 1994 ).
+|
+Based on living system specificity, the bioprocesses  are characterized by non  linearity, 
+multivariability and parameter time variance ( Eiki, Osono, 1990; Cushing, 1991;
+Stanbury, Whitaker, 1994; Kurtanjek, 1992 ). Consequently, the variables, which describe the 
 bioprocess evolution, demonstrate a strong interdependency, which make impossible the correlative 
-influences study (Turner ct al., 1988). The general equation presented below:
-
-
-2
-
-
+influences study ( Turner ct al  1988 ). The general equation presented below:
 is only a theoretical assumption.
 
-The attempts to realize such global models were not successful (firstly, due to the impossibility 
-to measure on-line the great number  of  bioprocess  parameters,  and secondly,  due to the high 
-degree of complexity, which characterizes the cell mechanisms). The deadlock was surmounted by the 
+The attempts to realize such global models were not successful ( firstly, due to the impossibility 
+to measure on line the great number  of  bioprocess  parameters,  and secondly,  due to the high 
+degree of complexity, which characterizes the cell mechanisms ). The deadlock was surmounted by the 
 implementation of the models depending of few variables, or by the use of the linear models for 
-restricted sections (periods of time) (Stanbury, Whitaker, 1994). This last one is functionally 
-taking into account that the bioprocesses are generally characterized by high time constants (hours 
-or tens hours), hence, the bioprocess should be considered quasi-linear (Stanbury, Whitaker, 1994).
-
-A general review of the bioprocess kinetic models was done by Moser (Moser, 1988). According to his 
+restricted sections ( periods of time ) ( Stanbury, Whitaker, 1994 ). This last one is functionally 
+taking into account that the bioprocesses are generally characterized by high time constants ( hours 
+or tens hours ), hence, the bioprocess should be considered quasi linear ( Stanbury, Whitaker, 1994 ).
+|
+A general review of the bioprocess kinetic models was done by Moser ( Moser, 1988 ). According to his 
 classification, for the modeling of the biosystems, the deterministic models are preferred to the 
-probabilistic ones. Several kinds of deterministic models were used (Moser, 1988):
-•  Unstructured models   the cells are considered  as black box. In these conditions the cell 
+probabilistic ones. Several kinds of deterministic models were used ( Moser, 1988 ):
+   Unstructured models   the cells are considered  as black box. In these conditions the cell 
 concentration is the most important parameter and the cell, as an entity, is significantly 
 influenced by the environmental conditions.
-•  Structured  models  — based on the assumption  of  the  cell  structure, considered at the level 
-of the main chemical components, or having in mind the cellular morphology (age, dimension, shape 
+   Structured  models based on the assumption  of  the  cell  structure, considered at the level 
+of the main chemical components, or having in mind the cellular morphology ( age, dimension, shape 
 etc.).
-
+|
 From  a  point  of  view  neglecting  the recognition/omission   of   the   above
-
-
-
-
-
-classification, Moser has proposed another classification (Moser, 1988):
-•  Unsegregated (continuous, distributive) models — which consider  individual identical cells;
-•  Segregated (corpuscular) models — based on individual cells consideration, but with distinctive 
+classification, Moser has proposed another classification ( Moser, 1988 ) :
+   Unsegregated ( continuous, distributive ) models which consider  individual identical cells;
+   Segregated ( corpuscular ) models based on individual cells consideration, but with distinctive 
 features.
 
 The segregated models are useful to describe biosystems characterized by average states. If the 
@@ -112,702 +64,96 @@ biosystem contains cells obtained after genetically modification, some character
 different from a cell group to another, and as a consequence, the correlation with the product 
 formation is more complex.
 
-The simplest and most used examples are the unstructured, unsegregated models (e.g. the Monod model 
-for the microbial growth). Only structured models are able to predict the biological  phenomena  in 
- unequilibrated conditions  of  growth  (the  growth  is equilibrated for a period of time if each 
-extensive property of the biosystem is proportional by increasing) (Campbell, 1977). The Monod 
-model is applied only for the biosystems with equilibrated growth (e.g. the exponential growth in 
-batch cultures and the steady state phase in continuous cultivation).
-
-Finally, the postulates defined by Edwards and Wilke (Edwards, Wilke, 1968) in the 
-bioprocess-modeling domain establish the biological kinetic norms; hence, a biological model:
-•  Must be able to represent all culture phases;
-•  Must be enough flexible to approximate different data types without the insertion of significant 
+The simplest and most used examples are the unstructured, unsegregated models ( e.g. the Monod model 
+for the microbial growth ). Only structured models are able to predict the biological  phenomena  in 
+ unequilibrated conditions  of  growth  ( the  growth  is equilibrated for a period of time if each 
+extensive property of the biosystem is proportional by increasing ) ( Campbell, 1977 ). The Monod 
+model is applied only for the biosystems with equilibrated growth ( e.g. the exponential growth in 
+batch cultures and the steady state phase in continuous cultivation ).
+|
+The postulates defined by Edwards and Wilke ( Edwards, Wilke, 1968 ) in the 
+bioprocess  modeling domain establish the biological kinetic norms; hence, a biological model:
+   Must be able to represent all culture phases;
+   Must be enough flexible to approximate different data types without the insertion of significant 
 distortions;
-•  Each model parameter must have a physic significance;
-•  Must be continuously derivable;
-•  The parameters must be easy to evaluate;
-•  The model must be easy to operate, once the parameters evaluated.
-
+   Each model parameter must have a physic significance;
+   Must be continuously derivable;
+   The parameters must be easy to evaluate;
+   The model must be easy to operate, once the parameters evaluated.
+|
 2.1.1.  Unstructured  and unsegregated models
 
-Conforming  to the  scientific  literature (Kossen, Oosterhuis, 1985), an unstructured model can be 
+Conforming  to the  scientific  literature ( Kossen, Oosterhuis, 1985 ), an unstructured model can be 
 conceived as black box and the structured one as gray box. A gray box is build as a black box 
 gathering in addition with their relationships, which define the biosystem structure. The 
 unstructured mathematical models can be:
-•  Constitutive equations:
-•  Kinetic equations.
-•  Transport equations.
-•  Thermodynamic equations.
-•  Balance equations (stoichiometry)
-
+   Constitutive equations:
+   Kinetic equations.
+   Transport equations.
+   Thermodynamic equations.
+   Balance equations ( stoichiometry )
+|
 2.1.1.1. Balance equations
 
-The balance equations were utilized (Cooney et af. 1977) to design an algorithm to keep up the 
+The balance equations were utilized ( Cooney et af. 1977 ) to design an algorithm to keep up the 
 monitoring of bioprocess performance indicators. The main parameters X,  xis and x/o  were  
 determined  using  the stoichyometric relationship relating to product formation and growth and by 
 the continuous monitoring of the oxygen flow rate, OUR, CPR and of the carbon and natrium source 
-consumption. The estimation algorithm was tested  on  a  batch  process  of  yeast (Saccharomyces 
-cerevisiae) growth using
+consumption. The estimation algorithm was tested  on  a  batch  process  of  yeast ( Saccharomyces 
+cerevisiae ) growth using
 glucose substrate.
 
 Through the next step, the proposed algorithm was used for optimal control of the feed rate in a 
-fed-batch bioprocess in order to increase the substrate consumption yield ( x s'  0,5) and to 
-maintain a high value of the cell mass productivity (dX/dt = max).
-
-2.1.1.2. Unstructured kinetic models for growth  depending  on  substrate concentration
-
-Generally speaking, one can consider that the specific growth rate (i.e. /r = 1 dX ) is the key
-X dt
-variable  for  cell  growth,  substrate consumption and product formation (Bastin, Dochain, 1990). 
-The specific growth rate is
-
-3
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-time dependent and, moreover, is dependent on different  physical,  chemical  and/or biological  
-parameters  (i.e.  substrate concentration, S, cell concentration, X, product concentration, P, pH, 
-temperature, T, dissolved oxygen concentration, pO2, and different inhibitors, I).
-
-
-a) p=p(S) Kinetic models with growth limitation through substrate concentration (without 
-inhibition)
-
-The Monod equation (Monod 1942, Monod, 1949) is the most used relation from this category. It is 
-empirically derived from the Michaelis & Menten equation (Michaelis, Menten, 1913; Sakamoto, 1986) 
-and can be considered as a formal kinetic equation (Moser, 1988; Sivakumar et al., 1994; Luong, 
-1987; Han, Levenspiel, 1988):
-
-2.1.1.2.2
-Kp + S
-
-where :Qmax'  maximum specific growth rate
-[1/h]
-KS = Saturation constant [g/L]
-
-The following figure shows the typical dependence of the specific growth rate upon substrate 
-concentration, without inhibition, conforming to Monod equation (kinetics with saturation).
-
-Conforming  to  literature  assumptions ((Bastin, Dochain, 1990), the specific growth rate 
-dependence upon different process parameters can be designed as follows:
-
-
-2.1.1.2.1
-
-Moreover, the substrate consumption rate is:
-
-
-2.1.1.2.3
-
-
-These dependencies are linked together through  the  yield  coefficient,   xis› conforming to the 
-following expression:
-
-
-2.1.1.2.4
-
-
-Other models were proposed alternatively. Some of they are presented below:
-•  Teissier equation (Teissier, 1936):
-
-2.1.1.2.5
-
-
-
-
-
-
-
-Substrate
-
-
-
-
-
-
-Substrate
-
-Fig. 2.1.1.2 p=p(S) dependence cf. Teissier equation
-• Moser equation (Moser, 1988):
-
-
-
-Fig. 2.1.1.1 p=p(S) dependence, cf. Monod law
-
-K + S"
-2.1.1.2.6
-through analogy with a Hill kinetic (n>0)
-4
-
-PART
-
-BIOPROCESS CONTROL STATEMENT
-                                TWO                               
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Substrate
-
-
-Fig. 2.1.1.3 p=p(S) dependence cf. Moser equation
-•  Blackman equation (Blackman, 1905):
-
-S(t)  if  S(t)  K
-“   2.1.1.2.7
-
-
-
-•  Powell equation (Powell, 1958); the influence of cell permeability, substrate diffusion and cell 
-dimensions are showed through KDparameter:
-s
+fed batch bioprocess in order to increase the substrate consumption yield ( x s   0,5) and to 
+maintain a high value of the cell mass productivity ( dX/dt = max ).
+|
 There are also some models, which utilize the substrate concentration in more complex structures. 
-Hence, Verhoff (Verhoff et al., 1972), introduces two steps in the cell behavior: assimilation and 
+Hence, Verhoff ( Verhoff et al  1972 ), introduces two steps in the cell behavior: assimilation and 
 ingestion, but the resulting equation is too complex. Moreover, Nyholm (Nyholm, 1976), introduces a 
-dual function for substrate utilization: consumption (including assimilation and desassimilation in 
-the liquid phase) and growth (substrate utilization for growth):
-
-2.1.1.2.9
-
-
-where S, is the substrate utilized for growth and Sathe substrate used for consumption. The growth 
-rate is linked to the intracellular concentration of limiting substrate (S 'X) and to preserved 
-substrates (i.e. inorganic ions or vitamins, which are not decomposed through cell metabolism):
-
-‘6‘ K +K + S
-2.1.1.2.8                                         
-dSi„
-dt
-2.1.1.2.10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Substrate
-
-
-Fig. 2.1.1.4 p=p(S) dependence cf. Powell equation
-
+dual function for substrate utilization: consumption ( including assimilation and desassimilation in 
+the liquid phase ) and growth (substrate utilization for growth )
+|
 Conforming to literature references, the Monod kinetic slowly tills to the asymptotic value; i.e. 
 it fit not well the experimental data,
 This kinetic model has a practical application in the wastewater treatment field.
 
 One of the most important objectives for developing a general kinetic model is to establish  a  
-conceptual  basis  for microorganism growth description (O'Neil, Fyeratos, 1986). Therefore, the 
-general dependence of the cell growth upon substrate concentration can be considered (Neubert et 
-al., 1984) as a difference {tmax  J. Hence, Konak kinetics (Konak, 1974) can be taken into 
-consideration:
-
-dg
-
-in simplest cases. Hence, the Teissier and Blackman kinetics represent better the data evolution 
-because the saturation level is faster attempted.
-dt
-
-where: k = kinetic constant p = reaction order
-2.1.1.2.11
-
-
-
-
-
-
-5
-
-PART
-
-BIOPROCESS CONTROL STATEMENT
-                                TWO                               
-
-
-This equation designates an analogy with the well-knownpower law, which is utilized in the chemical 
-kinetics field. If the relative growth rate notion (in a biological sense) is introduced:
-rel                        2.1.1.2.12
-then equation (2.1.1.2.11) can be written:
-d
-Table 2.1.1 Specific cases for eq. 2.1.1.2.15
-Model     K     m     p
-Monod     I/Ks     0     2
-Teissier    I/Ks     0     1
-Hill-     n/Ks”ⁿ   1-1/n   1+1/n Moser
-b) p=p(X,S) The influence of cell and substrate concentrations upon the specific growth rate, p
-
+conceptual  basis  for microorganism growth description ( O Neil, Fyeratos, 1986 ). Therefore, the 
+general dependence of the cell growth upon substrate concentration can be considered ( Neubert et 
+al  1984 ) as a difference.
+|
 2.1.1.2.13
-dS
-
 Konak has demonstrated that this equation can be reduced to a Monod kinetic (for p = 2) and to a 
-Teissier kinetic (for p = 1). An attractive
+Teissier kinetic ( for p = 1 ). An attractive
 dependence between Jtmax and Ks can be
 written:
-Because the dependence q=f(X) also involves (Yamane, 1993) a dependence upon the substrate 
+Because the dependence q=f(X) also involves ( Yamane, 1993 ) a dependence upon the substrate 
 concentration, there are few models which express a double influence; the most commonly being 
 written as q = f(X,S).
-
-From the cell growth point of view (Chattaway et al., 1992), the culture evolution rate decreases 
-if the cell concentration increases (Mulchandani, Luong, 1988; Matanguihan et
-
-KS —
-
-
-Qmax‘
-2.1.1.2.14
-al., 1994). A simple kinetic model which describes these situations was proposed by Verhulst 
-(Verhulst, 1845) through a linear
-
-Based on above (differential) equations, Kargi and Shuler (Kargi, Shuler, 1979) has obtained the 
-following relationship:
-dependence:
-
-
-
-2.1.1.2.166
-
-
-d
-—— K(   ) (1 —   )   2.1.1.2.15
-dS
-This model is also named the growth logistic model (fig.2.1.1.6).
-where K, m, p = constants
-Meanwhile, the general equation (2.1.1.2.15) can be reduced to the following simple models:
-Substrate
-Fig. 2.1.1.5 p=p(X) dependence cf. Verhulst equation
-Meyrath (Meyrath, 1973) introduced a more realistic equation, which defines the growth
-6
-
-limitation through substrate concentration. This model is based on Monod kinetic:
-dX  k,'k’C,'C’ — k C        2.1.1.2.21
-dt    ²      ³
-
-
-s, —Y
-Ks + 0 Y
-where Y = the substrate/cell yield.
-
-
-
-2.1.1.2.17
-
-where: Ci = limiting substrate concentration Cz = co-substrate concentration;
-C3product concentration;
-X,..t = critical cell concentration.
-The reaction order changes if X = X„,i. Hence,
-Based on the above model, the Verhulst —    1 = 1 and j = 0 if X < Xc„t, 1 = 0 and j = 1 if X Pearl 
-kinetic was proposed:             >  t
-
-
-N —— N exp(fmaxt)
-_    N0/r0a, exp(/r0a,/)
-y0a, + m,N0 (exp(/r0a,f) — 1)
-
-
-2.1.1.2.18
-Other corresponding interesting kinetics are presented below:
-•  Nihtila and Virkkunnen model (Moser, 1988)
-
-
-The most known model in the related field (q
-= f(X,S) is the Contois (Contois — Fujimoto) equation (Contois, 1959):
-'  Qmax K,«+ s         2.1.1.2.19
-
-dC —— K S(t)(X(t) — C(t)) — K DC(t)
-dt  ²
-2.1.1.2.22
-
-where: C(t)
-concentration;
-cell-substrate  group
-
-As it can be seen, if S = constant, the only dependence remains p = f(X).
-
-Kono and Asai (Kono, Asai, 1968) built a growth equation based on chemical kinetic concepts.  
-Hence,  a  growth  consumption activity coefficient & was introduced. This coefficient  was  
-redefined  by  Bastin  as apparent growth activity coefficient.
-
-2.1.1.2.170
-
-where Kx   growth  rate  constant  (has different values depending on the growth step in a batch 
-culture);
-G = 0, induction phase;
-G = ‹p, cu 0 < ‹p < 1, transition phase,
-‹p = at;
-G  1, exponential phase
-The basic idea of Kono was a general growth equation:
-KI, K₂, K₃ = Constants
-•  Kishimoto  model  (Kishimoto, 1978):
-
-
-2.1.1.2.23
-
-where  ,I, S — corresponding mean values; Hi. Qz = regression coefficients.
-•  Staniskis and Levisauskas model (Moser, 1988):
-
-2.1.1.2.24
-
-
-
-
-c) Growth kinetic with substrate inhibition
-
-In most cases, the kinetic model equations are derived (like the Monod model) from the
-
-7
-
-PART
-
-BIOPROCESS CONTROL STATEMENT
-
-                                TWO                               
-
-inhibition  theory  of  enzymatic  reactions.   
-
-
-
-2.1.1.2.27
-
-Hence, these equation types are not generally valid. They can be applied in connection with 
-experimental acceptability.
-
+|
 The most usually kinetic models with substrate inhibition are presented below:
-•  Andrews  model  (Andrews Noack), substrate inhibition in a
+   Andrews  model  (Andrews Noack), substrate inhibition in a
 chemostat (Andrews, 1968):
-Qmax 1 + K +
-S
-
-where: Ki,S   =  inhibition  constant (considering the substrate influence).
-•  Aiba model (Aiba, Hara, 1965):
-
-
-1
-a in K+,  S
-S   1
-Kp + S 1 + s
-p   p
-  s   e K S K, + s
-2.1.1.2.28
-
-S  K,
-K,
-2.1.1.2.25
-The graphical presentation is given below:
-where: K, = inhibition constant (considering with the substrate influence).
-The graphical presentation is the following:
-Substrate
-Fig. 2.1.1.7 p=p(S) dependence cf. Aiba equation
-
-
-
-
-
-
-
-
-
-Substrate
-
-
-Fig. 2.1.1.6 p=p(S) dependence cf. Andrews equation
-
-•  Webb model (Webb, 1963):
-
-S(1  S
-
-Edwards (Edwards, 1970) analyzed eqs. (2.1.1.25 - 2.1.1.28) based on different experimental data 
-sets. He demonstrated that it is not an objective criteria to classify these equations  regarding  
-the  generalization potential.  Hence,  he recommended  the Andrews model as the simplest and easy 
-to use.
-
-Wayman and Tseng (Wayman, Tseng, 1976) proposed a different equation type in order to introduce a 
-substrate inhibition kinetic:
-
-
-2
-S+ K
-K'
-2.1.1.2.26
-  S  
-— K,  (S — Sp)    2.1.1.2.29
-
-
-where: K,’ = inhibition constant (considering the substrate influence).
-•  Yano model (Yano et al., 1966)
-
-
-8
-where: Sc = limiting substrate concentration (a threshold value).
-
-PART
-
-BIOPROCESS CONTROL STATEMENT
-                                TWO                               
-
-This equation can be used whether the specific growth rate has a linear reduction trend (fig. 
-2.1.1.9).
-
-
-
-
-
-
-
-
-Product
-
-
-Fig. 2.1.1.9  p=p(P) dependence  cf. Holzberg equation
-
-
-Substrate
-
-
-Fig. 2.1.1.8 p=p(S) dependence cf. Waymann & Tseng equation
-
-•  Ghose and Tyagi model (Ghose, Tyagi, 1979) fig. 2.1.1.11:
-
-
-d) p = f(S,P) Growth kinetic with product inhibition
-
+Qmax 1 + K + S
+|
 Hinshelwood (Hinshelwood, 1946) detected different product inhibition influences upon the specific 
 growth rate: linear decrease, exponential decrease, growth sudden stop, and linear/exponential 
-decrease in comparison with a threshold value of P. The first type (Hinshelwood - Dagley model) is 
-presented below:
-
-
-
-where: Pmax
-concentration.
-2.1.1.2.32
-
-
-
-maximum  product
-
-
-l  kP)    2‘1.1.2.30
-s
-
-
-where: k  inhibition constant (considering the product concentration influence)..
-
-This equation was modified as follows:
-•  Holzberg model (Holzberg et al., 1967):
-
-
-Product
-
-
-Fig. 2.1.1.10 p=p(P) dependence cf. Ghose & Tyagi equation
-
-A different equation type was introduced by
-
-p{P) —— ypq  — K,{P — K₂}
-
-where: Kt, K2= constants (>0).
-2.1.1.2.31
-Aiba (Aiba, 1982), fig. 2.1.12:
-
-/r(P) = yp e K'""'
-
-
-
-2.1.1.2.33
-
-
-The graphical presentation of Holzberg model is presented below:
-where: Ki = constant
-
-
-
-9
-
-PART
-
-BIOPROCESS CONTROL STATEMENT
-                                TWO                               
-
-e) The influence of dissolved oxygen (as a second substrate) upon the specific growth rate
-
+decrease in comparison with a threshold value of P
+|
 Usually, the dissolved oxygen can be considered as a second substrate (Eiki, Osono, 1990). Hence, 
 the most used equation is the kinetic model with double growth limitation, q(S,C), i.e. Olsson 
-model (Moser, 1988):
-
-
-Product
-
-
-Fig. 2.1.1.11 p=p(P) dependence cf. Aiba equation
-
-The Aiba and Shoda model (Aiba, Shoda, 1989) presents a variant of the above equation:
-
-2.1.1.2.34
-a                2.1.1.2.37
-‘ ‘ K + S KC + C
-
-where: Kp = saturation constant (vs. oxygen), or, more complex, the Williams model (Williams, 
-1969):
-
-    K P 
-
-
-
-Also  lerusalimsky  (lerusalimsky, 1967)
-(S, C, P) ——
-
-  c 
-• (
-2
-'K + S K p + P'
-
-+ +K C — A )
-
-2.1.1.2.38
-
-recommended a model type describing the dependence q = f(P,S) which is similar with an
-KC + C
-
-enzymatic kinetic:
-
-
-
-
-or, more developed:
-
-
-
-2.1.1.2.35
-
-
-
-
-
-
-2.1.1.2.36
-f) The influence of environmental factors upon the specific growth rate
-
-There are simple models proposed to predict the pH effect (Ben-Hassan et al., 1991) on the process 
+model (Moser, 1988)
+|
+There are simple models proposed to predict the pH effect (Ben Hassan et al  1991) on the process 
 behavior:
-•  Andreyeva   and   Biriukov (polynomial model) (Andreyeva, Biriukov, 1973):
-
-p(p
-°  (ppz + b UPS +
-
-where: Ki  inhibition constant (considering the product concentration influence).
-
-The last equation represents the most useful kinetic model regarding growth kinetic with
-2.1.1.2.39
-
-•  Jackson and Edwards model (with inhibition) (Moser, 1988):
-
-     H+   
-
-product inhibition.
-(H“) ——
-K + H“ + N,(// )²
-2.1.1.2.40
-
+   Andreyeva   and   Biriukov (polynomial model) (Andreyeva, Biriukov, 1973)
+|
 In order to model the simultaneous efect of substrate concentration and pH, q = f(S,pH), there are 
 different variants of the previous equations:
-
-
-10
-
-
-
-
-
-•  Andreyeva   and   Biriukov (Andreyeva, Biriukov, 1973):
-fi2 (  = A4
-2.1.1.2.47
-— KB
-T — N )²
-
-
-
-
-
-
-
-or:
-SH“
-K + SH“ +
-
-(S// )²
-K,
-
-
-
-
-2.1.1.2.41
-g) p(Si,S2) Kinetic models based on different substrates
-
-The  dissolved  oxygen  was  commonly considered as a second substrate (cf. e)). However, there are 
-many cases when two or more  carbon  sources  are  taken  into
-
-
-
-2.1.1.2.42
-S   KH
-Kp + S KH + H+
-consideration (Chiu et al., 1972). There are two primary cases regarding these aspects:
-•  The cells grow through the sequential (consecutive)  substrate  consumption
-
-•  Jackson and Edwards (Moser, 1988):
-
-(S,H+) ——
-S
-(diauxy); hence, a simple Monod model can be utilized;
-•  The cells grow through the simultaneous consumption  of  substrates  (e.g. wastewater 
-treatment); in this case, the mathematical modeling is more complex
-
-(1 +
-K + II“
-II“  C
-
-)(KH + S +
-s2
-K,(1+ A³
-H“
-2.1.1.2.43
-(Chiu et al., 1972).
-
-2.1.1.3. Unstructured kinetic models for product formation
-
-
+|
 The temperature influence is introduced through  an  Arrhenius  equation  type, conforming to 
-Topiwala and Sinclair model (Topiwala, Sinclair, 1971):
-
-p(    A,e *T — A2,e *T — A ,  T e [T, T2 ]
-0              T z [T, T₂ ]
-2.1.1.2.44
-
+Topiwala and Sinclair model (Topiwala, Sinclair, 1971)
+|
 Finally, Constantinides (Constantinides et al. 1970) defines the dependence p(T,X) using the 
 following equation:
 The product formation kinetic is taken into account in conjunction with the growth kinetic. 
@@ -818,157 +164,51 @@ Type 0: This production type occurs even in resting cells that use only a little
 their own metabolism. The microbial cells function only as enzyme carriers. Some examples  are  
 provided  by  steroid transformation and vitamin E synthesis by Saccharomyces cerevisiae.
 
-
-y(T, X) —— b,(T)(l
-
-where:
-
-by(T)'
-2.1.1.2.45
-Type 1: Type-1 situations include processes in witch product  accumulation is directly associated 
+Type 1: Type 1 situations include processes in witch product  accumulation is directly associated 
 with growth; in this case the product formation is linked to the energy metabolism. Examples 
 include fermentation
 
-b,(T) = K, — K (T — 3)²
 
-and:
-2.1.1.2.46
-to produce alcohol and gluconic acid and situations in biological wastewater treatment.
-
-Type  2.  Type-2  bioprocesses  include fermentations in which there is no direct
-
-11
-
-PART
-
-BIOPROCESS CONTROL STATEMENT
-                                TWO                               
-
-
+Type  2.  Type 2  bioprocesses  include fermentations in which there is no direct
 connection between growth and product formation  (for example,  penicillin and streptomycin 
 synthesis).
+
 Type 3. This production type includes those having a partial association with growth and thus, an 
 indirect link to energy metabolism (e.g. citric acid and amino acid production)
-
-Recognition of the production type is done with the aid of plots rs. rx. rp '  f(t), and expressly, 
-tacking into consideration the specific rates is. b. qP-
-
-The diagram of the time dependence of the bioprocess  specific  rate  is  called quantification 
-diagram (Moser, 1988). It gives the best insight into the bioprocess and a basic for designing 
-mathematical models.
-
-The following figure shows the formal kinetic linear relationship between specific rates (product 
-formation rate, qp, vs. specific growth
-rate, p).
-rp  Ypf try               2.1.1.2.50
-
-Finally, the following relationship exists between yield factors:
-
-2.1.1.2.51
-
-
-Substituting a Monod-type equation into eq.
-2.1.1.2.50 results in a hyperbolic function (Moser, 1988) for production in the case of growth 
-association:
-
-2.1.1.2.52
-
-
-Type 3. Non-growth-linked product formation is more difficult to quantify because no direct 
-relationship  to  growth  exists.  As  an alternative, the dependence rp  f(X) is often 
-successfully used:
-
-2.1.1.2.53
-
-Product formation can also be quantified by the dependence of substrate utilization (cf. eq. 
-(2.1.1.2.50).
-
-Type 2: When product formation is partly growth linked and partly independent of growth, a 
+|
+When product formation is partly growth linked and partly independent of growth, a 
 combination of eqs. (2.1.1.2.49) and (2.1.1.2.53) is valid, as it was proposed by Luedeking and 
 Piret (Luedeking, Piret, 1959):
-
-
-Fig. 2.1.1.13 — Product formation rate vs. specific growth rate cf. Gaden equations (type I, II, 
-III)
-
-Type 1. Product formation linked to microbial growth can be described by (Moser, 1988):
-2.1.1.2.54
-
-Hence, the general forms of eq. (2.1.1.2.54) — with eqs. (2.1.1.2.49) and (2.1.1.2.53) as boundary 
-cases — suggests a logistic equation (Luedeking, Piret, 1959, Moser, 1988).
-
-rp  Ypf yrp
-and:
-2.1.1.2.48
-
-
+|
 2.1.1.2.49
 
 Kono and Asai (Kono, Asai, 1968) introduced a generalized concept, using the consumption 
-coefficient G (as an apparent coefficient of growth activity):
-
-In  the  same  way,  Constantidines (Constantinides et al. 1970):
-
-12
-
-2.1.1.2.55
-
-
-
+coefficient G (as an apparent coefficient of growth activity)
 
 
 This equation can be linked to eq. (2.1.1.2.20) which describes the specific growth rate evolution. 
 Hence, the Gaden type product formations can be particularized through different values of the 
 parameter kpq: kp q > 0
-or kp q < 0, j' 1p 2
+or kp q < 0, j  1p 2
 
 In special cases, different kinetic equations were proposed, according to experimental data (Shu, 
 1961, Fishman, Birjukov, 1974, Ryu,
 Humphrey, 1972, Brown, Vass, 1981).
-
+|
 2.1.2. Structured models
 
 The most important structured models are correlated with the chemical cell structure. Williams  and 
  Ramkrishna  has  proposed models  with  two  components.  Williams (Williams,  1975)  has  
-considered  the concentration of R-components (principally ARN) and D-components  with structural- 
-genetic part (ADN and proteins). Ramkrishna (Ramkrishna, 1969) has divided the cell in G- mass (ADN 
-and ARN) and D-mass (proteins). Fredrickson (Fredrickson, 1970) has analyzed later on these models 
-and has demonstrated their invalidity, due to kinetic expressions which don't utilize the intrinsic 
+considered  the concentration of R components (principally ARN) and D components  with structural  
+genetic part (ADN and proteins). Ramkrishna (Ramkrishna, 1969) has divided the cell in G  mass (ADN 
+and ARN) and D mass (proteins). Fredrickson (Fredrickson, 1970) has analyzed later on these models 
+and has demonstrated their invalidity, due to kinetic expressions which don t utilize the intrinsic 
 concentrations of structural components.
 
 A rigorous structured model involves kinetic equations, which take into account the intrinsic 
 concentrations of components (i.e. the component quantity / cell unity of volume).
-
-Hence, Frederickson builds up the general balance of a discontinuous reactor:
-
-d(mVc )
-2.1.2.1
-dt
-
-where: m = total biomass (at time f);
-V — volume filled by the cells / cell mass unit;
-C = mass of componenty / cell volume unit (intrinsic concentration of componenty);
-r, = appearance/disappearance of
-componenty through process i / cell volume.
-
-If  is constant and one consider (cf. the unstructured kinetic) that:
-
-1 dm
-2.1.2.2
-m dt
-
-the following equation can be obtained:
-dc
-2.1.2.3
-dt
-
-In the most structured models, the expression QC can be ignored.
-
-Moreover, the term Cj can be substituted with the concentration X/ (mass of component y / cell mass 
-unit), in conformity with the following relation:
-
+|
 2.1.2.4
-
 
 The structured models can be applied for the mixed cultures, too. In these cases, the chemical  
 structure  is  substituted  with component  specie  divisions  (population models).
@@ -976,170 +216,62 @@ structure  is  substituted  with component  specie  divisions  (population model
 Harder and Roels (Harder, Roels, 1981) surveyed the biotechnology applications of simple structured 
 models. Moreover, they presented the main principles of structured model design (derived from 
 molecular biology):
-•  The  modifications  of  substrate/ intermediate  concentrations  induce modifications of the 
+   The  modifications  of  substrate / intermediate  concentrations  induce modifications of the 
 reaction rates;
-•  The enzyme interactions with some small molecules  generate  modifications  of enzyme 
+   The enzyme interactions with some small molecules  generate  modifications  of enzyme 
 conformation;
-•  The  concentration  of  some  cell macromolecules accommodate oneself to environment conditions 
+   The  concentration  of  some  cell macromolecules accommodate oneself to environment conditions 
 through synthesis rate modification;
-•  The natural selection is an adaptation modality;
-
-
-13
-
-
-
-
-
-•  The environment changes can induce some modifications in respect of different species in a mixed 
+   The natural selection is an adaptation modality;
+   The environment changes can induce some modifications in respect of different species in a mixed 
 culture.
-
+|
 Following these principles and according to the time relax concept, the authors proposed some 
 structured models:
-•  Biomass grow conforming to a bi- compartimental model;
-•  Biomass grow conforming to a tri- compartimental model;
-•  The synthesis of enzymes, which are genetic controlled.
+   Biomass grow conforming to a bi  compartimental model;
+   Biomass grow conforming to a tri  compartimental model;
+   The synthesis of enzymes, which are genetic controlled.
 
 Moreover, Ryu and Kim (Ryu, Kim, 1992) studied a recombinant cell bioprocess (i.e. with/without 
 plasmid carrying cells).
-
-For product formation kinetic, the following equation can be proposed:
-
-2.1.2.5
-
-
-where: k₀ = constantof the global biosynthesis rate;
-c = genetic expression efficiency;
-Gp ADN concentration in plasmids; q“ = specific growth rate of plasmid
-carrying cells;
-b = constant.
-
-This  equation  can  be  related  to  the
+|
 2.1.3. Segregated kinetic models
 
-The scientific literature doesn't clearly present other segregated kinetic models, except those 
+The scientific literature doesn t clearly present other segregated kinetic models, except those 
 using the composition based on chemical structure.
 
-Shuler (Shuler, 1985) defines as segregated (but unstructured) models, the models based on the 
+Shuler (Shuler, 1985) defines as segregated ( but unstructured ) models, the models based on the 
 presumption that an unique variable (i.e. cell age, cell dimensions) can completely describe the 
 cell state (i.e. all cells with the same age or dimensions have the same chemical  composition  and 
  the  same productive potential).
 
 Also, Bley (Bley, 1987) proposed a specific model for yeast cells, which comprises two different 
-physiological states — budding
+physiological states  budding
 /unbudding cells. Moreover, he proposed a model taking into consideration the yeast cells,  which  
-are characterized  by two physiological states. The two states differ through  q,  dS/dt,  biomass  
+are characterized  by two physiological states. The two states differ through  q,  biomass  
 production efficiency, etc. Hence, for a continuous process, in which the state transition is 
-(mainly)  influenced  by  the  substrate concentration (S), the following equations are valid:
+(mainly)  influenced  by  the  substrate concentration (S)
 
-dJ dt
-
-unstructured model of Luedeking - Piret (eq.
-dJ2
-= (y (  — k (S) — D)X + k,(S)X
-
-2.1.1.2.54), which can be written as follows:
-
-dP  A dX“  + BX“        2.1.1.2.54’
-dt   dt
-dt    2    2
-dS dt
-
-
-
-
-
-2.1.3.1
-
-where: X“ = concentration of plasmid carrying cells;
-
-Hence, the parameters A and B get a biological significance:
-
-A  ko
-where: X  = biomass concentration for budding cells;
-X2   biomass concentration for unbudding cells;
-D = dilution rate.
-In this model, k (S) represents the specific rate to pass from the state Xt to X2, and k2(S) the
-
-B —— Ab
-
-
-14
-2.1.2.6
-specific rate for the inverted process; oi (S) and oz(S) represent the coefficients of yield
-
-
-
-
-conversion  (S  —+  Xi and S  —+  X2, respectively).
+|
 
 Nowadays, the segregated and structured models are insufficiently applied. They were taken over 
 from molecular biology and physiology, where they play an important role in cell mechanism 
 investigations (Sonnleitner, Fiechter, 1989). For a fast increase of their applications in 
 bioprocess control it is necessary:
-•  To develop the non-destructive analytical techniques (Sonnleitner, 1992);
-•  To link the mathematical modeling to the understanding  of  the  internal  cell mechanisms (van 
+   To develop the non destructive analytical techniques (Sonnleitner, 1992);
+   To link the mathematical modeling to the understanding  of  the  internal  cell mechanisms (van 
 Breusegem, Bastin, 1992).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15
-
-
-
-
-2. 2. C O NT R O L ST R U C T U R E C O N F I G U R A T I O N
-
-
-
+|
 2.2.1. Control statement
 
 The bioprocess control (and optimisation) strategies  are  based  on  three  main implementations 
-(Pokkinen et al., 1992):
-•  Algorithmic optimisation: the optimum can be analytically reached (due to relationship defined 
+(Pokkinen et al  1992):
+   Algorithmic optimisation: the optimum can be analytically reached (due to relationship defined 
 between process parameters);  hence,  the  algorithmic optimisation is cheaper that the adaptive 
 one;
-•  Adaptive  optimisation:  this  kind  of optimisation  requires  not  a  priori knowledge  
+   Adaptive  optimisation:  this  kind  of optimisation  requires  not  a  priori knowledge  
 regarding  the  existing relationships   between   bioprocess parameters;
-•  Intelligent  technique  optimisation: requires knowledge transfer from a human expert to the 
+   Intelligent  technique  optimisation: requires knowledge transfer from a human expert to the 
 control structures (expert system, neural nets, fuzzy structure, etc).
 
 Generally speaking, the first solution offers the answer based on peak parameter values estimation, 
@@ -1152,261 +284,68 @@ conditions, due to living cells and metabolic cycles.
 
 The major bioprocess control difficulties are presented below (DECHEMA, 1984):
 
-
-
-
-
-
-16
-•  The impossibility to access on-line all process variables;
-•  The measurements are noise influenced;
-•  The process has high value of time delay;
-•  The process parameters are strongly interconnected;
-•  The bioprocess evolution curves are time varying  and  depend  upon  initial conditions.
-
-The first obstacle till to be removed through the large-scale use of biosensors (e.g. glucose 
+   The impossibility to access on line all process variables;
+   The measurements are noise influenced;
+   The process has high value of time delay;
+   The process parameters are strongly interconnected;
+   The bioprocess evolution curves are time varying  and  depend  upon  initial conditions.
+|
+The first obstacle till to be removed through the large scale use of biosensors (e.g. glucose 
 sensor). The standard method is based on observation schema (Nogai, 1979), which utilise secondary 
-measurements. For example, it is easy to determine the RQ values (in a fed- batch bioprocess) 
-through the substrate addition varying. In this case, the main problem is to fix the set-point 
+measurements. For example, it is easy to determine the RQ values (in a fed  batch bioprocess) 
+through the substrate addition varying. In this case, the main problem is to fix the set point 
 value of the secondary variable in order to attempt the desired value of the primary process 
 variable.
 
 The general configuration of a bioprocess control structure is shown in fig. 2.2.1.
-
+|
 2.2.2. Performance criteria
 
 The scientific  literature  (Moser,  1988, Richards, 1988, Trilli, 1977) recommends, from the 
 bioprocess control point of view, three performance indices, which must be maximised:
-•  the productivity;
-•  the conversion;
-•  the profit.
+   the productivity;
+   the conversion;
+   the profit.
 
 The productivity and the conversion rate look upon technological aspects, and the last one 
 considers the economic point of view.
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-
-
-
-
-
-
-Data processing:
--filtration
--conversion
--test
-
-Step progress
-
-
-
-
-Materia I & energetic balance
-
-Complex parz meter evaluation
-
-
-
-
-adjustment
-
-Measure Alarm Reports
-
-
-
-
-
-
-Bioprocess control
-
-
-
-
-Fig. 2.2.1 The general structure of bioprocess control
-
-To  clarify  the  productivity  concept  (rj) (dimensions kg*m '*h ¹), the curve from the 
+|
+To  clarify  the  productivity  concept  (rj) , the curve from the 
 considering  fig.  2.2.2  can  be  used demonstrates  for discontinuous  processes. Hence, a 
 certain lag time, to, is necessary between production cycles due to harvesting,
 emptying and refilling operations (Moser, 1988).
-
-
-Drawing a tangent from this point to the concentration/time curve, the value of the product 
-concentration is obtained at point 2; this level can be reached  in the whole production time 
-(ttot't0 tr).
-
-
-time
-
-Fig. 2.2.2 Schematic representation of optimal operating point for a process based on different 
-economic criteria (from Moser, 1988)
-
-34
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-The maximum productivity attainable in a discontinuous bioprocess can be calculated from:
-The output of the reactor (dimensions tons/day)  can  be  calculated  from  the relationship:
-
-
-r.    CmaxJ                  2.2.1
-Output —— {,n, —— Yin,
-2.2.4
-
-Point 1 (fig. 2.2.2) gives the maximum productivity of an equivalent continuous bioprocess (because 
-a continuous process has no dead time, the slope of the tangent is greater than in a batch 
-process).
-Moreover, at point 5 the productivity is 0. This point may be of interest when very expensive
-where nI is the mass flow of component i [t/d] (Moser, 1988). If {, —› 1 or Y, —r 1, the output 
-will be equal to ni-
-Point 4 in fig 2.2.2 represents the point where the minimum costs are reached (Moser, 1988). The 
-accumulated cost at any time can be formulated according to:
-
-substrates are being used (Moser, 1988): in these cases, the process may be run to
-CB+ C
-2.2.5
-
-complete substrate utilisation.
-
-The conversion, \i, is defined (V = constant):
-
-Ci — C ,
-W  W
-
-where: CB   batch  costs  (sterilisation, materials, etc.);
-CR= running costs (stirring & aeration
-
-$,=   ⁰   
-i0
-2.2.2
-power, etc.)
-
-Hence, a typical time course for the
-
-and can also be given as a relative quantity:
-
-
-2.2.2’
-Y i max
-accumulation of costs in a batch bioprocess is shown in fig. 2.2.3; the time when costs are minimal 
-(n) may be calculated.
-
-C0St, C
-
-Moreover, a yield,  i/j, Can be determined as follows:
-
-
-
+|
 2.2.3
 
-
-The yield compares the total amount of a product j yielded from an amount of material i consumed. A 
-relative yield can also be defined:
-
-CB
-
-Time, t
-Fig. 2.2.3 Typical cost time evolutions for a discontinuous bioprocess over time (from Moser, 1988)
-
-
-
-2.2.3’
-Finally, point 3 from fig. 2.2.2 is that of maximum profitability. From an empirical point of view 
-(Moser, 1988), this point lies between the point of maximum productivity (for a batch bioprocess) 
-and the point
-
-35
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-representing minimum costs. The profit is calculated through the following analytical relationship 
-(Geyson, Gray, 1972, Moser, 1988):
-
-Profit[$/fona] — W(price - Cpe) C
-— (CB — C )
-2.2.6
-
-where: W = mass, [kg];
-Cpe  the extraction cost for product isolation, [$];
-Ce the extraction running costs, [$].
-
-The maximum profit can be graphically obtained from eq. 2.2.6 as it is shown in fig.
-2.2.4. Hence, the maximum profit represents the slope of the tangent to curve drawn from a starting 
-point A.
-
-
-
-
-
-
-
-
-
-Fig. 2.2.4 Graphic method for evaluating the maximum profit at a given selling price and starting 
-point (from Moser, 1988)
-Finally, one can appreciate that the use of economic analysis of processing costs is a powerful  
-tool  in  establishing  control performances criteria.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-36
-
-
-
-
-2. 3.  BI O PR O C E S S C O NT R O L ST R A T E G I E S
-
-
-
+The yield compares the total amount of a product j yielded from an amount of material i consumed
+|
 2.3.1. Bioprocess control using a priori
 model
 
 Good knowledge about physiological states and operation modes which characterize a biosystem, allow 
-the design of control algorithms  dedicated  to  optimize  the bioprocess (Vanichsriratana et a/. 
+the design of control algorithms  dedicated  to  optimize  the bioprocess (Vanichsriratana et a . 
 1996). If this knowledge is enough for model design (i.e.  mathematical  description  of  cell 
 metabolic processes), then:
-•  The process mathematical description is used for the design of the control and optimization 
-algorithms (Abidi et al., 1993; Isaacs, Thoma, 1992);
-•  The model (based on the cellular metabolic reactions) can produce more information about the 
+   The process mathematical description is used for the design of the control and optimization 
+algorithms (Abidi et al  1993; Isaacs, Thoma, 1992);
+   The model (based on the cellular metabolic reactions) can produce more information about the 
 specificity of the applied procedure (Rohner, Meyer, 1995; Eaton, Rawlings, 1992).
 
 A  good  mathematical  model  (i.e. comprehensive,  with  skillful  microbial kinetics integration) 
 is able to give predictions relative to procedure efficiency (Moser, 1984). Moreover, it represents 
-the best way for strategy design of optimal control (Slimes et al., 1995).
-
+the best way for strategy design of optimal control (Slimes et al  1995).
+|
 Mathematical models, which describe the living cells evolution, must represent the dynamic nature 
 of the biosystem, as general as possible  (and  more  complex  as  a consequence), less empirical, 
 reflecting the biochemistry of the microorganism culture. In these conditions, the model should be 
 set up based on a compromise between the detailed description of the bioprocess (which means the 
 use of o great number of parameters, often undeterminable/ uncontrollable) and the use of a limited 
-number of parameters easy to estimate and control. (Patwardhan et al., 1992; Henson, Seborg, 1992).
+number of parameters easy to estimate and control. (Patwardhan et al  1992; Henson, Seborg, 1992).
 
 As a general rule for the bioprocesses control with a priori model, the deterministic models
 37
 are preferred to the probabilistic ones (Cazzador, 1988). For the time being, the unstructured 
-deterministic models (the cells are considered as black-box units) are very used in the bioprocess 
+deterministic models (the cells are considered as black box units) are very used in the bioprocess 
 control. In the future an increase of the structured models role is expected, as a consequence of 
 modern analysis methods development, as well as of the capacity to more adequately describe the 
 phenomena.
@@ -1414,9 +353,9 @@ phenomena.
 These characteristics can be accomplished taking into account the cellular structure, at the level 
 of the chemical components (chemical structured models) or from the point of view of cellular 
 morphology (size, dimension and cellular age).
-
+|
 Also it is necessary to remark that the control bioprocess can be done, besides the kinetic 
-equations, using the mass balance equations (Weinrich, Lapidus, 1972; Balzer et al., 1984) and the 
+equations, using the mass balance equations (Weinrich, Lapidus, 1972; Balzer et al  1984) and the 
 typical elements introduced by the bioprocess stoechiometry (yield coefficients Yxes, Yens, Yx o, 
 etc.).
 2.3.1.1. Main characteristics of the control with mathematical model
@@ -1430,107 +369,23 @@ established as well as the performance index (Cardello, San, 1988; Dovi, Reverbe
 
 If the mathematical rules, which characterize the bioprocess, are defined, the bioprocess control 
 consists of an algorithm put into operation in order to maintain the parameter evolution all around 
-the optimum values. In
-
-PART
-TWO
-BIOPROCESS
-CONTROL STATEMENT
-
-
-fact this represents the simplest case for the use of a control algorithm.
-
-The major problems connected to the a priori
-model control are determined by the nonlinear
-       K,  
-S² K, + C2
-K,
-
+the optimum values. In fact this represents the simplest case for the use of a control algorithm.
+|
 2.3.1.6
 
-and non-stationary characteristics of the bioprocess (Shields, Kao, 1994). Moreover, the access to 
-the information (on-line and estimative determinations) is limited and powerfully affected by 
-several errors, as it has already presented.
+Moreover, the access to  the information (on line and estimative determinations) is limited 
+and powerfully affected by several errors, as it has already presented.
 
 In a recent study, Proell (Proell et al, 1994) have presented the solution of a bioprocess control 
 using a priori model. He proposed the following equations:
 where the values of parameters y, M, Qmax, Ki, K, and Km are obtained by estimation.
 
 In this case the control problem comprises two levels:
-•  the determination of the time minimum value at the end of the process for which the  cell  
+   the determination of the time minimum value at the end of the process for which the  cell  
 concentration  attains  the maximum value (after this moment the process can be described as a 
 stationary system);
-•  the optimization of the global productivity
-
-dX    X dV
-dt     V dt
-dS  NS₀  X   S dV 
-
-2.3.1.1
-
-
-2.3.1.2
-in a fixed time.
-
-Hence, the authors define the objective function:
-
-
-dC,
-C, dV 
-max  —— (  dt
-2.3.1.7
-
-dt      V dt
-2.3.1.3           ₀
-
-
-dV —— F — Fp
-dt
-
-2.3.1.4
-The  system  is  characterized  by  cell concentration, substrate concentration, toxin 
-concentration  and  culture  volume,  the
-
-where: X   = cell concentration;
-S   = substrate concentration; V   = volume of culture;
-Ct  = inhibitor (toxin);
-p   = specific growth rate;
-F   = feed rate;
-So  = substrate concentration in the
-following restrictions being necessary:
-
-
-
-
-2.3.1.8
-
-feed;
-
-Yx s  = yield coefficient (S —› X); F,  = evaporation loss rate.
-The optimum feed flow rate is obtained by maximizing  the  functional  Hamiltonian (Proell et al, 
-1994):
-
-
-Conforming to the above conditions, the analytical expressions of the parameters Yes and q are:
-
-2.3.1.5
-Npa,  i   H  =  > 0;
-= Fq,n  if  H < 0;
-F  if  HF —— 0
-
-
-2.3.1.9
-My +
-
-where: Fs = solution on the singular arc.
-38
-
-PART
-TWO
-BIOPROCESS
-CONTROL STATEMENT
-
-
+   the optimization of the global productivity
+|
 
 The control solution must be circumscribed to the control conditions afforded by the growth 
 specific rate:
@@ -1539,107 +394,69 @@ F(t + 1) = F(t) + Ke(t)        2.3.1.10
 2.3.1.11
 
 
-where: href '  optimal value of the specific growth rate (set-point value);
+where: href    optimal value of the specific growth rate (set point value);
 K = constant
-
-Taking into account the linear dependence p = f(S), the relationship can be written:
-
-s(i) = ’ref  ’(')            2.3.1.12
-
-The set-point value, Sref,Can be analytically determined:
-2.3.1.2. Bioconversion control using a priori
-model
-
+|
 In many cases, in the bioconversion process for complex chemical substance obtaining, strong 
 inhibition exercised by substrate or product has been recorded.
 
 To control such processes, it has been established, as a general rule, the use of the optimum 
 domains (without inhibition) for the major bioprocess parameters.
 
-For  the  bioprocesses  characterized  by substrate  inhibition,  the  fed-batch fermentations are 
+For  the  bioprocesses  characterized  by substrate  inhibition,  the  fed batch fermentations are 
 preferred, the substrate and other products being introduced during the process, according to a 
 specific protocol.
 
-Meanwhile, for the bioprocess performance improving, the repeated fed-batch system has been used, 
-which means that at the end of the process about 5-100/o of the medium volume is kept as inoculum 
+Meanwhile, for the bioprocess performance improving, the repeated fed batch system has been used, 
+which means that at the end of the process about 5   100/o of the medium volume is kept as inoculum 
 for the next cycle. In these
-
-
-
-ref
-KSK,
-2
-
-2.3.1.13
-culture conditions, the system is safe as regarding the sterility and the apparatus fiability.
-
-
-In the authors' opinion, in order to modify these models into linear equivalents, it is better to 
+|
+In the authors  opinion, in order to modify these models into linear equivalents, it is better to 
 use the nonlinear modifications of the coordinates. In this way, the fermenter productivity is 
 indirectly controlled by the cell concentration,  substrate  and  metabolic product  concentrations 
- adjustment;  the obtaining results are sub-optimal.
-
-
-
-
-
-
-
-
-
-
-
-
-39
+ adjustment;  the obtaining results are sub optimal.
+|
 The control of the bioprocesses when the cell growth and product formation take place at the same 
 time, is based on the modeling with balance  equations  including  kinetic expressions. In this 
 way, by solving the differential equation system, the optimum concentrations of cells and products, 
 as well as the specific process rates can be determined.
-
+|
 2.3.1.3. Conceptual restrictions of the control based on a priori model
 
 The control of the bioprocesses according to a priori model represents an optimal method, due  to  
-the  possibility  of  analytical determination of the extreme values of the co- ordinates.
+the  possibility  of  analytical determination of the extreme values of the co  ordinates.
 
-As it has already presented in #2.1 a great variety of analytical models can describe the culture 
-evolution steps. If the parameter
-
-PART
-TWO
-BIOPROCESS
-CONTROL STATEMENT
-
-
-influence is considered, the models are able to realize a proper fit between model and experiment. 
+As it has already presented in 2.1 a great variety of analytical models can describe the culture 
+evolution steps. If the parameter influence is considered, the models are able to realize a proper fit between model and experiment. 
 Despite these aspects, the models mentioned in the literature can not describe accurately enough 
 all the evolution steps of a complex bioprocess.
 
-This fact is a consequence of the lack of measurement methods for on-line obtaining the variable 
-levels from the system, (cf. #1.3.). On the other hand, the theoretical studies presented in the 
+This fact is a consequence of the lack of measurement methods for on line obtaining the variable 
+levels from the system, (cf. 1.3.). On the other hand, the theoretical studies presented in the 
 literature can not cover all the biological, chemical and physical phenomena taking  place  during  
-micro-organism cultivation.
-
+micro organism cultivation.
+|
 Hence, there are a great number of kinetic models, each one trying to better present the parameter 
 interdependence and the bioprocess evolution. Therefore, in the future, the control structure based 
 on a priori model will be replaced by more flexible configurations using the adaptive or artificial 
 techniques in addition with the pr3evious control structures.
-
+|
 2.3.2. Adaptive control of bioprocesses
 
 At the same time with the developing of the bioprocess control based on a priori model, other 
-alternative  control  systems  were designed (Liu et al., 1993; Jorgensen et al., 1992). The most 
-attractive was the adaptive control strategy (Ferreira, de Azevedo, 1996, Vanichsriratana et al., 
+alternative  control  systems  were designed (Liu et al  1993; Jorgensen et al  1992). The most 
+attractive was the adaptive control strategy (Ferreira, de Azevedo, 1996, Vanichsriratana et al  
 1996).
-
+|
 For instance, the following equation describes a simple growth microbial process, with a single 
 substrate (with concentration S):
 
 2.3.2.1
 
-This relationship represents an auto-catalyzed reaction, with @g'  growth rate, X = biomass 
+This relationship represents an auto catalyzed reaction, with @g   growth rate, X = biomass 
 concentration. Note that biomass production requires an initial biomass concentration.
 
-The enzyme-catalyzed reactions can be described as follows:
+The enzyme catalyzed reactions can be described as follows:
 
 2.3.2.2
 
@@ -1649,17 +466,17 @@ The enzymatic catalysis is conceivable with a biomass, which grows on the same s
 
 An usual example for this kind of complex reaction is the yeast growth on glucose substrate. This 
 bioprocess is characterized by three metabolic reactions:
-•  Respiratory growth on glucose (a);
-•  Fermentative growth on glucose (b);
-•  Respiratory growth on ethanol (c).
+   Respiratory growth on glucose (a);
+   Fermentative growth on glucose (b);
+   Respiratory growth on ethanol (c).
 
-(a)  S + OF   X + C
 
-The adaptive control structures (cf. to the Belgian School Bastin, Dochain, 1990; Chen et al., 
+
+The adaptive control structures (cf. to the Belgian School Bastin, Dochain, 1990; Chen et al  
 1991), are based on the design of different estimation algorithms which are able
-to determine the off-line parameter values.
-(b)  S      X + E + C
-(c) E + OF   X + C
+to determine the off line parameter values.
+
+|
 2.3.2.3
 
 Many control algorithms were developed based on minimal knowledge about bioprocess kinetics (i.e. 
@@ -1668,86 +485,7 @@ bioreactors can be described as follows: the bioprocess reactions which occur in
 assumed to be encoded  into  a reaction  network  of  M reactions involving N components (N > M).
 This example (Bastin, 1992), involves three reactions with five components; O represents dissolved 
 oxygen concentration, E, ethanol concentration  and C, dissolved  carbon dioxide.
-
-Hence, the above example can be generalized, and the general dynamic model of the bioprocess can be 
-written: the mass balance dynamics (of each component) results from
-40
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-two mechanisms — i.e. reaction kinetics and exchange of material with the environment:
-Hence, cf. to eq. (2.3.1.1) it can be obtained:
-
-
-d{, dt
-
-where:
-
-2.3.2.4
-
-where q({) = specific growth rate. The dynamic model become:
-
-a) I   represents the rate of consumption
-and/or production of component (, in the bioreactor, according to the reaction network; the 
-summation is taken over the reactions with index j which involve the component {,.
-b) Kij represents the yield coefficients (strictly positive) of the component {, in reaction j 
-(e.g. Yxesor YP S, );
-c) Qi represents the rate of removal of
-component \i from the reactor in gaseous
-
-D S +  F
-X  0
-
-and ‹p can be written as follows:
-
-
-
-2.3.2.8
-
-
-
-
-
-
-2.3.2.9
-
-form per unit of volume;
-d) Det represents the dilution of component \i in the bioreactor due to the increase in volume (D = 
-dilution rate);
-e) Ft represents the feed rate component \I into the reactor per unit of volume.
-Conforming to the second relationship from (2.3.2.8), the dynamic model is identical with the 
-classical one whether k2'  1 and F = DSo (So= substrate concentration in the feed rate):
-
-dS
-
-If the following matrix notations are introduced:
-dt
-= ( — D)X
-dt
-
-2.3.2.10
-
-Moreover:
-2.3.2.5
-
-
-K —— [K; ],matrixNxM
-2.3.2.11
-
-
-
-then  the  bioprocess  dynamic  can  be represented as follows:
-
-Hence:
-
-
-d{ = K‹p({,t) — D + F — Q(f)    2.3.2.6
-dt
-dS
-dt —— D(S— S) — s
+|
 2.3.2.12
 
 This General Dynamical Model of biological reactors (proposed by Prof. Bastin) is the fundament of 
@@ -1755,320 +493,113 @@ the control algorithms, which will be presented below.
 41
 Moreover, for an autocatalytic reaction, with one substrate and one gaseous product, the following 
 equation can be used:
-
-PART
-TWO
-BIOPROCESS
-CONTROL STATEMENT
-2.3.2.13    Consequently, the following situations are to be considered:
-
-and the global dynamic model becomes:
-
-d  S   —k     S   DS0    0
-I  =  1 ‹— D X +  0  — 0
-dt P   kz     P   0   Q,
-2.3.2.14
-
-
-The design of the kinetics ‹p(\) is complex, as it depends on the following factors:
-•  The adequate choice of biological and physic-chemical factors;
-•  The founding of an analytical relationship for correctly describing the phenomena;
-•  The determination of kinetic coefficients based on experimental data.
-
-Consequently, Prof. Bastin recommends the introduction of a minimal modeling of the bioprocess 
-kinetic ‹p(\) using the expression done below:
-
-2.3.2.15
-
-
-where: H({) is a known matrix (i.e. it represents the known component of the kinetics) and p(\) 
-represents the unknown component. The above equation is flexible and
-involves many realistic situations. The
-
-I   If the kinetic is a priori completely unknown, the parameters can be defined as follows:
-
-
-2.3.2.19
-H2I ( '  DCUS, X, P)
-
-II   Moreover,  the  following expression can be added:
-
-2.3.2.20
-
-
-where: n({,t) = specific growth;
-G({) = diagonal matrix of the product
-H. .f.
-Taking into account the above expression (if the specific reaction rates are unknown), two 
-relationships can be written:
-
-
-2.3.2.21
-H2(  '  CUS, X)
-
-In this case, the matrix H(\) becomes
-SX  0
-
-limiting situation comprises a bioprocess kinetics entirely unknown:
-
-2.3.2.16
-
-The enzymatic catalysis bioprocess offers a
-simple example of the minimal modeling concept application:
-H(fj ‘'!!!°° o  s:v
-Finally:
-
-
-Pc S9 X9 P)   0  SX  p₂
-2.3.2.22
-
-
-
-
-
-2.3.2.23
-
-
-
-
-S + XP   P + X
-
-
-2.3.2.17
-
-2.3.2.18
-III  If the specific growth rate
-q(S,P) is an unknown parameter of the model, the following variables can be defined:
-
-
-
-42
-
-PART
-TWO
-
-
-
-
-X  0
-H(‹f) —— 0 SX
-BIOPROCESS
-
-
-
-2.3.2.24
-CONTROL STATEMENT
-
-
-The principle of the Linear Control involves the design of a control law u(‹p, Q, f, y*), which is 
-a multivariable, non-linear function. This control law must be designed so that the error (y*-y) 
-respects a pre-specified nonlinear differential equation.
-
+|
+The design of the kinetics is complex, as it depends on the following factors:
+   The adequate choice of biological and physic chemical factors;
+   The founding of an analytical relationship for correctly describing the phenomena;
+   The determination of kinetic coefficients based on experimental data.
+|
+The principle of the Linear Control involves the design of a control law, which is 
+a multivariable, non linear function. This control law must be designed so that the error (y* y) 
+respects a pre specified nonlinear differential equation.
+|
 Hence, using the state variables, which are
-continuously monitored (through standard instrumentation),   on-line   estimation algorithms can be 
+continuously monitored (through standard instrumentation),   on line   estimation algorithms can be 
 developed and useful information will be send to the human expert.
 
 Moreover, if an adaptive control algorithm is used, the controller must determine, at each time 
-period, the best-input flow in the system,
-
-The design of the Linear Control procedure involves three steps:
-
-Step /: An input/output model can be obtained (through  derivation)  from  the  general Dynamic 
-Model:
-
-based on measured and estimated variables.
-d'y  = f (i)+ u(t) f(t)
-2.3.2.28
-
-From the point of view of the General Dynamic Model, the control objective is the regulation of the 
-output variable (i.e. a scalar variable)  which  represents  a  linear combination of the state 
-variables:
-dt’  ᵒ
-where: 6 = relative degree
-
-The I/O model is linear according to u(t); at the mean time, f0(t) and fi(t) can be complex 
-functions, depending on \, Q, F and theirs
-
-N
-y  — Z C.{, —— CT
-2.3.2.25
-derivatives.
-Step II: A linear reference model of the error [y*(t)-y(t)] will be selected, conforming to the
-
-where: CT [Ci, C2,...,CN] represents a vector
-of known constants. In this case the variable u
-designates the substrate flow:
-following equation:
-
-
-
-F —— bu + f
-bT —— [b ,b ,..., b ] b, —— 1 b —— 0  d j  i
-d'
-dt'
-[y‘(t) — y(t)] —— 0 with * = 1
-
-2.3.2.29
-
-fT — [  /2 ‘ ‘ ‘ IN]    = 0  j  —— F
-
-2.3.2.26
-Conforming to these notations, the General Dynamic Model (2.3.2.6) becomes:
-The coefficients Z are arbitrary selected so that the above differential equation becomes stable. 
-Moreover, the reference model gets independent,  if  the  working  point  is considered.
-
-Step III: Finally, the control variable u(t) is to
-
-d{ = A‹p(  — D + bu+ f — Q dt
-2.3.2.27
-be calculated, so that the I/O model becomes identical with the reference model:
-
-with f and Q on-line measurable. The state variables, {, can be on-line measured/ estimated, too.
-43
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-
-
- d’ 
-dt’
-
-
-d'y'(t) dt’
-
-
-
-2.3.2.30
+period, the best input flow in the system
+|
 The impact of intelligent techniques in the bioprocess application field represents, on one hand, a 
-quasi-failure of the standard control strategy applications, and on the other hand, a pragmatic 
+quasi failure of the standard control strategy applications, and on the other hand, a pragmatic 
 approach tentative in opposition with the knowledge bioprocess uncertainty.
 
 The last equation designates the control law with exact linearization.
 
 Conforming to author conceptions, the design of an adaptive control algorithm must focus on the 
 entire bioprocess stability. Hence, two general aspects must be outlined:
-a) The main objective of a fed-batch bioprocess control is to maintain the control  upon  an 
+ The main objective of a fed batch bioprocess control is to maintain the control  upon  an 
 unstable  evolution trajectory; in a continuous bioprocess, the main objective is to preserve the 
 global stability;
-b) In a minimal modeling context (and depending on modeling strategies) the same linear controller 
+ In a minimal modeling context (and depending on modeling strategies) the same linear controller 
 design method can generate stable or unstable closed loops.
 
-Finally, the following conclusions can be set up:
-•  The  matrix  conceptualization  of bioprocess variables offers easy-to-use in control  algorithm 
- implementations (Hinde, Cooper, 1995; Meszaros, et al., 1995), but does suggest nothing about the 
-corresponding real variables;
-•  The optimization is made during a sample time period (Estler, 1995; Andrews, 1995); thus, it not 
-corresponds to a global optimization (Harmon, et al., 1987; Modak, Lim, 1987; Modak, Lim, 1989); 
-ipso facto, the control strategy is sub- optimal (Morningred et al., 1992; Modak, Lim, 1992);
-•  The control structures based on these model typologies don't produce basic knowledge  about  the 
- bio/chemical mechanisms, which control the cell metabolism (Lee, Ramirez, 1996).
-
+|
 2.3.3. Intelligent control of bioprocesses
 Hence, it has been found (Narendra, Parthasarathy, 1992) that the control structures based on the 
 human decisional factor (i.e. a subjectively element) offer better results as the standard control 
 systems based on algorithmic determinations. Moreover,  it has been observed that a general 
-stoppage exists in the bioprocess-modeling  field  (without  the structured models); so that, the 
+stoppage exists in the bioprocess modeling  field  (without  the structured models); so that, the 
 computer performances are developed in the detriment of the general knowledge concerning life 
-phenomena (Hinde, Cooper, 1994; Cooper et al., 1992). Consequently, through intelligent techniques 
+phenomena (Hinde, Cooper, 1994; Cooper et al , 1992). Consequently, through intelligent techniques 
 (i.e. neural nets, fuzzy structures, genetic algorithms or expert systems) the uncertainties 
 regarding the living phenomena can  be  mathematically  formalized. Furthermore,  the  (subjective) 
  human knowledge is used and different simulation techniques are adopted in order to find out the 
 evolution types. These kind of solutions offers better results as the standard  control techniques 
-but don't promote advanced comprehension upon the metabolic routes of bioprocesses.
-
+but don t promote advanced comprehension upon the metabolic routes of bioprocesses.
+|
 2.3.3.1. Bioprocess control using expert systems
 
 The development in the field of fermentation process  control  makes  necessary  the integration  
 of  some  research  disciplines. Moreover, the control of biotechnological processes is based on 
 the knowledge of experts and human operators as well as on analysis and processing of numerical 
-data. Also, Expert Systems (ES) can handle this knowledge, acquired by human experts — but the 
+data. Also, Expert Systems (ES) can handle this knowledge, acquired by human experts  but the 
 specified knowledge are able to describe not more than the conscious thinking and decisions.
-
-The ES applicability starts with the selection of a specialized algorithm dedicated to the
-44
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-designated bioprocess (ESDT). This selection is achieved following a well-defined set of rules.
-
-Hence, it must focus on the structure, functions, implementation structure of ES and ESDT  
-algorithm  characteristics  (i.e. bioprocess limitations, etc.)
-
-ES —functions and implementation
-
+|
 The specificity of an ES algorithm must be correlated with the functions, to be fulfilled in real 
 conditions:
-•  Identification of the cell population state (i.e.  on-line  evaluation  of  the physiological  
+   Identification of the cell population state (i.e.  on line  evaluation  of  the physiological  
 state,  cell  behavior interpretation, future state prediction and the diagnostic of biological 
 phenomena);
-•  Identification of the entire equipment state (i.e. fault detection);
-•  Supervision of the conventional control equipment  (i.e.  set-point  values modification, 
+   Identification of the entire equipment state (i.e. fault detection);
+   Supervision of the conventional control equipment  (i.e.  set point  values modification, 
 parameter control revision, etc.);
-•  Advanced communication with the human operator (i.e. parameter monitoring, etc).
-
+   Advanced communication with the human operator (i.e. parameter monitoring, etc).
+|
 The most used control implementation in the bioprocess field is the indirect control; two 
 procedures are available:
-•  The ES algorithm runs on an independent computer;  it  is  interfaced  with conventional  
+   The ES algorithm runs on an independent computer;  it  is  interfaced  with conventional  
 controllers  (this  is, nowadays,  the  standard  control procedure);
-•  The ES and the conventional control algorithms run together on the same computer; this solution 
+   The ES and the conventional control algorithms run together on the same computer; this solution 
 can be the best one in the bioprocess control field.
-
+|
 ESDT characteristics
 
 The usual characteristics of all applications for bioprocess control are:
-•  High run speed (i.e. ESDT must be developed in Assembler and/or C);
-•  Rules activation at different time period;
-•  Continuous cyclic operation;
+   High run speed (i.e. ESDT must be developed in Assembler and/or C);
+   Rules activation at different time period;
+   Continuous cyclic operation;
 45
-•  Human operator intervention relating to bioprocess evolution;
-•  Integration with other external algorithms (through information exchanges);
-•  Powerful  mechanism  for knowledge organization during process evolution;
-•  On-line integration of new information regarding  process evolution;  inexact knowledge 
+   Human operator intervention relating to bioprocess evolution;
+   Integration with other external algorithms (through information exchanges);
+   Powerful  mechanism  for knowledge organization during process evolution;
+   On line integration of new information regarding  process evolution;  inexact knowledge 
 rejection (i.e. advanced control system flexibility);
-•  Continuous  control  system  learning through neural nets and/or other structures.
-
+   Continuous  control  system  learning through neural nets and/or other structures.
+|
 An useful ESDT involves the following features:
-•  Limiting   number   of   on-line measurable/estimable  variables  and relationships;
-•  Powerful mechanisms for qualitative/ subjective information inclusion, and for confidence-level 
+   Limiting   number   of   on line measurable/estimable  variables  and relationships;
+   Powerful mechanisms for qualitative/ subjective information inclusion, and for confidence level 
 definition;
-•  Continuous  system  supervision  (i.e. modification of time sample period, sensor periodical  
-re-calibrations,  measure apparatus tests, etc).
-
+   Continuous  system  supervision  (i.e. modification of time sample period, sensor periodical  
+re calibrations,  measure apparatus tests, etc).
+|
 The design of an ES for fermentation process control is based on the database and knowledge 
 resources formalization, i.e. it is preferably to define a specific ESDT for each kind of 
 bioprocess
-
+|
 2.3.3.2. Bioprocess control using neural nets
 
 The control and optimization of a continuous stirrer tank fermenter using a neural network 
-(Thibault et all., 1994) is based on the presumption that the control set-point is not known  
+(Thibault et all  1994) is based on the presumption that the control set point is not known  
 explicitly,  but  it  is  calculated considering the goal (through neural nets, NN) to optimize an 
 objective criterion. Hence, the final results show that NN can model very accurately the bioprocess 
 dynamics and can predict the state variable over a long prediction horizon.
 
 For instance, it is assumed that the bioreactor volume remains constant and the biomass growth 
 kinetics can be appropriately described
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-with a Haldane substrate inhibition model. A general objective cost function (J) is expressed by 
-the following equation:
-moderate level of noise contributes to produce a more informative data set.
-
-
+|
 2.3.3.1
-
-where: F = the flow rate
-X = biomass concentration
 
 If it is desired to optimize the productivity, the value of n would be set to one. However, the 
 process  economics  dictate  the  double condition to have at the same time the highest possible 
@@ -2082,90 +613,11 @@ the inlet substrate flow rate was considered as the learning data set. The NN we
 using the backpropagation algorithm in order to minimize the sum of errors squares on both biomass 
 and substrate concentrations.
 
-The results clearly demonstrates (Thibault et all., 1994) the ability of the neural model to 
+The results clearly demonstrates (Thibault et all  1994) the ability of the neural model to 
 indirectly represent the complex relationship occurring in the bioprocess. In addition, the NN was 
 able to reproduce with an outstanding accuracy the variation of the objective function as a 
 function of flow rate.
-
-Moreover, the use of the NN in conjunction with an optimizing routine can determine, at each sample 
-instant, the inlet substrate flow rate that will maximize the steady state objective performance 
-criterion. The authors note that the presence of noise increases the time required to find a proper 
-NN; however, a
-
-46
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-47
-
-PART
-TWO
-BIOPROCESS CONTROL STATEMENT
-
-CONCLUSIONS
-
+|
 1. The literature model investigation indicates that it is impossible to design conceptual models 
 conforming to Edwards & Wilke postulates. Hence, the mathematical expressions of bioprocess 
 parameter evolution are built using some conceptual simplifications (e.g. the multivariable 
@@ -2176,37 +628,14 @@ control design);
 2. The objective control criterion is to be made from an economic point of view, taking into 
 account the (final) industrial requirements. Hence, different ways for profit determination are 
 presented, linked with the bioprocess type and evolution phase.
+|
 3. The analysis of different literature methods for bioprocess control proves that it is not 
 possible, in this moment, to globally optimize this kind of processes. Hence, the control with a 
-priori model is not efficient due to the non-existence of global bioprocess models; the adaptive 
-control strategies are (theoretically speaking) sub-optimal: the optimization during each sample 
+priori model is not efficient due to the non existence of global bioprocess models; the adaptive 
+control strategies are (theoretically speaking) sub optimal : the optimization during each sample 
 time period cannot agree (in most cases) with the global optimum. Finally, the intelligent control 
 technique solutions offer an economic answer (i.e. an increasing of efficiency) versus the 
 expansion of basis knowledge regarding the process general evolution. In addition, this solution is 
 based on human experience, i.e. it involves strong subjective characteristics augmented by computer 
 speed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-48
+|
