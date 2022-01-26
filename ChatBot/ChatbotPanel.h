@@ -38,6 +38,7 @@ public:
 	~ChatbotPanel();
 
 	static Message recommended_questions[4];
+	static Message recommended_answers[4];
 
 private:
 	static bool is_waiting_for_search;
@@ -63,5 +64,5 @@ enum
 */
 void getSearchResult(Message* q, Message* a);
 void getFactForFeelingLucky(Message* f);
-void getQsForRecommended(Message q[]);
+void getQsAndAsForRecommended(Message q[], Message a[]);
 void getStatementForTest(Message* x, bool* is_statement_true);

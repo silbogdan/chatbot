@@ -4,6 +4,7 @@ int i{};
 bool ChatbotPanel::is_waiting_for_search = false;
 bool ChatbotPanel::is_waiting_for_choice = false;
 Message ChatbotPanel::recommended_questions[4];
+Message ChatbotPanel::recommended_answers[4];
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
@@ -80,9 +81,7 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 			//compare the input to the 4 q's (key..
 			if (recommended_questions[j].msg == keyword->msg)
 			{
-				answer->isbot = true;
-				answer->msg = _("Valid");
-				this->pushMessage(answer);
+				this->pushMessage(&recommended_answers[j]);
 				break;
 			}
 		}
@@ -91,8 +90,7 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 
 		if (j == 4)
 		{
-			answer->isbot = true;
-			answer->msg = _("Invalid");
+			getSearchResult(keyword, answer);
 			this->pushMessage(answer);
 		}
 	}
@@ -150,7 +148,7 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 	question->isbot = true;
 	this->pushMessage(question);
 	
-	getQsForRecommended(this->recommended_questions);
+	getQsAndAsForRecommended(this->recommended_questions, this->recommended_answers);
 
 	for (int k{}; k < 4; k++)
 	{
@@ -233,12 +231,14 @@ void getFactForFeelingLucky(Message* f)
 	f->isbot = true;
 }
 
-void getQsForRecommended(Message q[])
+void getQsAndAsForRecommended(Message q[], Message a[])
 {
 	for (int j {}; j < 4; j++)
 	{
 		q[j].msg = _("ceva");
 		q[j].isbot = true;
+		a[j].msg = _("altceva");
+		a[j].isbot = true;
 	}
 }
 
