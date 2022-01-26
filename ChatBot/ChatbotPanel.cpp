@@ -59,7 +59,7 @@ void ChatbotPanel::pushMessage(Message* x)
 
 	for (int k{}; k < lenght; )
 	{
-		if (k + max_lenght < lenght || (same.substr(k, max_lenght)).find_first_of('?') != -1)
+		if (k + max_lenght < lenght || (same.substr(k, max_lenght)).find_first_of('?') != -1 || (same.substr(k, max_lenght)).find_first_of(':') != -1)
 		{
 			//create a string thah has the maximum amount of characters before a space
 			same_temp_substring = same.substr(k, max_lenght);
@@ -67,6 +67,9 @@ void ChatbotPanel::pushMessage(Message* x)
 			auto x = same_temp_substring.find_first_of('?');
 			if (x != -1)
 				temp = x+1;
+			x = same_temp_substring.find_first_of(':');
+			if (x != -1)
+				temp = x + 1;
 			same_temp_substring = same.substr(k, temp);
 			k += temp;
 		}
