@@ -45,13 +45,39 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 
 void ChatbotPanel::pushMessage(Message* x)
 {
+	unsigned int lenght;
+	const unsigned int max_lenght = 35;
+	std::string same;
+	std::string same_temp_substring;
+
 	if (x->msg == "") {
 		return;
 	}
-	main_chat->InsertItem(i, _(""));
-	main_chat->SetItem(i, !x->isbot, x->msg);
-	main_chat->SetItemFont(i, *custom_font);
-	i++;
+
+	same = x->msg.ToStdString();
+	lenght = same.length();
+
+	for (int k{}; k < lenght; k = k+max_lenght)
+	{
+		if (k + max_lenght < lenght)
+		{
+			same_temp_substring = same.substr(k, max_lenght);
+		}
+
+		else
+		{
+			same_temp_substring = same.substr(k, lenght-k+1);
+		}
+		wxString buffer(same_temp_substring);
+
+		//show buffer
+
+		main_chat->InsertItem(i, _(""));
+		main_chat->SetItem(i, !x->isbot, buffer);
+		main_chat->SetItemFont(i, *custom_font);
+		i++;
+	}
+	return;
 }
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
