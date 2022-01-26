@@ -70,8 +70,8 @@ void ChatbotPanel::pushMessage(Message* x)
 
 		else
 		{
-			same_temp_substring = same.substr(k, lenght-k+1.0);
-			break;
+			same_temp_substring = same.substr(k, lenght-k+1);
+			k = lenght + 1;
 		}
 		wxString buffer(same_temp_substring);
 
