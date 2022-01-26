@@ -116,11 +116,11 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 
 	Message* recommendedMessage = new Message();
 	recommendedMessage->msg =
-		"Try asking these questions:\n\
-	What is the purpose of bioprocess study?\n\
-	What are the bioprocess modes of operation?\n\
-	What is important for developing a general kinetic model?\n\
-	What is cellulase?\n\
+		"Try asking these questions:\
+	What is the purpose of bioprocess study?\
+	What are the bioprocess modes of operation?\
+	What is important for developing a general kinetic model?\
+	What is cellulase?\
 	What is the purpose of a fuzzy control system?";
 	recommendedMessage->isbot = true;
 
@@ -192,47 +192,47 @@ void getSearchResult(Message* q, Message* a)
 
 	if (q->msg == "What is the purpose of bioprocess study?")
 	{
-		a->msg = _("The bioprocess study makes evident the principles that are the foundation of living systems. In the\n\
-			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\n\
-			be analyzed, together with the most interesting parameters and a general overview on the cell\n\
-			metabolism.In the second part, the most usual bioreactor types with some particularities will be\n\
-			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\n\
-			addition with the information  organization  modalities and other some consonant possibilities on\n\
-			these.\n\
+		a->msg = _("The bioprocess study makes evident the principles that are the foundation of living systems. In the\
+			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\
+			be analyzed, together with the most interesting parameters and a general overview on the cell\
+			metabolism.In the second part, the most usual bioreactor types with some particularities will be\
+			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\
+			addition with the information  organization  modalities and other some consonant possibilities on\
+			these.\
 			Find out more about this in PART ONE.");
 	}
 	else if (q->msg == "What are the bioprocess modes of operation?")
 	{
-		a->msg = _("From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\n\
-			bioprocess modes of operation:\n\
-		-  Batch cultivation;\n\
-		-  Fed - batch cultivation;\n\
-		-  Continuous cultivation\n\
+		a->msg = _("From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\
+			bioprocess modes of operation:\
+		-  Batch cultivation;\
+		-  Fed - batch cultivation;\
+		-  Continuous cultivation\
 		Find out more about this in PART TWO.");
 	}
 	else if (q->msg == "What is important for developing a general kinetic model?")
 	{
-		a->msg = _("One of the most important objectives for developing a general kinetic model is to establish a\n \
+		a->msg = _("One of the most important objectives for developing a general kinetic model is to establish a\
 			conceptual basis for microorganism growth description\n\
 			Find out more about this in PART TWO.");
 	}
 	else if (q->msg == "What is cellulase?")
 	{
-		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\n\
-			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\n\
-			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\n\
-			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\n\
-			which is able to produce a wide range of extracellular enzymes growing on various substrates.\n\
+		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases,\
+			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
+			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
+			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
+			which is able to produce a wide range of extracellular enzymes growing on various substrates.\
 			Find out more about this in PART THREE.");
 	}
 	else if (q->msg == "What is the purpose of a fuzzy control system?")
 	{
-		a->msg = _("The design of a fuzzy control system arises from organization necessity of the human expert\n\
-			knowledge.The  decisional quintessence of the control system is determined  by the\n\
-			transition from the information objective level to the subjective one(i.e.the information\n\
-			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\n\
-			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\n\
-			Caramihai, 1996).\n\
+		a->msg = _("The design of a fuzzy control system arises from organization necessity of the human expert\
+			knowledge.The  decisional quintessence of the control system is determined  by the\
+			transition from the information objective level to the subjective one(i.e.the information\
+			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\
+			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\
+			Caramihai, 1996).\
 			Find out more about this in PART FOUR");
 	}
 	else
