@@ -153,4 +153,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="BioprocessInfo\dictionarNou.txt" />
+    <Text Include="..\..\..\..\..\OneDrive - Universitatea Politehnica Bucuresti\Desktop\dictionaraj.txt" />
+  </ItemGroup>
 </Project>

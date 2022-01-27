@@ -184,6 +184,10 @@
     <ClCompile Include="TFIDFDatabase.cpp" />
     <ClCompile Include="TFIDFMatrixCreator.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\OneDrive - Universitatea Politehnica Bucuresti\Desktop\dictionaraj.txt" />
+    <Text Include="BioprocessInfo\dictionarNou.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

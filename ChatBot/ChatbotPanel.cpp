@@ -317,7 +317,43 @@ void ChatbotPanel::getSearchResult(Message* q, Message* a)
 			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\
 			Caramihai, 1996).\
 			Find out more about this in PART FOUR");
+	}//INTREBARILE LU CHIS 
+	else if (q->msg == "What types of bioreactors are used?")
+	{
+		a->msg = _("From this point if view two principal bioreactor types are now used in the bioprocessing operation (Moo-Young, 1985):\
+				•	Stirrer reactor;\n\
+				•	Pneumatic reactor.\
+					\nYou can find more here:\n\
+						Course 1, 1.2.2");
 	}
+	else if (q->msg == "What are the implementations for bioprocess control?")
+	{
+		a->msg = _("The bioprocess control (and optimisation) strategies are based on three main implementations (Pokkinen et al., 1992):\
+			•	Algorithmic optimisation : the optimum can be analytically reached(due to relationship defined between process parameters); hence, the algorithmic optimisation is cheaper that the adaptive one;\
+			•	Adaptive optimisation : this kind of optimisation requires not a priori knowledge regarding the existing relationships between bioprocess parameters;\
+			•	Intelligent technique optimisation : requires knowledge transfer from a human expert to the control structures(expert system, neural nets, fuzzy structure, etc).\
+				\nYou can find more here:\n\
+			Course 2, 2.2.1");
+	}
+	else if (q->msg == "What means bioprocess intelligent control?")
+	{
+		a->msg = _("The idea of an integrated control structure starts from the intelligent system, which is able to detect the bioprocess type, to design the process model and to control the fermentation process based on intelligent techniques, in order to maximize a performance index.");
+	}
+	else if (q->msg == "What is an expert system?")
+	{
+		a->msg = _("Structurally, the expert system is based on human expert knowledge, formalized as logical rules.\
+			The term “rules” has a large meaning. It includes different elements and knowledge corresponding to the bioprocess,\
+			i.e. the main process parameters, the general evolution curves, etc. The knowledge is configured as syntactical forms, if...then.\
+			Hence, after the rule selection by the expert system, the corresponding bioprocess control strategy (based on human knowledge) is applied.\
+			Moreover, the expert system must supervise the whole control system, in order to change the global control strategy (if there is non-optimal)\
+			and even stop the bioprocess if the metabolic evolutions are troubled. ");
+	}
+	else if (q->msg == "What is the main goal of the intelligent control structure?")
+	{
+		a->msg = _("The main goal of the intelligent control structure designed in this work is (cf. #3.3) to maximize the performance index through\
+				pattern curve recognition and the applicability of a suitable fuzzy algorithm. The evolution type validation is build through  a large bioprocess type class,\
+				a priori imposed by a human expert. ");
+	}//INTREBARILE LU CHIS
 	else
 	{
 		// Create an array with stemmed words of user's question
