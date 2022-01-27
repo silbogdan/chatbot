@@ -8,6 +8,7 @@ Message ChatbotPanel::recommended_answers[4];
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
+const vector<int> parCounters = { 38, 97, 135, 190 };
 const std::vector<std::string> luckyInfo =
 {
 	"The bioprocess study makes evident the principles that are the foundation of living systems. In the\
@@ -319,9 +320,6 @@ void ChatbotPanel::getSearchResult(Message* q, Message* a)
 	}
 	else
 	{
-		//a->msg = _("I do not know anything about ") + q->msg + _(".");
-
-
 		// Create an array with stemmed words of user's question
 		vector<string> inputWords;
 		stringstream ssin(q->msg.ToStdString());
@@ -343,6 +341,8 @@ void ChatbotPanel::getSearchResult(Message* q, Message* a)
 		int parCount = parArray.size();
 		vector<double> sumsArray(parCount, 0.0);
 
+
+		bool found = false;
 		// Compare input words to dictionary
 		for (string word : inputWords)
 		{
@@ -352,6 +352,7 @@ void ChatbotPanel::getSearchResult(Message* q, Message* a)
 			auto it = find(dictionary.begin(), dictionary.end(), word);
 			if (it != dictionary.end())
 			{
+				found = true;
 				int idx = it - dictionary.begin();
 				for (int i = 0; i < parCount; i++)
 				{
@@ -360,7 +361,21 @@ void ChatbotPanel::getSearchResult(Message* q, Message* a)
 			}
 		}
 
-		// Sort sumsArray in parallel with parArray
+		// Create vector that maps paragraphs to document number
+		vector<string> documentIndices;
+		for (int i = 0; i < parArray.size(); i++)
+		{
+			if (i <= parCounters[0])
+				documentIndices.push_back("ONE");
+			else if (i <= parCounters[1])
+				documentIndices.push_back("TWO");
+			else if (i <= parCounters[2])
+				documentIndices.push_back("THREE");
+			else if (i <= parCounters[3])
+				documentIndices.push_back("FOUR");
+		}
+
+		// Sort sumsArray in parallel with parArray and documentIndices
 		for (int i = 0; i < sumsArray.size(); i++)
 		{
 			for (int j = i + 1; j < sumsArray.size(); j++)
@@ -369,23 +384,34 @@ void ChatbotPanel::getSearchResult(Message* q, Message* a)
 				{
 					double sumAux = sumsArray[i];
 					string parAux = parArray[i];
+					string docIdxAux = documentIndices[i];
 					sumsArray[i] = sumsArray[j];
 					parArray[i] = parArray[j];
+					documentIndices[i] = documentIndices[j];
 					sumsArray[j] = sumAux;
 					parArray[j] = parAux;
+					documentIndices[j] = docIdxAux;
 				}
 			}
 		}
 
 		string returnMessage = "";
-		returnMessage.append(parArray[0]);
-		a->msg = wxString::FromUTF8(returnMessage);
-		//for (string word : inputWords)
-		//{
-		//	returnMessage.append(word + " ");
-		//}
+		if (found)
+		{
+			string spaces = "                                                                  ";
+			returnMessage.append("Here is what I found: " + spaces);
+			for (int i = 0; i < 3; i++)
+			{
+				returnMessage.append(parArray[i] + " ");
+				returnMessage.append("Find more information in document PART " + documentIndices[i] + spaces);
+			}
+		}
+		else
+		{
+			returnMessage.append("I couldn't find anything related to " + q->msg);
+		}
 
-		//a->msg = wxString::FromUTF8(returnMessage);
+		a->msg = wxString::FromUTF8(returnMessage);
 	}
 }
 
