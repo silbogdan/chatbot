@@ -15,6 +15,8 @@
 #include "Message.h"
 #include "TFIDFDatabase.h"
 #include "include/olestem/stemming/english_stem.h"
+#include <time.h>
+#include <string>
 
 class ChatbotPanel : public wxPanel
 {
@@ -72,4 +74,4 @@ enum
 */
 void getFactForFeelingLucky(Message* f);
 void getQsAndAsForRecommended(Message q[], Message a[]);
-void getStatementForTest(Message* x, bool* is_statement_true);
+void getStatementForTest(Message* x, bool* is_statement_true,string s[]);

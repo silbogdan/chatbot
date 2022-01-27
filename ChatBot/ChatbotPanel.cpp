@@ -9,6 +9,7 @@ wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
 const vector<int> parCounters = { 38, 97, 135, 190 };
+int counterCorect = 0, counterGresit = 0;
 const std::vector<std::string> luckyInfo =
 {
 	"The bioprocess study makes evident the principles that are the foundation of living systems. In the\
@@ -218,10 +219,60 @@ void ChatbotPanel::testKnowledge(wxCommandEvent& event)
 	const wxMessageDialog::ButtonLabel a(_("False"));
 	const wxMessageDialog::ButtonLabel b(_("True"));
 
+	string questions[10] = {
+		"Bioprocesses take place into a culture \
+		medium, an aqueous solution, where the \
+		substrates are not solved or mixed ready for being \
+		transformed by the cells, also introduced in \
+		this mixture through inoculation.",
+
+		"For obtaining a high productivity in a \
+		bioprocess, an optimal evolution of the physic \
+		and biochemical parameters, which assure the \
+		cultivation conditions, is needed",
+
+			"Bioreactors are vessels in \
+		which raw materials are sintetically \
+		converted into specific products, using \
+		microorganisms,synthetic plant or animal cells or \
+		individual enzymes",
+
+		"In the aerobic bioprocesses, the oxygen is the \
+	least soluble nutrient from the mediumand can \
+	become a limiting substrate for cellular growth",
+
+			"Microorganisms growing on lignocellulosic \
+		substrates are not able to produce extracellular \
+		enzymes, which degrade cellulose to soluble \
+		sugars. ",
+
+				"The in-line systems are set up for those cases \
+		when it is not allowed to make measurements \
+		inside the reactor.",
+
+				"The procedure KBEH.C is founded \
+		on a case statement with three possibilities \
+		non - inhibitory inhibitory and by - inhibitory bioprocess.",
+
+				"One of the details that must be addressed when \
+		building complete neural net structure is the \
+		matter of getting data to the network",
+
+		"Bubbles coalescence, which often occurs in \
+		such reactors, is absolutely required in aerobic \
+		bioprocesses as the oxygen transfer is \
+		decreased",
+
+				"The enzymatic hydrolysis is a process \
+		performed in heterogeneous system, involving \
+		the action of soluble enzyme(cellulase) on \
+		insoluble substrate"
+	};
+
 	statement = new Message;
 	feedback = new Message;
 
-	getStatementForTest(statement, &is_right);
+	getStatementForTest(statement, &is_right, questions);
 
 	dial = new wxMessageDialog(NULL, statement->msg, _("Test incoming!"),
 		wxOK | wxCANCEL);
@@ -232,16 +283,22 @@ void ChatbotPanel::testKnowledge(wxCommandEvent& event)
 
 	feedback->isbot = true;
 
+	string rightAnswer = "Congratulations! You were right!", wrongAnswer = "You were wrong! Maybe next time!";
+
 	if (is_right)
 	{
 		auto x = dial->ShowModal();
 		if (x == wxID_CANCEL)
 		{
-			feedback->msg = _("Congratulations! You were right!");
+			counterCorect++;
+			string score = rightAnswer +"Your Score Is:  "+ to_string(counterCorect)+"/"+to_string(counterCorect + counterGresit);
+			feedback->msg = _(score);
 		}
 		else
 		{
-			feedback->msg = _("You were wrong! Maybe next time!");
+			counterGresit++;
+			string score = wrongAnswer + "Your Score Is:  " + to_string(counterCorect) + "/" + to_string(counterCorect + counterGresit);
+			feedback->msg = _(score);
 		}
 	}
 	else
@@ -249,11 +306,15 @@ void ChatbotPanel::testKnowledge(wxCommandEvent& event)
 		auto x = dial->ShowModal();
 		if (x == wxID_OK)
 		{
-			feedback->msg = _("Congratulations! You were right!");
+			counterCorect++;
+			string score = rightAnswer + "Your Score Is:  " + to_string(counterCorect) + "/" + to_string(counterCorect + counterGresit);
+			feedback->msg = _(score);
 		}
 		else
 		{
-			feedback->msg = _("You were wrong! Maybe next time!");
+			counterGresit++;
+			string score = wrongAnswer + "Your Score Is:  " + to_string(counterCorect) + "/" + to_string(counterCorect + counterGresit);
+			feedback->msg = _(score);
 		}
 	}
 
@@ -424,8 +485,14 @@ void getQsAndAsForRecommended(Message q[], Message a[])
 	}
 }
 
-void getStatementForTest(Message* x, bool* is_statement_true)
+void getStatementForTest(Message* x, bool* is_statement_true,string s[])
 {
-	x->msg = _("Hint: False is the right answer.");
-	*is_statement_true = false;
+	srand(time(NULL));
+	int iRand = rand() % 10;
+
+	x->msg = _(s[iRand]);
+	if(iRand % 2 == 0)
+		*is_statement_true = false;
+	else
+		*is_statement_true = true;
 }
