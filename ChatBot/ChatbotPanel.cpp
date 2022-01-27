@@ -8,6 +8,7 @@ Message ChatbotPanel::recommended_answers[4];
 wxTextCtrl* ChatbotPanel::text_box = NULL;
 wxListCtrl* ChatbotPanel::main_chat = NULL;
 const wxFont* ChatbotPanel::custom_font;
+const vector<int> parCounters = { 38, 97, 135, 190 };
 const std::vector<std::string> luckyInfo =
 {
 	"The bioprocess study makes evident the principles that are the foundation of living systems. In the\
@@ -42,9 +43,12 @@ const std::vector<std::string> luckyInfo =
 			Find out more about this in PART FOUR"
 };
 
+vector<string> fileNames = { "BioprocessInfo\\1.txt", "BioprocessInfo\\2.txt", "BioprocessInfo\\3_1.txt", "BioprocessInfo\\4.txt" };
+TFIDFDatabase* ChatbotPanel::tfidfDatabase = new TFIDFDatabase(".\\tfidfmatrix.txt", ".\\dictionary.txt", fileNames);
+
 ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	: wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN)
-{	
+{
 	custom_font = new wxFont(13, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL,
 		wxFONTWEIGHT_NORMAL, false);
 	wxBitmap* bitmap = new wxBitmap;
@@ -70,7 +74,7 @@ ChatbotPanel::ChatbotPanel(wxPanel* parent)
 	big_sizer->Add(small_sizer, 1, wxEXPAND | wxALL, 3);
 
 	this->SetSizer(big_sizer);
-	
+
 	main_chat->Bind(wxEVT_SIZE, &ChatbotPanel::Resize, this);
 
 	delete bitmap;
@@ -114,7 +118,7 @@ void ChatbotPanel::pushMessage(Message* x)
 			same_temp_substring = same.substr(k, lenght - k + 1);
 			k = lenght + 1;
 		}
-		
+
 		wxString buffer(same_temp_substring);
 
 		//show buffer
@@ -128,7 +132,7 @@ void ChatbotPanel::pushMessage(Message* x)
 }
 
 void ChatbotPanel::takeMessage(wxCommandEvent& event)
-{	 
+{
 	Message* keyword, * answer;
 
 	int j{};
@@ -143,7 +147,7 @@ void ChatbotPanel::takeMessage(wxCommandEvent& event)
 	getSearchResult(keyword, answer);
 	this->pushMessage(answer);
 	ChatbotPanel::deactivateSearch();
-	
+
 	text_box->ChangeValue("");
 
 	delete keyword;
@@ -208,7 +212,7 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 
 void ChatbotPanel::testKnowledge(wxCommandEvent& event)
 {
-	Message* statement, *feedback;
+	Message* statement, * feedback;
 	wxMessageDialog* dial;
 	bool is_right;
 	const wxMessageDialog::ButtonLabel a(_("False"));
@@ -265,7 +269,7 @@ ChatbotPanel::~ChatbotPanel()
 	delete custom_font;
 }
 
-void getSearchResult(Message* q, Message* a)
+void ChatbotPanel::getSearchResult(Message* q, Message* a)
 {
 	a->isbot = true;
 
@@ -316,7 +320,98 @@ void getSearchResult(Message* q, Message* a)
 	}
 	else
 	{
-		a->msg = _("I do not know anything about ") + q->msg + _(".");
+		// Create an array with stemmed words of user's question
+		vector<string> inputWords;
+		stringstream ssin(q->msg.ToStdString());
+		while (ssin.good())
+		{
+			string word;
+			ssin >> word;
+			if (word != "")
+			{
+				word = stemming::english_stem<>::get_stemmed_text(word);
+				inputWords.push_back(word);
+			}
+		}
+
+		// Get data from database
+		vector<string> dictionary = ChatbotPanel::tfidfDatabase->getDictionary();
+		vector<vector<double>> tfidfMatrix = ChatbotPanel::tfidfDatabase->getMatrix();
+		vector<string> parArray = ChatbotPanel::tfidfDatabase->getParArray();
+		int parCount = parArray.size();
+		vector<double> sumsArray(parCount, 0.0);
+
+
+		bool found = false;
+		// Compare input words to dictionary
+		for (string word : inputWords)
+		{
+			cout << word;
+
+			// Create array of sums of word importance / frequency
+			auto it = find(dictionary.begin(), dictionary.end(), word);
+			if (it != dictionary.end())
+			{
+				found = true;
+				int idx = it - dictionary.begin();
+				for (int i = 0; i < parCount; i++)
+				{
+					sumsArray[i] += tfidfMatrix[i][idx];
+				}
+			}
+		}
+
+		// Create vector that maps paragraphs to document number
+		vector<string> documentIndices;
+		for (int i = 0; i < parArray.size(); i++)
+		{
+			if (i <= parCounters[0])
+				documentIndices.push_back("ONE");
+			else if (i <= parCounters[1])
+				documentIndices.push_back("TWO");
+			else if (i <= parCounters[2])
+				documentIndices.push_back("THREE");
+			else if (i <= parCounters[3])
+				documentIndices.push_back("FOUR");
+		}
+
+		// Sort sumsArray in parallel with parArray and documentIndices
+		for (int i = 0; i < sumsArray.size(); i++)
+		{
+			for (int j = i + 1; j < sumsArray.size(); j++)
+			{
+				if (sumsArray[i] < sumsArray[j])
+				{
+					double sumAux = sumsArray[i];
+					string parAux = parArray[i];
+					string docIdxAux = documentIndices[i];
+					sumsArray[i] = sumsArray[j];
+					parArray[i] = parArray[j];
+					documentIndices[i] = documentIndices[j];
+					sumsArray[j] = sumAux;
+					parArray[j] = parAux;
+					documentIndices[j] = docIdxAux;
+				}
+			}
+		}
+
+		string returnMessage = "";
+		if (found)
+		{
+			string spaces = "                                                                  ";
+			returnMessage.append("Here is what I found: " + spaces);
+			for (int i = 0; i < 3; i++)
+			{
+				returnMessage.append(parArray[i] + " ");
+				returnMessage.append("Find more information in document PART " + documentIndices[i] + spaces);
+			}
+		}
+		else
+		{
+			returnMessage.append("I couldn't find anything related to " + q->msg);
+		}
+
+		a->msg = wxString::FromUTF8(returnMessage);
 	}
 }
 
@@ -330,7 +425,7 @@ void getFactForFeelingLucky(Message* f)
 
 void getQsAndAsForRecommended(Message q[], Message a[])
 {
-	for (int j {}; j < 4; j++)
+	for (int j{}; j < 4; j++)
 	{
 		q[j].msg = _("ceva");
 		q[j].isbot = true;

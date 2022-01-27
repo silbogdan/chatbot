@@ -13,11 +13,15 @@
 #include "MenuPanel.h"
 #include "OpenPDF.h"
 #include "Message.h"
+#include "TFIDFDatabase.h"
+#include "include/olestem/stemming/english_stem.h"
 
 class ChatbotPanel : public wxPanel
 {
 public:
 	ChatbotPanel(wxPanel* parent);
+
+	static TFIDFDatabase* tfidfDatabase;
 
 	static wxTextCtrl* text_box;
 	static wxListCtrl* main_chat;
@@ -30,6 +34,8 @@ public:
 	void feelingLucky(wxCommandEvent& event);
 	void recommended(wxCommandEvent& event);
 	void testKnowledge(wxCommandEvent& event);
+	void getSearchResult(Message* q, Message* a);
+
 	
 	static void activateSearch() { is_waiting_for_search = true; }
 	static void deactivateSearch() { is_waiting_for_search = false; }
@@ -64,7 +70,6 @@ enum
 * I prefer that you keep the parameter order and type
 * x
 */
-void getSearchResult(Message* q, Message* a);
 void getFactForFeelingLucky(Message* f);
 void getQsAndAsForRecommended(Message q[], Message a[]);
 void getStatementForTest(Message* x, bool* is_statement_true);
