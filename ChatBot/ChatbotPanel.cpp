@@ -200,11 +200,11 @@ void ChatbotPanel::recommended(wxCommandEvent& event)
 	Message* recommendedMessage = new Message();
 	recommendedMessage->msg =
 		"Try asking these questions:\
-	What is the purpose of bioprocess study?\
-	What are the bioprocess modes of operation?\
-	What is important for developing a general kinetic model?\
-	What is cellulase?\
-	What is the purpose of a fuzzy control system?";
+	What types of bioreactors are used?\
+	What are the implementations for bioprocess control?\
+	What means bioprocess intelligent control?\
+	What is an expert system?\
+	What is the main goal of the intelligent control structure?";
 	recommendedMessage->isbot = true;
 
 	this->pushMessage(recommendedMessage);
@@ -272,51 +272,41 @@ ChatbotPanel::~ChatbotPanel()
 void ChatbotPanel::getSearchResult(Message* q, Message* a)
 {
 	a->isbot = true;
-
-	if (q->msg == "What is the purpose of bioprocess study?")
+	//predefined Questiojns
+	if (q->msg == "What types of bioreactors are used?")
 	{
-		a->msg = _("The bioprocess study makes evident the principles that are the foundation of living systems. In the\
-			first part of this chapter, different kind of bioprocesses(specially the aerobic bioprocesses) will\
-			be analyzed, together with the most interesting parameters and a general overview on the cell\
-			metabolism.In the second part, the most usual bioreactor types with some particularities will be\
-			shown.Finally, a general overview on the bioprocess measuring systems will be presented in\
-			addition with the information  organization  modalities and other some consonant possibilities on\
-			these.\
-			Find out more about this in PART ONE.");
+		a->msg = _("From this point if view two principal bioreactor types are now used in the bioprocessing operation (Moo-Young, 1985):\
+					•	Stirrer reactor;\
+					•	Pneumatic reactor.\
+					Course 1, 1.2.2");
 	}
-	else if (q->msg == "What are the bioprocess modes of operation?")
+	else if (q->msg == "What are the implementations for bioprocess control?")
 	{
-		a->msg = _("From a technological point of view (Chisti, 1989, Tolbert et al. 1982) there are three main\
-			bioprocess modes of operation:\
-		-  Batch cultivation;\
-		-  Fed - batch cultivation;\
-		-  Continuous cultivation\
-		Find out more about this in PART TWO.");
+		a->msg = _(" The bioprocess control (and optimisation) strategies are based on three main implementations (Pokkinen et al., 1992):\
+			•	Algorithmic optimisation : the optimum can be analytically reached(due to relationship defined between process parameters); hence, the algorithmic optimisation is cheaper that the adaptive one;\
+		•	Adaptive optimisation : this kind of optimisation requires not a priori knowledge regarding the existing relationships between bioprocess parameters;\
+		•	Intelligent technique optimisation : requires knowledge transfer from a human expert to the control structures(expert system, neural nets, fuzzy structure, etc).\
+			Course 2, 2.2.1");
 	}
-	else if (q->msg == "What is important for developing a general kinetic model?")
+	else if (q->msg == "What means bioprocess intelligent control?")
 	{
-		a->msg = _("One of the most important objectives for developing a general kinetic model is to establish a\
-			conceptual basis for microorganism growth description\n\
-			Find out more about this in PART TWO.");
+		a->msg = _("The idea of an integrated control structure starts from the intelligent system, which is able to detect the bioprocess type,\
+			 to design the process model and to control the fermentation process based on intelligent techniques, in order to maximize a performance index.");
 	}
-	else if (q->msg == "What is cellulase?")
+	else if (q->msg == "What is an expert system?")
 	{
-		a->msg = _("Cellulase is a multicomponent enzymatic system, which comprises three main enzymes: endoglucanases, \
-			exoglucanases(cellobiohydrolases) and beta - glucosidases.The individual enzymes act\
-			synergistic for the complete degradation of insoluble cellulose.The most important cellulolytic\
-			fungus is Trichoderma reesei, but it is of interest to study other organisms, like Aspergillus sp.,\
-			which is able to produce a wide range of extracellular enzymes growing on various substrates.\
-			Find out more about this in PART THREE.");
+		a->msg = _("Structurally, the expert system is based on human expert knowledge, formalized as logical rules.\
+				 The term “rules” has a large meaning. It includes different elements and knowledge corresponding to the bioprocess,\
+				 i.e. the main process parameters, the general evolution curves, etc. The knowledge is configured as syntactical forms,\
+				 if...then. Hence, after the rule selection by the expert system, the corresponding bioprocess control strategy (based on human knowledge)\
+				is applied. Moreover, the expert system must supervise the whole control system, in order to change the global control strategy (if there is non-optimal)\
+				 and even stop the bioprocess if the metabolic evolutions are troubled.");
 	}
-	else if (q->msg == "What is the purpose of a fuzzy control system?")
+	else if (q->msg == "What is the main goal of the intelligent control structure?")
 	{
-		a->msg = _("The design of a fuzzy control system arises from organization necessity of the human expert\
-			knowledge.The  decisional quintessence of the control system is determined  by the\
-			transition from the information objective level to the subjective one(i.e.the information\
-			version level) (Srinivas, Chidambaram, 1995).Thus, the interest is focussed on human expert\
-			experience(outlined through fuzzy rules) rather than information algorithmic process(Jecu,\
-			Caramihai, 1996).\
-			Find out more about this in PART FOUR");
+		a->msg = _("The main goal of the intelligent control structure designed in this work is (cf. #3.3) to maximize\
+				 the performance index through  pattern curve recognition and the applicability of a suitable fuzzy algorithm. The evolution type\
+				 validation is build through  a large bioprocess type class, a priori imposed by a human expert.");
 	}
 	else
 	{
