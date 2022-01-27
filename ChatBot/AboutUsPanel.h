@@ -9,7 +9,8 @@ class AboutUsPanel : public wxPanel
 {
 public:
 	AboutUsPanel(wxPanel* Parent);
-
-	wxStaticText* m_text;
+private:
+	wxBoxSizer* master_sizer;
+	wxStaticBitmap* display;
 };
 

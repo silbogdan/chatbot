@@ -10,8 +10,8 @@ MenuPanel::MenuPanel(wxPanel* Parent)
 	file_sizer = new wxBoxSizer(wxVERTICAL);
 
 	//buttons that go on the top and are related to navigation
-	go_to_chatbot = new wxButton(this, BUTTON_CHATBOT, _T("  Chatbot"), wxPoint(0, 0), wxSize(300, 40), wxBU_LEFT | wxBORDER_NONE);
-	go_to_about_us = new wxButton(this, BUTTON_ABOUT_US, _T("  About Us"), wxPoint(0, 40), wxSize(300, 40), wxBU_LEFT | wxBORDER_NONE);
+	go_to_chatbot = new wxButton(this, BUTTON_CHATBOT, _T("  Chatbot"), wxPoint(0, 40), wxSize(300, 40), wxBU_LEFT | wxBORDER_NONE);
+	go_to_about_us = new wxButton(this, BUTTON_ABOUT_US, _T("  Home Page"), wxPoint(0, 0), wxSize(300, 40), wxBU_LEFT | wxBORDER_NONE);
 
 	//buttons that go on the bottom and involve the bot
 	search = new wxButton(this, BUTTON_SEARCH, _T(" Search"), wxPoint(0, 60), wxSize(300, 30), wxBU_LEFT | wxBORDER_NONE);
